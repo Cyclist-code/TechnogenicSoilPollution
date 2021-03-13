@@ -1,7 +1,7 @@
 ﻿
 namespace TechnogenicSoilPollution
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,13 +29,14 @@ namespace TechnogenicSoilPollution
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.BtnOpenHome = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnOpenMap = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnOpenData = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnOpenHelp = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.PanelLoadUserControl = new System.Windows.Forms.Panel();
+            this.SideMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnOpenHome
@@ -85,31 +86,41 @@ namespace TechnogenicSoilPollution
             this.BtnOpenHelp.TabIndex = 3;
             this.BtnOpenHelp.Text = "Справка";
             this.BtnOpenHelp.UseVisualStyleBackColor = true;
+            this.BtnOpenHelp.Click += new System.EventHandler(this.BtnOpenHelp_Click);
             // 
-            // panel1
+            // SideMenuPanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.BtnOpenHome);
-            this.panel1.Controls.Add(this.BtnOpenHelp);
-            this.panel1.Controls.Add(this.BtnOpenData);
-            this.panel1.Controls.Add(this.BtnOpenMap);
-            this.panel1.Location = new System.Drawing.Point(0, 63);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(90, 560);
-            this.panel1.TabIndex = 4;
+            this.SideMenuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SideMenuPanel.Controls.Add(this.BtnOpenHome);
+            this.SideMenuPanel.Controls.Add(this.BtnOpenHelp);
+            this.SideMenuPanel.Controls.Add(this.BtnOpenData);
+            this.SideMenuPanel.Controls.Add(this.BtnOpenMap);
+            this.SideMenuPanel.Location = new System.Drawing.Point(0, 63);
+            this.SideMenuPanel.Name = "SideMenuPanel";
+            this.SideMenuPanel.Size = new System.Drawing.Size(90, 560);
+            this.SideMenuPanel.TabIndex = 4;
             // 
-            // Form1
+            // PanelLoadUserControl
+            // 
+            this.PanelLoadUserControl.Location = new System.Drawing.Point(91, 63);
+            this.PanelLoadUserControl.Name = "PanelLoadUserControl";
+            this.PanelLoadUserControl.Size = new System.Drawing.Size(860, 560);
+            this.PanelLoadUserControl.TabIndex = 5;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 620);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelLoadUserControl);
+            this.Controls.Add(this.SideMenuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 620);
             this.MinimumSize = new System.Drawing.Size(950, 620);
-            this.Name = "Form1";
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расчёт и визуализация техногенного загрязнения почвенного покрова";
-            this.panel1.ResumeLayout(false);
+            this.SideMenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -120,7 +131,8 @@ namespace TechnogenicSoilPollution
         private MaterialSkin.Controls.MaterialRaisedButton BtnOpenMap;
         private MaterialSkin.Controls.MaterialRaisedButton BtnOpenData;
         private MaterialSkin.Controls.MaterialRaisedButton BtnOpenHelp;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel SideMenuPanel;
+        private System.Windows.Forms.Panel PanelLoadUserControl;
     }
 }
 

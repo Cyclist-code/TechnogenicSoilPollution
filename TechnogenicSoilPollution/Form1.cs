@@ -9,12 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TechnogenicSoilPollution.Window;
 
 namespace TechnogenicSoilPollution
 {
-    public partial class Form1 : MaterialForm
+    public partial class MainForm : MaterialForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -22,6 +23,12 @@ namespace TechnogenicSoilPollution
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+        }
+
+        private void BtnOpenHelp_Click(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
         }
     }
 }
