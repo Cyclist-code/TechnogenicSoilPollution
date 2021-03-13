@@ -50,6 +50,7 @@ namespace TechnogenicSoilPollution
             this.BtnOpenHome.TabIndex = 0;
             this.BtnOpenHome.Text = "Главная";
             this.BtnOpenHome.UseVisualStyleBackColor = true;
+            this.BtnOpenHome.Click += new System.EventHandler(this.OpenPageBtn);
             // 
             // BtnOpenMap
             // 
@@ -62,6 +63,7 @@ namespace TechnogenicSoilPollution
             this.BtnOpenMap.TabIndex = 1;
             this.BtnOpenMap.Text = "Карта";
             this.BtnOpenMap.UseVisualStyleBackColor = true;
+            this.BtnOpenMap.Click += new System.EventHandler(this.OpenPageBtn);
             // 
             // BtnOpenData
             // 
@@ -74,6 +76,7 @@ namespace TechnogenicSoilPollution
             this.BtnOpenData.TabIndex = 2;
             this.BtnOpenData.Text = "Данные";
             this.BtnOpenData.UseVisualStyleBackColor = true;
+            this.BtnOpenData.Click += new System.EventHandler(this.OpenPageBtn);
             // 
             // BtnOpenHelp
             // 
