@@ -29,6 +29,7 @@ namespace TechnogenicSoilPollution
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.BtnOpenHome = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnOpenMap = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnOpenData = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -103,6 +104,7 @@ namespace TechnogenicSoilPollution
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 620);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 620);
             this.MinimumSize = new System.Drawing.Size(950, 620);
             this.Name = "Form1";
