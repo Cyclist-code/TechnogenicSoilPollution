@@ -37,6 +37,7 @@ namespace TechnogenicSoilPollution.Window
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CloseFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -109,11 +110,25 @@ namespace TechnogenicSoilPollution.Window
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // CloseFormBtn
+            // 
+            this.CloseFormBtn.Depth = 0;
+            this.CloseFormBtn.Location = new System.Drawing.Point(363, 403);
+            this.CloseFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CloseFormBtn.Name = "CloseFormBtn";
+            this.CloseFormBtn.Primary = true;
+            this.CloseFormBtn.Size = new System.Drawing.Size(80, 40);
+            this.CloseFormBtn.TabIndex = 14;
+            this.CloseFormBtn.Text = "ОК";
+            this.CloseFormBtn.UseVisualStyleBackColor = true;
+            this.CloseFormBtn.Click += new System.EventHandler(this.CloseFormBtn_Click);
+            // 
             // AboutProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 455);
+            this.Controls.Add(this.CloseFormBtn);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
@@ -143,5 +158,6 @@ namespace TechnogenicSoilPollution.Window
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialRaisedButton CloseFormBtn;
     }
 }

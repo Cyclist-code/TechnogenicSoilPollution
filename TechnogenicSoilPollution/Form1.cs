@@ -29,7 +29,7 @@ namespace TechnogenicSoilPollution
         private void BtnOpenHelp_Click(object sender, EventArgs e)
         {
             AboutProgramForm aboutProgram = new AboutProgramForm();
-            aboutProgram.Show();
+            aboutProgram.ShowDialog();
         }
 
         private void OpenPageBtn(object sender, EventArgs e)
