@@ -107,7 +107,7 @@ namespace TechnogenicSoilPollution
             // 
             this.PanelLoadUserControl.Location = new System.Drawing.Point(91, 63);
             this.PanelLoadUserControl.Name = "PanelLoadUserControl";
-            this.PanelLoadUserControl.Size = new System.Drawing.Size(860, 560);
+            this.PanelLoadUserControl.Size = new System.Drawing.Size(860, 555);
             this.PanelLoadUserControl.TabIndex = 5;
             // 
             // MainForm
