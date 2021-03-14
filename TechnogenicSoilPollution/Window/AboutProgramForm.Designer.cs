@@ -47,9 +47,9 @@ namespace TechnogenicSoilPollution.Window
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(30, 248);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 20);
+            this.label5.Size = new System.Drawing.Size(151, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "KOSTYA190900@yandex.ru";
+            this.label5.Text = "kgostev@gmail.com";
             // 
             // label4
             // 
@@ -67,9 +67,9 @@ namespace TechnogenicSoilPollution.Window
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(1, 191);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(150, 20);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Связь:";
+            this.label3.Text = "Обратная связь:";
             // 
             // label2
             // 
@@ -121,6 +121,7 @@ namespace TechnogenicSoilPollution.Window
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(455, 455);
             this.MinimumSize = new System.Drawing.Size(455, 455);
             this.Name = "AboutProgramForm";
