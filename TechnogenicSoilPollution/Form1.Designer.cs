@@ -46,7 +46,7 @@ namespace TechnogenicSoilPollution
             this.BtnOpenHome.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnOpenHome.Name = "BtnOpenHome";
             this.BtnOpenHome.Primary = true;
-            this.BtnOpenHome.Size = new System.Drawing.Size(81, 40);
+            this.BtnOpenHome.Size = new System.Drawing.Size(110, 40);
             this.BtnOpenHome.TabIndex = 0;
             this.BtnOpenHome.Text = "Главная";
             this.BtnOpenHome.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@ namespace TechnogenicSoilPollution
             this.BtnOpenMap.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnOpenMap.Name = "BtnOpenMap";
             this.BtnOpenMap.Primary = true;
-            this.BtnOpenMap.Size = new System.Drawing.Size(81, 40);
+            this.BtnOpenMap.Size = new System.Drawing.Size(110, 40);
             this.BtnOpenMap.TabIndex = 1;
-            this.BtnOpenMap.Text = "Карта";
+            this.BtnOpenMap.Text = "Расчёт";
             this.BtnOpenMap.UseVisualStyleBackColor = true;
             this.BtnOpenMap.Click += new System.EventHandler(this.OpenPageBtn);
             // 
@@ -72,9 +72,9 @@ namespace TechnogenicSoilPollution
             this.BtnOpenData.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnOpenData.Name = "BtnOpenData";
             this.BtnOpenData.Primary = true;
-            this.BtnOpenData.Size = new System.Drawing.Size(81, 40);
+            this.BtnOpenData.Size = new System.Drawing.Size(110, 40);
             this.BtnOpenData.TabIndex = 2;
-            this.BtnOpenData.Text = "Данные";
+            this.BtnOpenData.Text = "База Данных";
             this.BtnOpenData.UseVisualStyleBackColor = true;
             this.BtnOpenData.Click += new System.EventHandler(this.OpenPageBtn);
             // 
@@ -85,7 +85,7 @@ namespace TechnogenicSoilPollution
             this.BtnOpenHelp.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnOpenHelp.Name = "BtnOpenHelp";
             this.BtnOpenHelp.Primary = true;
-            this.BtnOpenHelp.Size = new System.Drawing.Size(81, 40);
+            this.BtnOpenHelp.Size = new System.Drawing.Size(110, 40);
             this.BtnOpenHelp.TabIndex = 3;
             this.BtnOpenHelp.Text = "Справка";
             this.BtnOpenHelp.UseVisualStyleBackColor = true;
@@ -98,28 +98,28 @@ namespace TechnogenicSoilPollution
             this.SideMenuPanel.Controls.Add(this.BtnOpenHelp);
             this.SideMenuPanel.Controls.Add(this.BtnOpenData);
             this.SideMenuPanel.Controls.Add(this.BtnOpenMap);
-            this.SideMenuPanel.Location = new System.Drawing.Point(0, 63);
+            this.SideMenuPanel.Location = new System.Drawing.Point(0, 62);
             this.SideMenuPanel.Name = "SideMenuPanel";
-            this.SideMenuPanel.Size = new System.Drawing.Size(90, 560);
+            this.SideMenuPanel.Size = new System.Drawing.Size(119, 637);
             this.SideMenuPanel.TabIndex = 4;
             // 
             // PanelLoadUserControl
             // 
-            this.PanelLoadUserControl.Location = new System.Drawing.Point(91, 63);
+            this.PanelLoadUserControl.Location = new System.Drawing.Point(119, 63);
             this.PanelLoadUserControl.Name = "PanelLoadUserControl";
-            this.PanelLoadUserControl.Size = new System.Drawing.Size(860, 555);
+            this.PanelLoadUserControl.Size = new System.Drawing.Size(930, 636);
             this.PanelLoadUserControl.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 620);
+            this.ClientSize = new System.Drawing.Size(1050, 700);
             this.Controls.Add(this.PanelLoadUserControl);
             this.Controls.Add(this.SideMenuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(950, 620);
-            this.MinimumSize = new System.Drawing.Size(950, 620);
+            this.MaximumSize = new System.Drawing.Size(1050, 700);
+            this.MinimumSize = new System.Drawing.Size(1050, 700);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расчёт и визуализация техногенного загрязнения почвенного покрова";
