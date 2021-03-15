@@ -38,7 +38,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(24, 5);
+            this.label1.Location = new System.Drawing.Point(59, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(811, 117);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.image_plant;
-            this.pictureBox1.Location = new System.Drawing.Point(116, 130);
+            this.pictureBox1.Location = new System.Drawing.Point(151, 170);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(628, 417);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -63,7 +63,7 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(860, 555);
+            this.Size = new System.Drawing.Size(930, 636);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
