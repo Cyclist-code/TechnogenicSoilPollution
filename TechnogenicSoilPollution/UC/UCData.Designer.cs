@@ -38,6 +38,8 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SelectYearBox = new System.Windows.Forms.ComboBox();
             this.SelectDataFiltersBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +48,15 @@ namespace TechnogenicSoilPollution.UC
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +92,16 @@ namespace TechnogenicSoilPollution.UC
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17});
             this.DataGrid.Location = new System.Drawing.Point(5, 50);
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.Size = new System.Drawing.Size(920, 510);
@@ -92,7 +110,7 @@ namespace TechnogenicSoilPollution.UC
             // UpdateDataBtn
             // 
             this.UpdateDataBtn.Depth = 0;
-            this.UpdateDataBtn.Location = new System.Drawing.Point(340, 574);
+            this.UpdateDataBtn.Location = new System.Drawing.Point(340, 578);
             this.UpdateDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.UpdateDataBtn.Name = "UpdateDataBtn";
             this.UpdateDataBtn.Primary = true;
@@ -104,7 +122,7 @@ namespace TechnogenicSoilPollution.UC
             // DeleteDataBtn
             // 
             this.DeleteDataBtn.Depth = 0;
-            this.DeleteDataBtn.Location = new System.Drawing.Point(446, 574);
+            this.DeleteDataBtn.Location = new System.Drawing.Point(446, 578);
             this.DeleteDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteDataBtn.Name = "DeleteDataBtn";
             this.DeleteDataBtn.Primary = true;
@@ -116,7 +134,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportDataBtn
             // 
             this.ExportDataBtn.Depth = 0;
-            this.ExportDataBtn.Location = new System.Drawing.Point(552, 574);
+            this.ExportDataBtn.Location = new System.Drawing.Point(552, 578);
             this.ExportDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDataBtn.Name = "ExportDataBtn";
             this.ExportDataBtn.Primary = true;
@@ -158,6 +176,26 @@ namespace TechnogenicSoilPollution.UC
             this.SelectDataFiltersBtn.Text = "Выбрать";
             this.SelectDataFiltersBtn.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(2, 578);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 36);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "\"-\" - означает, что для выбранного элемента\r\nне проводидись измеренеия.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(2, 563);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Подсказка:";
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Направление";
@@ -185,40 +223,65 @@ namespace TechnogenicSoilPollution.UC
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Фаза";
+            this.Column6.HeaderText = "Фаза 1";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Содержание (мг/л)";
+            this.Column7.HeaderText = "Содержание";
             this.Column7.Name = "Column7";
             this.Column7.Width = 130;
             // 
             // Column8
             // 
-            this.Column8.HeaderText = "Запасы (кг/м3)";
+            this.Column8.HeaderText = "Запасы";
             this.Column8.Name = "Column8";
             this.Column8.Width = 120;
             // 
-            // label1
+            // Column9
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(2, 578);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 36);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "\"-\" - означает, что для выбранного элемента\r\nне проводидись измеренеия.";
+            this.Column9.HeaderText = "Фаза 2";
+            this.Column9.Name = "Column9";
             // 
-            // label2
+            // Column10
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(2, 563);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Подсказка:";
+            this.Column10.HeaderText = "Содержание";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Запасы";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Фаза 3";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Содержание";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Запасы";
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Фаза 4";
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Содержание";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Запасы";
+            this.Column17.Name = "Column17";
             // 
             // UCData
             // 
@@ -254,6 +317,8 @@ namespace TechnogenicSoilPollution.UC
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ComboBox SelectYearBox;
         private MaterialSkin.Controls.MaterialRaisedButton SelectDataFiltersBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -262,7 +327,14 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
     }
 }
