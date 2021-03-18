@@ -98,28 +98,28 @@ namespace TechnogenicSoilPollution
             this.SideMenuPanel.Controls.Add(this.BtnOpenHelp);
             this.SideMenuPanel.Controls.Add(this.BtnOpenData);
             this.SideMenuPanel.Controls.Add(this.BtnOpenMap);
-            this.SideMenuPanel.Location = new System.Drawing.Point(0, 62);
+            this.SideMenuPanel.Location = new System.Drawing.Point(0, 63);
             this.SideMenuPanel.Name = "SideMenuPanel";
-            this.SideMenuPanel.Size = new System.Drawing.Size(119, 637);
+            this.SideMenuPanel.Size = new System.Drawing.Size(119, 658);
             this.SideMenuPanel.TabIndex = 4;
             // 
             // PanelLoadUserControl
             // 
-            this.PanelLoadUserControl.Location = new System.Drawing.Point(119, 63);
+            this.PanelLoadUserControl.Location = new System.Drawing.Point(119, 64);
             this.PanelLoadUserControl.Name = "PanelLoadUserControl";
-            this.PanelLoadUserControl.Size = new System.Drawing.Size(930, 636);
+            this.PanelLoadUserControl.Size = new System.Drawing.Size(1031, 657);
             this.PanelLoadUserControl.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 700);
+            this.ClientSize = new System.Drawing.Size(1150, 720);
             this.Controls.Add(this.PanelLoadUserControl);
             this.Controls.Add(this.SideMenuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1050, 700);
-            this.MinimumSize = new System.Drawing.Size(1050, 700);
+            this.MaximumSize = new System.Drawing.Size(1150, 720);
+            this.MinimumSize = new System.Drawing.Size(1150, 720);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расчёт и визуализация техногенного загрязнения почвенного покрова";
