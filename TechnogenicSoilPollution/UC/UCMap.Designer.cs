@@ -50,7 +50,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(612, 16);
+            this.materialLabel1.Location = new System.Drawing.Point(649, 16);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(75, 19);
@@ -61,7 +61,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.ChemicalElementsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChemicalElementsBox.FormattingEnabled = true;
-            this.ChemicalElementsBox.Location = new System.Drawing.Point(616, 38);
+            this.ChemicalElementsBox.Location = new System.Drawing.Point(653, 38);
             this.ChemicalElementsBox.Name = "ChemicalElementsBox";
             this.ChemicalElementsBox.Size = new System.Drawing.Size(113, 26);
             this.ChemicalElementsBox.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(745, 16);
+            this.materialLabel2.Location = new System.Drawing.Point(806, 16);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(123, 19);
@@ -97,7 +97,7 @@ namespace TechnogenicSoilPollution.UC
             "12",
             "13",
             "14"});
-            this.SamplingPointBox.Location = new System.Drawing.Point(749, 38);
+            this.SamplingPointBox.Location = new System.Drawing.Point(810, 38);
             this.SamplingPointBox.Name = "SamplingPointBox";
             this.SamplingPointBox.Size = new System.Drawing.Size(119, 154);
             this.SamplingPointBox.TabIndex = 4;
@@ -105,7 +105,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportMapBtn
             // 
             this.ExportMapBtn.Depth = 0;
-            this.ExportMapBtn.Location = new System.Drawing.Point(626, 575);
+            this.ExportMapBtn.Location = new System.Drawing.Point(670, 590);
             this.ExportMapBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportMapBtn.Name = "ExportMapBtn";
             this.ExportMapBtn.Primary = true;
@@ -118,7 +118,7 @@ namespace TechnogenicSoilPollution.UC
             // CalcPollutionBtn
             // 
             this.CalcPollutionBtn.Depth = 0;
-            this.CalcPollutionBtn.Location = new System.Drawing.Point(792, 575);
+            this.CalcPollutionBtn.Location = new System.Drawing.Point(868, 590);
             this.CalcPollutionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.CalcPollutionBtn.Name = "CalcPollutionBtn";
             this.CalcPollutionBtn.Primary = true;
@@ -150,7 +150,7 @@ namespace TechnogenicSoilPollution.UC
             this.Gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.Gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.Gmap.ShowTileGridLines = false;
-            this.Gmap.Size = new System.Drawing.Size(600, 600);
+            this.Gmap.Size = new System.Drawing.Size(630, 625);
             this.Gmap.TabIndex = 7;
             this.Gmap.Zoom = 0D;
             this.Gmap.Load += new System.EventHandler(this.Gmap_Load);
@@ -161,7 +161,7 @@ namespace TechnogenicSoilPollution.UC
             this.panel1.Controls.Add(this.Gmap);
             this.panel1.Location = new System.Drawing.Point(5, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 600);
+            this.panel1.Size = new System.Drawing.Size(630, 625);
             this.panel1.TabIndex = 8;
             // 
             // materialLabel3
@@ -170,7 +170,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(612, 78);
+            this.materialLabel3.Location = new System.Drawing.Point(649, 78);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(49, 19);
@@ -181,7 +181,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.PhaseBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhaseBox.FormattingEnabled = true;
-            this.PhaseBox.Location = new System.Drawing.Point(616, 100);
+            this.PhaseBox.Location = new System.Drawing.Point(653, 100);
             this.PhaseBox.Name = "PhaseBox";
             this.PhaseBox.Size = new System.Drawing.Size(113, 26);
             this.PhaseBox.TabIndex = 10;
@@ -192,7 +192,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(612, 139);
+            this.materialLabel4.Location = new System.Drawing.Point(649, 135);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(39, 19);
@@ -203,7 +203,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.YearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.YearBox.FormattingEnabled = true;
-            this.YearBox.Location = new System.Drawing.Point(616, 161);
+            this.YearBox.Location = new System.Drawing.Point(653, 157);
             this.YearBox.Name = "YearBox";
             this.YearBox.Size = new System.Drawing.Size(113, 26);
             this.YearBox.TabIndex = 12;
@@ -224,7 +224,7 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.ChemicalElementsBox);
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCMap";
-            this.Size = new System.Drawing.Size(930, 636);
+            this.Size = new System.Drawing.Size(1031, 657);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

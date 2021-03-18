@@ -32,14 +32,6 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SelectElementsBox = new System.Windows.Forms.ComboBox();
             this.DataGrid = new System.Windows.Forms.DataGridView();
-            this.UpdateDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.DeleteDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.ExportDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.SelectYearBox = new System.Windows.Forms.ComboBox();
-            this.SelectDataFiltersBtn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +49,14 @@ namespace TechnogenicSoilPollution.UC
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UpdateDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.DeleteDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.ExportDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.SelectYearBox = new System.Windows.Forms.ComboBox();
+            this.SelectDataFiltersBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,97 +104,8 @@ namespace TechnogenicSoilPollution.UC
             this.Column17});
             this.DataGrid.Location = new System.Drawing.Point(5, 50);
             this.DataGrid.Name = "DataGrid";
-            this.DataGrid.Size = new System.Drawing.Size(920, 510);
+            this.DataGrid.Size = new System.Drawing.Size(1021, 526);
             this.DataGrid.TabIndex = 2;
-            // 
-            // UpdateDataBtn
-            // 
-            this.UpdateDataBtn.Depth = 0;
-            this.UpdateDataBtn.Location = new System.Drawing.Point(340, 578);
-            this.UpdateDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.UpdateDataBtn.Name = "UpdateDataBtn";
-            this.UpdateDataBtn.Primary = true;
-            this.UpdateDataBtn.Size = new System.Drawing.Size(100, 40);
-            this.UpdateDataBtn.TabIndex = 3;
-            this.UpdateDataBtn.Text = "Обновить";
-            this.UpdateDataBtn.UseVisualStyleBackColor = true;
-            // 
-            // DeleteDataBtn
-            // 
-            this.DeleteDataBtn.Depth = 0;
-            this.DeleteDataBtn.Location = new System.Drawing.Point(446, 578);
-            this.DeleteDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DeleteDataBtn.Name = "DeleteDataBtn";
-            this.DeleteDataBtn.Primary = true;
-            this.DeleteDataBtn.Size = new System.Drawing.Size(100, 40);
-            this.DeleteDataBtn.TabIndex = 4;
-            this.DeleteDataBtn.Text = "Удалить";
-            this.DeleteDataBtn.UseVisualStyleBackColor = true;
-            // 
-            // ExportDataBtn
-            // 
-            this.ExportDataBtn.Depth = 0;
-            this.ExportDataBtn.Location = new System.Drawing.Point(552, 578);
-            this.ExportDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ExportDataBtn.Name = "ExportDataBtn";
-            this.ExportDataBtn.Primary = true;
-            this.ExportDataBtn.Size = new System.Drawing.Size(140, 40);
-            this.ExportDataBtn.TabIndex = 5;
-            this.ExportDataBtn.Text = "Экпортировать";
-            this.ExportDataBtn.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(225, 20);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(39, 19);
-            this.materialLabel2.TabIndex = 6;
-            this.materialLabel2.Text = "Год:";
-            // 
-            // SelectYearBox
-            // 
-            this.SelectYearBox.FormattingEnabled = true;
-            this.SelectYearBox.Location = new System.Drawing.Point(270, 20);
-            this.SelectYearBox.Name = "SelectYearBox";
-            this.SelectYearBox.Size = new System.Drawing.Size(99, 21);
-            this.SelectYearBox.TabIndex = 7;
-            // 
-            // SelectDataFiltersBtn
-            // 
-            this.SelectDataFiltersBtn.Depth = 0;
-            this.SelectDataFiltersBtn.Location = new System.Drawing.Point(390, 14);
-            this.SelectDataFiltersBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SelectDataFiltersBtn.Name = "SelectDataFiltersBtn";
-            this.SelectDataFiltersBtn.Primary = true;
-            this.SelectDataFiltersBtn.Size = new System.Drawing.Size(100, 30);
-            this.SelectDataFiltersBtn.TabIndex = 8;
-            this.SelectDataFiltersBtn.Text = "Выбрать";
-            this.SelectDataFiltersBtn.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(2, 578);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 36);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "\"-\" - означает, что для выбранного элемента\r\nне проводидись измеренеия.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(2, 563);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Подсказка:";
             // 
             // Column1
             // 
@@ -283,6 +194,95 @@ namespace TechnogenicSoilPollution.UC
             this.Column17.HeaderText = "Запасы";
             this.Column17.Name = "Column17";
             // 
+            // UpdateDataBtn
+            // 
+            this.UpdateDataBtn.Depth = 0;
+            this.UpdateDataBtn.Location = new System.Drawing.Point(363, 600);
+            this.UpdateDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UpdateDataBtn.Name = "UpdateDataBtn";
+            this.UpdateDataBtn.Primary = true;
+            this.UpdateDataBtn.Size = new System.Drawing.Size(100, 40);
+            this.UpdateDataBtn.TabIndex = 3;
+            this.UpdateDataBtn.Text = "Обновить";
+            this.UpdateDataBtn.UseVisualStyleBackColor = true;
+            // 
+            // DeleteDataBtn
+            // 
+            this.DeleteDataBtn.Depth = 0;
+            this.DeleteDataBtn.Location = new System.Drawing.Point(469, 600);
+            this.DeleteDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeleteDataBtn.Name = "DeleteDataBtn";
+            this.DeleteDataBtn.Primary = true;
+            this.DeleteDataBtn.Size = new System.Drawing.Size(100, 40);
+            this.DeleteDataBtn.TabIndex = 4;
+            this.DeleteDataBtn.Text = "Удалить";
+            this.DeleteDataBtn.UseVisualStyleBackColor = true;
+            // 
+            // ExportDataBtn
+            // 
+            this.ExportDataBtn.Depth = 0;
+            this.ExportDataBtn.Location = new System.Drawing.Point(575, 600);
+            this.ExportDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ExportDataBtn.Name = "ExportDataBtn";
+            this.ExportDataBtn.Primary = true;
+            this.ExportDataBtn.Size = new System.Drawing.Size(140, 40);
+            this.ExportDataBtn.TabIndex = 5;
+            this.ExportDataBtn.Text = "Экпортировать";
+            this.ExportDataBtn.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(225, 20);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(39, 19);
+            this.materialLabel2.TabIndex = 6;
+            this.materialLabel2.Text = "Год:";
+            // 
+            // SelectYearBox
+            // 
+            this.SelectYearBox.FormattingEnabled = true;
+            this.SelectYearBox.Location = new System.Drawing.Point(270, 20);
+            this.SelectYearBox.Name = "SelectYearBox";
+            this.SelectYearBox.Size = new System.Drawing.Size(99, 21);
+            this.SelectYearBox.TabIndex = 7;
+            // 
+            // SelectDataFiltersBtn
+            // 
+            this.SelectDataFiltersBtn.Depth = 0;
+            this.SelectDataFiltersBtn.Location = new System.Drawing.Point(390, 14);
+            this.SelectDataFiltersBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SelectDataFiltersBtn.Name = "SelectDataFiltersBtn";
+            this.SelectDataFiltersBtn.Primary = true;
+            this.SelectDataFiltersBtn.Size = new System.Drawing.Size(100, 30);
+            this.SelectDataFiltersBtn.TabIndex = 8;
+            this.SelectDataFiltersBtn.Text = "Выбрать";
+            this.SelectDataFiltersBtn.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(2, 604);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(321, 36);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "\"-\" - означает, что для выбранного элемента\r\nне проводидись измеренеия.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(2, 586);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Подсказка:";
+            // 
             // UCData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +299,7 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.SelectElementsBox);
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCData";
-            this.Size = new System.Drawing.Size(930, 636);
+            this.Size = new System.Drawing.Size(1031, 657);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
