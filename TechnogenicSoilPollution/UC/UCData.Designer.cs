@@ -205,6 +205,7 @@ namespace TechnogenicSoilPollution.UC
             this.UpdateDataBtn.TabIndex = 3;
             this.UpdateDataBtn.Text = "Обновить";
             this.UpdateDataBtn.UseVisualStyleBackColor = true;
+            this.UpdateDataBtn.Click += new System.EventHandler(this.UpdateDataBtn_Click);
             // 
             // DeleteDataBtn
             // 
@@ -217,6 +218,7 @@ namespace TechnogenicSoilPollution.UC
             this.DeleteDataBtn.TabIndex = 4;
             this.DeleteDataBtn.Text = "Удалить";
             this.DeleteDataBtn.UseVisualStyleBackColor = true;
+            this.DeleteDataBtn.Click += new System.EventHandler(this.DeleteDataBtn_Click);
             // 
             // ExportDataBtn
             // 
@@ -262,6 +264,7 @@ namespace TechnogenicSoilPollution.UC
             this.SelectDataFiltersBtn.TabIndex = 8;
             this.SelectDataFiltersBtn.Text = "Выбрать";
             this.SelectDataFiltersBtn.UseVisualStyleBackColor = true;
+            this.SelectDataFiltersBtn.Click += new System.EventHandler(this.SelectDataFiltersBtn_Click);
             // 
             // label1
             // 
