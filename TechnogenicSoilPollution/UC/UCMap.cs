@@ -20,6 +20,9 @@ namespace TechnogenicSoilPollution.UC
 {
     public partial class UCMap : UserControl
     {
+        // Список маркеров
+        GMapOverlay pointsOverlay = new GMapOverlay("markers");
+
         public UCMap()
         {
             InitializeComponent();
@@ -47,6 +50,12 @@ namespace TechnogenicSoilPollution.UC
             Gmap.ShowTileGridLines = false;
             //Красный крест по центру
             Gmap.ShowCenter = false;
+            //Отключение негативного режима
+            Gmap.NegativeMode = false;
+            //Разрешение полигонов
+            Gmap.PolygonsEnabled = true;
+            //Разрешение маршрутов
+            Gmap.RoutesEnabled = true;
 
             //Провайдер для отображения карты
             Gmap.MapProvider = GMapProviders.YandexMap;
@@ -54,6 +63,11 @@ namespace TechnogenicSoilPollution.UC
             GMaps.Instance.Mode = AccessMode.ServerOnly;
             //Начальные координаты для загрузки карты
             Gmap.Position = new PointLatLng(52.192972, 104.087009);
+
+            GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(52.191713, 104.084576), GMarkerGoogleType.red_small);
+            plantMarker.ToolTipText = "Алюминиевый Завод";
+            pointsOverlay.Markers.Add(plantMarker);
+            Gmap.Overlays.Add(pointsOverlay);
         }
 
         private void ExportMapBtn_Click(object sender, EventArgs e)
