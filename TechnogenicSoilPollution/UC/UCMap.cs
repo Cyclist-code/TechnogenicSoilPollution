@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,17 +17,22 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Windows.Input;
+using TechnogenicSoilPollution.CPoint;
 
 namespace TechnogenicSoilPollution.UC
 {
     public partial class UCMap : UserControl
     {
         // Список маркеров
-        GMapOverlay pointsOverlay = new GMapOverlay("markers");
+        GMapOverlay pointsOverlay = new GMapOverlay("markers");      
+
+        private SqlConnection sqlConnection = null;
 
         public UCMap()
         {
             InitializeComponent();
+
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
         }
 
         private void Gmap_Load(object sender, EventArgs e)
@@ -79,11 +86,39 @@ namespace TechnogenicSoilPollution.UC
 
         #region Методы
 
+        List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();
+        SqlCommand sqlPointsCommand;
+
         private void LoadPoints()
         {
+            pointsOverlay.Clear();
+            sqlConnection.Open();
+
+            sqlPointsCommand = new SqlCommand("SELECT * FROM SamplingPoints", sqlConnection);
+            SqlDataReader sqlDataReader = sqlPointsCommand.ExecuteReader();
+
             GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(52.191713, 104.084576), GMarkerGoogleType.red_small);
+            plantMarker.ToolTip = new GMapRoundedToolTip(plantMarker);
             plantMarker.ToolTipText = "Алюминиевый Завод";
             pointsOverlay.Markers.Add(plantMarker);
+
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    ListPoints.Add(new CoordinatesPoint(Convert.ToDouble(sqlDataReader[4]), Convert.ToDouble(sqlDataReader[5])));
+                }
+            }
+            sqlDataReader.Close();
+
+            for(int i = 0; i < ListPoints.Count; i++)
+            {
+                GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
+                samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker);
+                samplingMarker.ToolTipText = "Точка пробоотбора";
+                pointsOverlay.Markers.Add(samplingMarker);
+            }
+
             Gmap.Overlays.Add(pointsOverlay);
         }
 
