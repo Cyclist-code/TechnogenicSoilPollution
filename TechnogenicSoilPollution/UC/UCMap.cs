@@ -64,20 +64,59 @@ namespace TechnogenicSoilPollution.UC
             //Начальные координаты для загрузки карты
             Gmap.Position = new PointLatLng(52.192972, 104.087009);
 
-            GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(52.191713, 104.084576), GMarkerGoogleType.red_small);
-            plantMarker.ToolTipText = "Алюминиевый Завод";
-            pointsOverlay.Markers.Add(plantMarker);
-            Gmap.Overlays.Add(pointsOverlay);
+            LoadPoints();
         }
 
         private void ExportMapBtn_Click(object sender, EventArgs e)
         {
-
+            SaveMapPNG();
         }
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
 
         }
+
+        #region Методы
+
+        private void LoadPoints()
+        {
+            GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(52.191713, 104.084576), GMarkerGoogleType.red_small);
+            plantMarker.ToolTipText = "Алюминиевый Завод";
+            pointsOverlay.Markers.Add(plantMarker);
+            Gmap.Overlays.Add(pointsOverlay);
+        }
+
+        private void SaveMapPNG()
+        {
+            try
+            {
+                using(SaveFileDialog saveMapDialog = new SaveFileDialog())
+                {
+                    saveMapDialog.Filter = "PNG (*.png)|*.png";
+                    Image imageMap = Gmap.ToImage();
+
+                    if (imageMap != null)
+                    {
+                        using (imageMap)
+                        {
+                            if (saveMapDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                string fileName = saveMapDialog.FileName;
+                                imageMap.Save(fileName);
+                                MessageBox.Show("Карта сохранена в директории: " + Environment.NewLine + saveMapDialog.FileName,
+                                    "Сохранение карты", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
     }
 }
