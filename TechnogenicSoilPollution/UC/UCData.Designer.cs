@@ -31,7 +31,7 @@ namespace TechnogenicSoilPollution.UC
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SelectElementsBox = new System.Windows.Forms.ComboBox();
-            this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.MainDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@ namespace TechnogenicSoilPollution.UC
             this.SelectDataFiltersBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -81,10 +81,10 @@ namespace TechnogenicSoilPollution.UC
             this.SelectElementsBox.Size = new System.Drawing.Size(121, 21);
             this.SelectElementsBox.TabIndex = 1;
             // 
-            // DataGrid
+            // MainDataGridView
             // 
-            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -102,10 +102,10 @@ namespace TechnogenicSoilPollution.UC
             this.Column15,
             this.Column16,
             this.Column17});
-            this.DataGrid.Location = new System.Drawing.Point(5, 50);
-            this.DataGrid.Name = "DataGrid";
-            this.DataGrid.Size = new System.Drawing.Size(1021, 526);
-            this.DataGrid.TabIndex = 2;
+            this.MainDataGridView.Location = new System.Drawing.Point(5, 50);
+            this.MainDataGridView.Name = "MainDataGridView";
+            this.MainDataGridView.Size = new System.Drawing.Size(1021, 526);
+            this.MainDataGridView.TabIndex = 2;
             // 
             // Column1
             // 
@@ -298,13 +298,13 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.ExportDataBtn);
             this.Controls.Add(this.DeleteDataBtn);
             this.Controls.Add(this.UpdateDataBtn);
-            this.Controls.Add(this.DataGrid);
+            this.Controls.Add(this.MainDataGridView);
             this.Controls.Add(this.SelectElementsBox);
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCData";
             this.Size = new System.Drawing.Size(1031, 657);
             this.Load += new System.EventHandler(this.UCData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +314,7 @@ namespace TechnogenicSoilPollution.UC
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ComboBox SelectElementsBox;
-        private System.Windows.Forms.DataGridView DataGrid;
+        private System.Windows.Forms.DataGridView MainDataGridView;
         private MaterialSkin.Controls.MaterialRaisedButton UpdateDataBtn;
         private MaterialSkin.Controls.MaterialRaisedButton DeleteDataBtn;
         private MaterialSkin.Controls.MaterialRaisedButton ExportDataBtn;

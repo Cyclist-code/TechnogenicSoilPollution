@@ -15,6 +15,8 @@ namespace TechnogenicSoilPollution.UC
     public partial class UCData : UserControl
     {
         private SqlConnection sqlConnection = null;
+        private SqlDataAdapter adapter = null;
+        private System.Data.DataTable table = null;
 
         public UCData()
         {
@@ -37,7 +39,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void SelectDataFiltersBtn_Click(object sender, EventArgs e)
         {
-
+            SelectFilterData();
         }
 
         private void UpdateDataBtn_Click(object sender, EventArgs e)
@@ -84,6 +86,11 @@ namespace TechnogenicSoilPollution.UC
             SelectYearBox.ValueMember = "Year_sampling";
 
             reader.Close();
+        }
+
+        private void SelectFilterData()
+        {
+
         }
 
         private void UpdateDataMethod()
