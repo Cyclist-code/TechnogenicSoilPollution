@@ -303,6 +303,7 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCData";
             this.Size = new System.Drawing.Size(1031, 657);
+            this.Load += new System.EventHandler(this.UCData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
