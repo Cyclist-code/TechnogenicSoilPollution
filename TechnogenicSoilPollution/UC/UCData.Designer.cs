@@ -30,7 +30,6 @@ namespace TechnogenicSoilPollution.UC
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.SelectElementsBox = new System.Windows.Forms.ComboBox();
             this.MainDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@ namespace TechnogenicSoilPollution.UC
             this.SelectDataFiltersBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.SelectElementsBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,14 +72,6 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1.Size = new System.Drawing.Size(75, 19);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Элемент:";
-            // 
-            // SelectElementsBox
-            // 
-            this.SelectElementsBox.FormattingEnabled = true;
-            this.SelectElementsBox.Location = new System.Drawing.Point(86, 20);
-            this.SelectElementsBox.Name = "SelectElementsBox";
-            this.SelectElementsBox.Size = new System.Drawing.Size(121, 21);
-            this.SelectElementsBox.TabIndex = 1;
             // 
             // MainDataGridView
             // 
@@ -286,10 +278,19 @@ namespace TechnogenicSoilPollution.UC
             this.label2.TabIndex = 10;
             this.label2.Text = "Подсказка:";
             // 
+            // SelectElementsBox
+            // 
+            this.SelectElementsBox.FormattingEnabled = true;
+            this.SelectElementsBox.Location = new System.Drawing.Point(86, 20);
+            this.SelectElementsBox.Name = "SelectElementsBox";
+            this.SelectElementsBox.Size = new System.Drawing.Size(121, 21);
+            this.SelectElementsBox.TabIndex = 11;
+            // 
             // UCData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SelectElementsBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SelectDataFiltersBtn);
@@ -299,7 +300,6 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.DeleteDataBtn);
             this.Controls.Add(this.UpdateDataBtn);
             this.Controls.Add(this.MainDataGridView);
-            this.Controls.Add(this.SelectElementsBox);
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCData";
             this.Size = new System.Drawing.Size(1031, 657);
@@ -313,7 +313,6 @@ namespace TechnogenicSoilPollution.UC
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.ComboBox SelectElementsBox;
         private System.Windows.Forms.DataGridView MainDataGridView;
         private MaterialSkin.Controls.MaterialRaisedButton UpdateDataBtn;
         private MaterialSkin.Controls.MaterialRaisedButton DeleteDataBtn;
@@ -340,5 +339,6 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.ComboBox SelectElementsBox;
     }
 }

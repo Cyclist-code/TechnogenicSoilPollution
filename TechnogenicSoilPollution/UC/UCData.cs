@@ -58,34 +58,26 @@ namespace TechnogenicSoilPollution.UC
 
         private void LoadElementsCB()
         {
-            string dataFilling = "SELECT Name_element FROM ChemicalElements";
-            SqlCommand command = new SqlCommand(dataFilling, sqlConnection);
-            SqlDataReader reader = command.ExecuteReader();
-
+            string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            dataTable.Columns.Add("Name_element");
-            dataTable.Load(reader);
-
+            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            adapter.Fill(dataTable);
             SelectElementsBox.DataSource = dataTable;
             SelectElementsBox.ValueMember = "Name_element";
-
-            reader.Close();
+            SelectElementsBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void LoadYearsCB()
         {
-            string dataFilling = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
-            SqlCommand command = new SqlCommand(dataFilling, sqlConnection);
-            SqlDataReader reader = command.ExecuteReader();
-
+            string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            dataTable.Columns.Add("Year_sampling");
-            dataTable.Load(reader);
-
+            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            adapter.Fill(dataTable);
             SelectYearBox.DataSource = dataTable;
             SelectYearBox.ValueMember = "Year_sampling";
-
-            reader.Close();
+            SelectYearBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void SelectFilterData()

@@ -106,6 +106,7 @@ namespace TechnogenicSoilPollution.UC
             adapter.Fill(dataTable);
             ChemicalElementsBox.DataSource = dataTable;
             ChemicalElementsBox.ValueMember = "Name_element";
+            ChemicalElementsBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         //Загрузка фаз из базы данных
@@ -118,6 +119,7 @@ namespace TechnogenicSoilPollution.UC
             adapter.Fill(dataTable);
             PhaseBox.DataSource = dataTable;
             PhaseBox.ValueMember = "Name_phase";
+            PhaseBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         //Загрузка годов из базы данных
@@ -130,6 +132,7 @@ namespace TechnogenicSoilPollution.UC
             adapter.Fill(dataTable);
             YearBox.DataSource = dataTable;
             YearBox.ValueMember = "Year_sampling";
+            YearBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();
