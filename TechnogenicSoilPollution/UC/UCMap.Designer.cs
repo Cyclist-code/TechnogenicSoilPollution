@@ -63,7 +63,7 @@ namespace TechnogenicSoilPollution.UC
             this.ChemicalElementsBox.FormattingEnabled = true;
             this.ChemicalElementsBox.Location = new System.Drawing.Point(653, 38);
             this.ChemicalElementsBox.Name = "ChemicalElementsBox";
-            this.ChemicalElementsBox.Size = new System.Drawing.Size(113, 26);
+            this.ChemicalElementsBox.Size = new System.Drawing.Size(130, 26);
             this.ChemicalElementsBox.TabIndex = 2;
             // 
             // materialLabel2
@@ -183,7 +183,7 @@ namespace TechnogenicSoilPollution.UC
             this.PhaseBox.FormattingEnabled = true;
             this.PhaseBox.Location = new System.Drawing.Point(653, 100);
             this.PhaseBox.Name = "PhaseBox";
-            this.PhaseBox.Size = new System.Drawing.Size(113, 26);
+            this.PhaseBox.Size = new System.Drawing.Size(130, 26);
             this.PhaseBox.TabIndex = 10;
             // 
             // materialLabel4
@@ -205,7 +205,7 @@ namespace TechnogenicSoilPollution.UC
             this.YearBox.FormattingEnabled = true;
             this.YearBox.Location = new System.Drawing.Point(653, 157);
             this.YearBox.Name = "YearBox";
-            this.YearBox.Size = new System.Drawing.Size(113, 26);
+            this.YearBox.Size = new System.Drawing.Size(130, 26);
             this.YearBox.TabIndex = 12;
             // 
             // UCMap
@@ -225,6 +225,7 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCMap";
             this.Size = new System.Drawing.Size(1031, 657);
+            this.Load += new System.EventHandler(this.UCMap_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

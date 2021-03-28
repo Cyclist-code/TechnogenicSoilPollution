@@ -35,6 +35,16 @@ namespace TechnogenicSoilPollution.UC
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
         }
 
+        private void UCMap_Load(object sender, EventArgs e)
+        {
+            //sqlConnection.Open();
+            LoadElementsCB();
+            LoadPhasesCB();
+            LoadYearsCB();
+
+            sqlConnection.Close();
+        }
+
         private void Gmap_Load(object sender, EventArgs e)
         {
             //Угол наклона карты
@@ -86,9 +96,46 @@ namespace TechnogenicSoilPollution.UC
 
         #region Методы
 
+        //Загрузка хим. элементов из базы данных
+        private void LoadElementsCB()
+        {
+            string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            adapter.Fill(dataTable);
+            ChemicalElementsBox.DataSource = dataTable;
+            ChemicalElementsBox.ValueMember = "Name_element";
+        }
+
+        //Загрузка фаз из базы данных
+        private void LoadPhasesCB()
+        {
+            string dataFillingComboBox = "SELECT Name_phase FROM Phases";
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            adapter.Fill(dataTable);
+            PhaseBox.DataSource = dataTable;
+            PhaseBox.ValueMember = "Name_phase";
+        }
+
+        //Загрузка годов из базы данных
+        private void LoadYearsCB()
+        {
+            string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            adapter.Fill(dataTable);
+            YearBox.DataSource = dataTable;
+            YearBox.ValueMember = "Year_sampling";
+        }
+
         List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();
         SqlCommand sqlPointsCommand;
 
+        //Загрзка точек из базы данных
         private void LoadPoints()
         {
             pointsOverlay.Clear();
@@ -122,6 +169,7 @@ namespace TechnogenicSoilPollution.UC
             Gmap.Overlays.Add(pointsOverlay);
         }
 
+        //Сохранение карты в PNG
         private void SaveMapPNG()
         {
             try
@@ -153,5 +201,7 @@ namespace TechnogenicSoilPollution.UC
         }
 
         #endregion
+
+        
     }
 }
