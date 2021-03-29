@@ -49,7 +49,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void DeleteDataBtn_Click(object sender, EventArgs e)
         {
-
+            DeleteDataMethod();
         }
 
         #endregion
@@ -82,17 +82,32 @@ namespace TechnogenicSoilPollution.UC
 
         private void SelectFilterData()
         {
+            sqlConnection.Open();
 
+            string selectData = $"SELECT SamplingPoints.Direction, SamplingPoints.Number_point, SamplingPoints.Distance, SamplingPoints.Latitude, SamplingPoints.Longitude," +
+                $" Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
+                $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
+                $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
+                $" ChemicalElements.Name_element = '{SelectElementsBox.SelectedValue}' AND SamplingPoints.Year_sampling = '{SelectYearBox.SelectedValue}'";
+            adapter = new SqlDataAdapter(selectData, sqlConnection);
+            table = new System.Data.DataTable();
+            adapter.Fill(table);
+            MainDataGridView.DataSource = table;
+
+            sqlConnection.Close();
         }
 
         private void UpdateDataMethod()
         {
-
+            
         }
 
         private void DeleteDataMethod()
         {
-
+            foreach (DataGridViewRow dataRow in MainDataGridView.SelectedRows)
+            {
+                MainDataGridView.Rows.Remove(dataRow);
+            }
         }
 
         private void ExportDataExcel()
