@@ -104,9 +104,16 @@ namespace TechnogenicSoilPollution.UC
 
         private void DeleteDataMethod()
         {
-            foreach (DataGridViewRow dataRow in MainDataGridView.SelectedRows)
+            try
             {
-                MainDataGridView.Rows.Remove(dataRow);
+                foreach (DataGridViewRow dataRow in MainDataGridView.SelectedRows)
+                {
+                    MainDataGridView.Rows.Remove(dataRow);
+                }
+            }
+            catch(InvalidOperationException exception)
+            {
+                MessageBox.Show(exception.Message, "Ошибка при удалении", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
