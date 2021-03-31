@@ -104,9 +104,9 @@ namespace TechnogenicSoilPollution.UC
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
-            ChemicalElementsBox.DataSource = dataTable;
-            ChemicalElementsBox.ValueMember = "Name_element";
-            ChemicalElementsBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ChemicalElementsCB.DataSource = dataTable;
+            ChemicalElementsCB.ValueMember = "Name_element";
+            ChemicalElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         //Загрузка фаз из базы данных
@@ -117,9 +117,9 @@ namespace TechnogenicSoilPollution.UC
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
-            PhaseBox.DataSource = dataTable;
-            PhaseBox.ValueMember = "Name_phase";
-            PhaseBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            PhasesCB.DataSource = dataTable;
+            PhasesCB.ValueMember = "Name_phase";
+            PhasesCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         //Загрузка годов из базы данных
@@ -130,9 +130,9 @@ namespace TechnogenicSoilPollution.UC
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
-            YearBox.DataSource = dataTable;
-            YearBox.ValueMember = "Year_sampling";
-            YearBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            YearsCB.DataSource = dataTable;
+            YearsCB.ValueMember = "Year_sampling";
+            YearsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();

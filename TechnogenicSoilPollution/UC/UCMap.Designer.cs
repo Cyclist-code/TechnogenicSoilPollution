@@ -30,7 +30,7 @@ namespace TechnogenicSoilPollution.UC
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.ChemicalElementsBox = new System.Windows.Forms.ComboBox();
+            this.ChemicalElementsCB = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SamplingPointBox = new System.Windows.Forms.CheckedListBox();
             this.ExportMapBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -38,9 +38,9 @@ namespace TechnogenicSoilPollution.UC
             this.Gmap = new GMap.NET.WindowsForms.GMapControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.PhaseBox = new System.Windows.Forms.ComboBox();
+            this.PhasesCB = new System.Windows.Forms.ComboBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.YearBox = new System.Windows.Forms.ComboBox();
+            this.YearsCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,14 +57,14 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Элемент:";
             // 
-            // ChemicalElementsBox
+            // ChemicalElementsCB
             // 
-            this.ChemicalElementsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChemicalElementsBox.FormattingEnabled = true;
-            this.ChemicalElementsBox.Location = new System.Drawing.Point(653, 38);
-            this.ChemicalElementsBox.Name = "ChemicalElementsBox";
-            this.ChemicalElementsBox.Size = new System.Drawing.Size(130, 26);
-            this.ChemicalElementsBox.TabIndex = 2;
+            this.ChemicalElementsCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChemicalElementsCB.FormattingEnabled = true;
+            this.ChemicalElementsCB.Location = new System.Drawing.Point(653, 38);
+            this.ChemicalElementsCB.Name = "ChemicalElementsCB";
+            this.ChemicalElementsCB.Size = new System.Drawing.Size(130, 26);
+            this.ChemicalElementsCB.TabIndex = 2;
             // 
             // materialLabel2
             // 
@@ -81,6 +81,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             // SamplingPointBox
             // 
+            this.SamplingPointBox.CheckOnClick = true;
             this.SamplingPointBox.FormattingEnabled = true;
             this.SamplingPointBox.Items.AddRange(new object[] {
             "1",
@@ -177,14 +178,14 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel3.TabIndex = 9;
             this.materialLabel3.Text = "Фаза:";
             // 
-            // PhaseBox
+            // PhasesCB
             // 
-            this.PhaseBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhaseBox.FormattingEnabled = true;
-            this.PhaseBox.Location = new System.Drawing.Point(653, 100);
-            this.PhaseBox.Name = "PhaseBox";
-            this.PhaseBox.Size = new System.Drawing.Size(130, 26);
-            this.PhaseBox.TabIndex = 10;
+            this.PhasesCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhasesCB.FormattingEnabled = true;
+            this.PhasesCB.Location = new System.Drawing.Point(653, 100);
+            this.PhasesCB.Name = "PhasesCB";
+            this.PhasesCB.Size = new System.Drawing.Size(130, 26);
+            this.PhasesCB.TabIndex = 10;
             // 
             // materialLabel4
             // 
@@ -199,29 +200,29 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Год:";
             // 
-            // YearBox
+            // YearsCB
             // 
-            this.YearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.YearBox.FormattingEnabled = true;
-            this.YearBox.Location = new System.Drawing.Point(653, 157);
-            this.YearBox.Name = "YearBox";
-            this.YearBox.Size = new System.Drawing.Size(130, 26);
-            this.YearBox.TabIndex = 12;
+            this.YearsCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.YearsCB.FormattingEnabled = true;
+            this.YearsCB.Location = new System.Drawing.Point(653, 157);
+            this.YearsCB.Name = "YearsCB";
+            this.YearsCB.Size = new System.Drawing.Size(130, 26);
+            this.YearsCB.TabIndex = 12;
             // 
             // UCMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.YearBox);
+            this.Controls.Add(this.YearsCB);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.PhaseBox);
+            this.Controls.Add(this.PhasesCB);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CalcPollutionBtn);
             this.Controls.Add(this.ExportMapBtn);
             this.Controls.Add(this.SamplingPointBox);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.ChemicalElementsBox);
+            this.Controls.Add(this.ChemicalElementsCB);
             this.Controls.Add(this.materialLabel1);
             this.Name = "UCMap";
             this.Size = new System.Drawing.Size(1031, 657);
@@ -234,7 +235,7 @@ namespace TechnogenicSoilPollution.UC
 
         #endregion
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.ComboBox ChemicalElementsBox;
+        private System.Windows.Forms.ComboBox ChemicalElementsCB;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.CheckedListBox SamplingPointBox;
         private MaterialSkin.Controls.MaterialRaisedButton ExportMapBtn;
@@ -242,8 +243,8 @@ namespace TechnogenicSoilPollution.UC
         private GMap.NET.WindowsForms.GMapControl Gmap;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.ComboBox PhaseBox;
+        private System.Windows.Forms.ComboBox PhasesCB;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.ComboBox YearBox;
+        private System.Windows.Forms.ComboBox YearsCB;
     }
 }

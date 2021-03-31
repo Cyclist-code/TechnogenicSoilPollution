@@ -63,9 +63,9 @@ namespace TechnogenicSoilPollution.UC
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
-            SelectElementsBox.DataSource = dataTable;
-            SelectElementsBox.ValueMember = "Name_element";
-            SelectElementsBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            SelectElementsCB.DataSource = dataTable;
+            SelectElementsCB.ValueMember = "Name_element";
+            SelectElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void LoadYearsCB()
@@ -75,9 +75,9 @@ namespace TechnogenicSoilPollution.UC
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
-            SelectYearBox.DataSource = dataTable;
-            SelectYearBox.ValueMember = "Year_sampling";
-            SelectYearBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            SelectYearCB.DataSource = dataTable;
+            SelectYearCB.ValueMember = "Year_sampling";
+            SelectYearCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void SelectFilterData()
@@ -88,7 +88,7 @@ namespace TechnogenicSoilPollution.UC
                 $" Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
                 $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
                 $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
-                $" ChemicalElements.Name_element = '{SelectElementsBox.SelectedValue}' AND SamplingPoints.Year_sampling = '{SelectYearBox.SelectedValue}'";
+                $" ChemicalElements.Name_element = '{SelectElementsCB.SelectedValue}' AND SamplingPoints.Year_sampling = '{SelectYearCB.SelectedValue}'";
             adapter = new SqlDataAdapter(selectData, sqlConnection);
             table = new System.Data.DataTable();
             adapter.Fill(table);
