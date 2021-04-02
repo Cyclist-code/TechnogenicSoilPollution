@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -52,10 +51,16 @@ namespace TechnogenicSoilPollution.UC
             DeleteDataMethod();
         }
 
+        private void ExportDataBtn_Click(object sender, EventArgs e)
+        {
+            ExportDataExcel();
+        }
+
         #endregion
 
         #region Методы
 
+        //Загрузка элементов в ComboBox
         private void LoadElementsCB()
         {
             string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
@@ -68,6 +73,7 @@ namespace TechnogenicSoilPollution.UC
             SelectElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        //Загрузка годов в ComboBox
         private void LoadYearsCB()
         {
             string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
@@ -80,6 +86,7 @@ namespace TechnogenicSoilPollution.UC
             SelectYearCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        //Загрузка данных на основе выборки
         private void SelectFilterData()
         {
             sqlConnection.Open();
@@ -117,11 +124,60 @@ namespace TechnogenicSoilPollution.UC
             }
         }
 
+        //Экспорт данных в Excel
         private void ExportDataExcel()
         {
+            Microsoft.Office.Interop.Excel.Application ExcelFile = new Microsoft.Office.Interop.Excel.Application();
+            Workbook workbook = ExcelFile.Workbooks.Add(Type.Missing);
+            Worksheet worksheet = null;
+            worksheet = workbook.ActiveSheet;
 
+            try
+            {
+                for (int i = 1; i < MainDataGridView.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[1, i] = MainDataGridView.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < MainDataGridView.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < MainDataGridView.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = MainDataGridView.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                worksheet.Columns.EntireColumn.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Title = "Сохранение в Excel",
+                Filter = "Документ Excel (*.xlsx)|*xlsx"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                        XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                    MessageBox.Show("Документ Excel сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx",
+                                    "Сохранение документа Excel", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            ExcelFile.Quit();
         }
 
-        #endregion
+        #endregion      
     }
 }

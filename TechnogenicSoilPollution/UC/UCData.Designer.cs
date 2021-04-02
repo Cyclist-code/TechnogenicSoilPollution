@@ -31,23 +31,6 @@ namespace TechnogenicSoilPollution.UC
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.MainDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DeleteDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ExportDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -57,6 +40,14 @@ namespace TechnogenicSoilPollution.UC
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SelectElementsCB = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,116 +75,11 @@ namespace TechnogenicSoilPollution.UC
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17});
+            this.Column8});
             this.MainDataGridView.Location = new System.Drawing.Point(5, 50);
             this.MainDataGridView.Name = "MainDataGridView";
             this.MainDataGridView.Size = new System.Drawing.Size(1021, 526);
             this.MainDataGridView.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Direction";
-            this.Column1.HeaderText = "Направление";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Number_point";
-            this.Column2.HeaderText = "№ точки";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Distance";
-            this.Column3.HeaderText = "Расстояние";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Latitude";
-            this.Column4.HeaderText = "Широта";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Longitude";
-            this.Column5.HeaderText = "Долгота";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Name_phase";
-            this.Column6.HeaderText = "Фаза 1";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Content_elements";
-            this.Column7.HeaderText = "Содержание";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 130;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Stocks_elements";
-            this.Column8.HeaderText = "Запасы";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 120;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "(нет)";
-            this.Column9.HeaderText = "Фаза 2";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Содержание";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Запасы";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Фаза 3";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Содержание";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Запасы";
-            this.Column14.Name = "Column14";
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Фаза 4";
-            this.Column15.Name = "Column15";
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Содержание";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Запасы";
-            this.Column17.Name = "Column17";
             // 
             // UpdateDataBtn
             // 
@@ -232,6 +118,7 @@ namespace TechnogenicSoilPollution.UC
             this.ExportDataBtn.TabIndex = 5;
             this.ExportDataBtn.Text = "Экпортировать";
             this.ExportDataBtn.UseVisualStyleBackColor = true;
+            this.ExportDataBtn.Click += new System.EventHandler(this.ExportDataBtn_Click);
             // 
             // materialLabel2
             // 
@@ -295,6 +182,56 @@ namespace TechnogenicSoilPollution.UC
             this.SelectElementsCB.Size = new System.Drawing.Size(121, 21);
             this.SelectElementsCB.TabIndex = 11;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Direction";
+            this.Column1.HeaderText = "Направление";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Number_point";
+            this.Column2.HeaderText = "№ точки";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Distance";
+            this.Column3.HeaderText = "Расстояние";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Latitude";
+            this.Column4.HeaderText = "Широта";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Longitude";
+            this.Column5.HeaderText = "Долгота";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Name_phase";
+            this.Column6.HeaderText = "Фаза";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Content_elements";
+            this.Column7.HeaderText = "Содержание";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 130;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Stocks_elements";
+            this.Column8.HeaderText = "Запасы";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 120;
+            // 
             // UCData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,14 +277,5 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
     }
 }
