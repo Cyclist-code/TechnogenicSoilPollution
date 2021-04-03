@@ -17,7 +17,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Windows.Input;
-using TechnogenicSoilPollution.CPoint;
+using TechnogenicSoilPollution.Data;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -203,8 +203,6 @@ namespace TechnogenicSoilPollution.UC
             }
         }
 
-        #endregion
-
-        
+        #endregion       
     }
 }

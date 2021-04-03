@@ -1,11 +1,11 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 
-namespace TechnogenicSoilPollution.Window
+namespace TechnogenicSoilPollution.Forms
 {
-    public partial class AboutProgramForm : MaterialForm
+    public partial class ReferenceProgramForm : MaterialForm
     {
-        public AboutProgramForm()
+        public ReferenceProgramForm()
         {
             InitializeComponent();
 

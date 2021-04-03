@@ -3,7 +3,7 @@ using MaterialSkin.Controls;
 using System;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.UC;
-using TechnogenicSoilPollution.Window;
+using TechnogenicSoilPollution.Forms;
 
 namespace TechnogenicSoilPollution
 {
@@ -28,8 +28,8 @@ namespace TechnogenicSoilPollution
 
         private void BtnOpenHelp_Click(object sender, EventArgs e)
         {
-            AboutProgramForm aboutProgram = new AboutProgramForm();
-            aboutProgram.ShowDialog();
+            ReferenceProgramForm programForm = new ReferenceProgramForm();
+            programForm.ShowDialog();
         }
 
         private void OpenPageBtn(object sender, EventArgs e)
