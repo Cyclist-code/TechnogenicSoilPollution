@@ -18,6 +18,7 @@ using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Windows.Input;
 using TechnogenicSoilPollution.Data;
+using TechnogenicSoilPollution.Forms;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -92,6 +93,12 @@ namespace TechnogenicSoilPollution.UC
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PromptFormBtn_Click(object sender, EventArgs e)
+        {
+            PromptMapForm promptMap = new PromptMapForm();
+            promptMap.ShowDialog();
         }
 
         #region Методы
@@ -203,6 +210,7 @@ namespace TechnogenicSoilPollution.UC
             }
         }
 
-        #endregion       
+        #endregion
+        
     }
 }

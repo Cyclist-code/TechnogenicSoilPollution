@@ -41,6 +41,7 @@ namespace TechnogenicSoilPollution.UC
             this.PhasesCB = new System.Windows.Forms.ComboBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.YearsCB = new System.Windows.Forms.ComboBox();
+            this.PromptFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,10 +210,24 @@ namespace TechnogenicSoilPollution.UC
             this.YearsCB.Size = new System.Drawing.Size(130, 26);
             this.YearsCB.TabIndex = 12;
             // 
+            // PromptFormBtn
+            // 
+            this.PromptFormBtn.Depth = 0;
+            this.PromptFormBtn.Location = new System.Drawing.Point(967, 16);
+            this.PromptFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PromptFormBtn.Name = "PromptFormBtn";
+            this.PromptFormBtn.Primary = true;
+            this.PromptFormBtn.Size = new System.Drawing.Size(50, 50);
+            this.PromptFormBtn.TabIndex = 13;
+            this.PromptFormBtn.Text = "Подсказка";
+            this.PromptFormBtn.UseVisualStyleBackColor = true;
+            this.PromptFormBtn.Click += new System.EventHandler(this.PromptFormBtn_Click);
+            // 
             // UCMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.PromptFormBtn);
             this.Controls.Add(this.YearsCB);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.PhasesCB);
@@ -246,5 +261,6 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.ComboBox PhasesCB;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox YearsCB;
+        private MaterialSkin.Controls.MaterialRaisedButton PromptFormBtn;
     }
 }

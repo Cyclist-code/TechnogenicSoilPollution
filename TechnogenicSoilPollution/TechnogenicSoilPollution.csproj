@@ -100,6 +100,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PromptMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PromptMapForm.Designer.cs">
+      <DependentUpon>PromptMapForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReferenceProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PromptMapForm.resx">
+      <DependentUpon>PromptMapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReferenceProgramForm.resx">
       <DependentUpon>ReferenceProgramForm.cs</DependentUpon>
