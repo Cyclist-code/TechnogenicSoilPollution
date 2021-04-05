@@ -49,12 +49,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(649, 16);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(75, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(74, 18);
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Элемент:";
             // 
@@ -71,12 +71,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(806, 16);
+            this.materialLabel2.Location = new System.Drawing.Point(792, 16);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(120, 18);
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Опорные точки:";
             // 
@@ -99,7 +99,7 @@ namespace TechnogenicSoilPollution.UC
             "12",
             "13",
             "14"});
-            this.SamplingPointBox.Location = new System.Drawing.Point(810, 38);
+            this.SamplingPointBox.Location = new System.Drawing.Point(795, 38);
             this.SamplingPointBox.Name = "SamplingPointBox";
             this.SamplingPointBox.Size = new System.Drawing.Size(119, 154);
             this.SamplingPointBox.TabIndex = 4;
@@ -170,12 +170,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(649, 78);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(49, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(49, 18);
             this.materialLabel3.TabIndex = 9;
             this.materialLabel3.Text = "Фаза:";
             // 
@@ -192,12 +192,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(649, 135);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(39, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(39, 18);
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Год:";
             // 
@@ -213,11 +213,11 @@ namespace TechnogenicSoilPollution.UC
             // PromptFormBtn
             // 
             this.PromptFormBtn.Depth = 0;
-            this.PromptFormBtn.Location = new System.Drawing.Point(967, 16);
+            this.PromptFormBtn.Location = new System.Drawing.Point(925, 16);
             this.PromptFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.PromptFormBtn.Name = "PromptFormBtn";
             this.PromptFormBtn.Primary = true;
-            this.PromptFormBtn.Size = new System.Drawing.Size(50, 50);
+            this.PromptFormBtn.Size = new System.Drawing.Size(100, 40);
             this.PromptFormBtn.TabIndex = 13;
             this.PromptFormBtn.Text = "Подсказка";
             this.PromptFormBtn.UseVisualStyleBackColor = true;
