@@ -179,6 +179,8 @@
     <Content Include="Assets\github.png" />
     <Content Include="Assets\icon-app.ico" />
     <Content Include="Assets\image-plant.jpg" />
+    <Content Include="Assets\Rose-Wind-1996.png" />
+    <Content Include="Assets\Rose-Wind-1997.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

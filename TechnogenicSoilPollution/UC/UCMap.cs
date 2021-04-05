@@ -211,6 +211,19 @@ namespace TechnogenicSoilPollution.UC
         }
 
         #endregion
-        
+
+        private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (YearsCB.SelectedIndex == 0)
+            {
+                RoseWindPictureBox.Image = Properties.Resources.Rose_Wind_1996;
+                RoseWindLabel.Text = "Роза ветров за 1996 год";
+            }
+            if (YearsCB.SelectedIndex == 1)
+            {
+                RoseWindPictureBox.Image = Properties.Resources.Rose_Wind_1997;
+                RoseWindLabel.Text = "Роза ветров за 1997 год";
+            }
+        }
     }
 }

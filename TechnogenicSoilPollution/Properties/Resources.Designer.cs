@@ -89,5 +89,25 @@ namespace TechnogenicSoilPollution.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rose_Wind_1996 {
+            get {
+                object obj = ResourceManager.GetObject("Rose-Wind-1996", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rose_Wind_1997 {
+            get {
+                object obj = ResourceManager.GetObject("Rose-Wind-1997", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

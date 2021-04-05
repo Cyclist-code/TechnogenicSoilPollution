@@ -42,19 +42,24 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.YearsCB = new System.Windows.Forms.ComboBox();
             this.PromptFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.RoseWindImagePanel = new System.Windows.Forms.Panel();
+            this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
+            this.RoseWindLabel = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
+            this.RoseWindImagePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(649, 16);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(74, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(75, 19);
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Элемент:";
             // 
@@ -71,12 +76,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(792, 16);
+            this.materialLabel2.Location = new System.Drawing.Point(847, 16);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(120, 18);
+            this.materialLabel2.Size = new System.Drawing.Size(123, 19);
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Опорные точки:";
             // 
@@ -99,7 +104,7 @@ namespace TechnogenicSoilPollution.UC
             "12",
             "13",
             "14"});
-            this.SamplingPointBox.Location = new System.Drawing.Point(795, 38);
+            this.SamplingPointBox.Location = new System.Drawing.Point(851, 38);
             this.SamplingPointBox.Name = "SamplingPointBox";
             this.SamplingPointBox.Size = new System.Drawing.Size(119, 154);
             this.SamplingPointBox.TabIndex = 4;
@@ -107,7 +112,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportMapBtn
             // 
             this.ExportMapBtn.Depth = 0;
-            this.ExportMapBtn.Location = new System.Drawing.Point(670, 590);
+            this.ExportMapBtn.Location = new System.Drawing.Point(759, 590);
             this.ExportMapBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportMapBtn.Name = "ExportMapBtn";
             this.ExportMapBtn.Primary = true;
@@ -120,7 +125,7 @@ namespace TechnogenicSoilPollution.UC
             // CalcPollutionBtn
             // 
             this.CalcPollutionBtn.Depth = 0;
-            this.CalcPollutionBtn.Location = new System.Drawing.Point(868, 590);
+            this.CalcPollutionBtn.Location = new System.Drawing.Point(905, 590);
             this.CalcPollutionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.CalcPollutionBtn.Name = "CalcPollutionBtn";
             this.CalcPollutionBtn.Primary = true;
@@ -170,12 +175,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(649, 78);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(49, 18);
+            this.materialLabel3.Size = new System.Drawing.Size(49, 19);
             this.materialLabel3.TabIndex = 9;
             this.materialLabel3.Text = "Фаза:";
             // 
@@ -192,12 +197,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(649, 135);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(39, 18);
+            this.materialLabel4.Size = new System.Drawing.Size(39, 19);
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Год:";
             // 
@@ -209,11 +214,12 @@ namespace TechnogenicSoilPollution.UC
             this.YearsCB.Name = "YearsCB";
             this.YearsCB.Size = new System.Drawing.Size(130, 26);
             this.YearsCB.TabIndex = 12;
+            this.YearsCB.SelectedIndexChanged += new System.EventHandler(this.YearsCB_SelectedIndexChanged);
             // 
             // PromptFormBtn
             // 
             this.PromptFormBtn.Depth = 0;
-            this.PromptFormBtn.Location = new System.Drawing.Point(925, 16);
+            this.PromptFormBtn.Location = new System.Drawing.Point(653, 590);
             this.PromptFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.PromptFormBtn.Name = "PromptFormBtn";
             this.PromptFormBtn.Primary = true;
@@ -223,10 +229,41 @@ namespace TechnogenicSoilPollution.UC
             this.PromptFormBtn.UseVisualStyleBackColor = true;
             this.PromptFormBtn.Click += new System.EventHandler(this.PromptFormBtn_Click);
             // 
+            // RoseWindImagePanel
+            // 
+            this.RoseWindImagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RoseWindImagePanel.Controls.Add(this.RoseWindPictureBox);
+            this.RoseWindImagePanel.Location = new System.Drawing.Point(670, 217);
+            this.RoseWindImagePanel.Name = "RoseWindImagePanel";
+            this.RoseWindImagePanel.Size = new System.Drawing.Size(300, 300);
+            this.RoseWindImagePanel.TabIndex = 14;
+            // 
+            // RoseWindPictureBox
+            // 
+            this.RoseWindPictureBox.Location = new System.Drawing.Point(-1, -1);
+            this.RoseWindPictureBox.Name = "RoseWindPictureBox";
+            this.RoseWindPictureBox.Size = new System.Drawing.Size(300, 300);
+            this.RoseWindPictureBox.TabIndex = 0;
+            this.RoseWindPictureBox.TabStop = false;
+            // 
+            // RoseWindLabel
+            // 
+            this.RoseWindLabel.AutoSize = true;
+            this.RoseWindLabel.Depth = 0;
+            this.RoseWindLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.RoseWindLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RoseWindLabel.Location = new System.Drawing.Point(736, 528);
+            this.RoseWindLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RoseWindLabel.Name = "RoseWindLabel";
+            this.RoseWindLabel.Size = new System.Drawing.Size(0, 19);
+            this.RoseWindLabel.TabIndex = 15;
+            // 
             // UCMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.RoseWindLabel);
+            this.Controls.Add(this.RoseWindImagePanel);
             this.Controls.Add(this.PromptFormBtn);
             this.Controls.Add(this.YearsCB);
             this.Controls.Add(this.materialLabel4);
@@ -243,6 +280,8 @@ namespace TechnogenicSoilPollution.UC
             this.Size = new System.Drawing.Size(1031, 657);
             this.Load += new System.EventHandler(this.UCMap_Load);
             this.panel1.ResumeLayout(false);
+            this.RoseWindImagePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +301,8 @@ namespace TechnogenicSoilPollution.UC
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox YearsCB;
         private MaterialSkin.Controls.MaterialRaisedButton PromptFormBtn;
+        private System.Windows.Forms.Panel RoseWindImagePanel;
+        private System.Windows.Forms.PictureBox RoseWindPictureBox;
+        private MaterialSkin.Controls.MaterialLabel RoseWindLabel;
     }
 }
