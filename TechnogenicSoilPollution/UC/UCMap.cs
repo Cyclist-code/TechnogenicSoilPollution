@@ -230,7 +230,7 @@ namespace TechnogenicSoilPollution.UC
         // Добавление пользовательского маркера
         private void Gmap_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Middle)
             {
                 Gmap.Overlays.Add(CustomMarkers);
 
@@ -241,6 +241,16 @@ namespace TechnogenicSoilPollution.UC
                 customMarker.ToolTip = new GMapToolTip(customMarker);
                 customMarker.ToolTipText = "Метка пользователя";
                 CustomMarkers.Markers.Add(customMarker);
+            }
+        }
+
+        //Удаление пользовательского маркера
+        private void Gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                GMapOverlay mapOverlay = CustomMarkers;
+                mapOverlay.Markers.Remove(item);
             }
         }
     }
