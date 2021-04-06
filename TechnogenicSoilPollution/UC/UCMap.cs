@@ -25,7 +25,8 @@ namespace TechnogenicSoilPollution.UC
     public partial class UCMap : UserControl
     {
         // Список маркеров
-        GMapOverlay pointsOverlay = new GMapOverlay("markers");      
+        GMapOverlay PointsSampling = new GMapOverlay("markers");
+        GMapOverlay CustomMarkers = new GMapOverlay("user");
 
         private SqlConnection sqlConnection = null;
 
@@ -148,7 +149,7 @@ namespace TechnogenicSoilPollution.UC
         //Загрзка точек из базы данных
         private void LoadPoints()
         {
-            pointsOverlay.Clear();
+            PointsSampling.Clear();
             sqlConnection.Open();
 
             sqlPointsCommand = new SqlCommand("SELECT * FROM SamplingPoints", sqlConnection);
@@ -157,7 +158,7 @@ namespace TechnogenicSoilPollution.UC
             GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(52.191713, 104.084576), GMarkerGoogleType.red_small);
             plantMarker.ToolTip = new GMapRoundedToolTip(plantMarker);
             plantMarker.ToolTipText = "Алюминиевый Завод";
-            pointsOverlay.Markers.Add(plantMarker);
+            PointsSampling.Markers.Add(plantMarker);
 
             if (sqlDataReader.HasRows)
             {
@@ -173,10 +174,10 @@ namespace TechnogenicSoilPollution.UC
                 GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
                 samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker);
                 samplingMarker.ToolTipText = "Точка пробоотбора";
-                pointsOverlay.Markers.Add(samplingMarker);
+                PointsSampling.Markers.Add(samplingMarker);
             }
 
-            Gmap.Overlays.Add(pointsOverlay);
+            Gmap.Overlays.Add(PointsSampling);
         }
 
         //Сохранение карты в PNG
@@ -223,6 +224,23 @@ namespace TechnogenicSoilPollution.UC
             {
                 RoseWindPictureBox.Image = Properties.Resources.Rose_Wind_1997;
                 RoseWindLabel.Text = "Роза ветров за 1997 год";
+            }
+        }
+
+        // Добавление пользовательского маркера
+        private void Gmap_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Gmap.Overlays.Add(CustomMarkers);
+
+                double userLat = Gmap.FromLocalToLatLng(e.X, e.Y).Lat;
+                double userLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
+
+                GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(userLat, userLng), GMarkerGoogleType.blue_small);
+                customMarker.ToolTip = new GMapToolTip(customMarker);
+                customMarker.ToolTipText = "Метка пользователя";
+                CustomMarkers.Markers.Add(customMarker);
             }
         }
     }

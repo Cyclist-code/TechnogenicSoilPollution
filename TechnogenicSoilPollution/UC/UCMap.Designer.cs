@@ -161,6 +161,7 @@ namespace TechnogenicSoilPollution.UC
             this.Gmap.TabIndex = 7;
             this.Gmap.Zoom = 0D;
             this.Gmap.Load += new System.EventHandler(this.Gmap_Load);
+            this.Gmap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Gmap_MouseClick);
             // 
             // panel1
             // 
