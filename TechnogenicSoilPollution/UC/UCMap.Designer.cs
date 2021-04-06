@@ -32,7 +32,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.ChemicalElementsCB = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.SamplingPointBox = new System.Windows.Forms.CheckedListBox();
+            this.PivotPointsCLB = new System.Windows.Forms.CheckedListBox();
             this.ExportMapBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.CalcPollutionBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Gmap = new GMap.NET.WindowsForms.GMapControl();
@@ -42,12 +42,12 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.YearsCB = new System.Windows.Forms.ComboBox();
             this.PromptFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.RoseWindImagePanel = new System.Windows.Forms.Panel();
-            this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
             this.RoseWindLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
+            this.RoseWindImagePanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.RoseWindImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).BeginInit();
+            this.RoseWindImagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -85,29 +85,14 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Опорные точки:";
             // 
-            // SamplingPointBox
+            // PivotPointsCLB
             // 
-            this.SamplingPointBox.CheckOnClick = true;
-            this.SamplingPointBox.FormattingEnabled = true;
-            this.SamplingPointBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14"});
-            this.SamplingPointBox.Location = new System.Drawing.Point(851, 38);
-            this.SamplingPointBox.Name = "SamplingPointBox";
-            this.SamplingPointBox.Size = new System.Drawing.Size(119, 154);
-            this.SamplingPointBox.TabIndex = 4;
+            this.PivotPointsCLB.CheckOnClick = true;
+            this.PivotPointsCLB.FormattingEnabled = true;
+            this.PivotPointsCLB.Location = new System.Drawing.Point(851, 38);
+            this.PivotPointsCLB.Name = "PivotPointsCLB";
+            this.PivotPointsCLB.Size = new System.Drawing.Size(119, 154);
+            this.PivotPointsCLB.TabIndex = 4;
             // 
             // ExportMapBtn
             // 
@@ -231,23 +216,6 @@ namespace TechnogenicSoilPollution.UC
             this.PromptFormBtn.UseVisualStyleBackColor = true;
             this.PromptFormBtn.Click += new System.EventHandler(this.PromptFormBtn_Click);
             // 
-            // RoseWindImagePanel
-            // 
-            this.RoseWindImagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RoseWindImagePanel.Controls.Add(this.RoseWindPictureBox);
-            this.RoseWindImagePanel.Location = new System.Drawing.Point(670, 217);
-            this.RoseWindImagePanel.Name = "RoseWindImagePanel";
-            this.RoseWindImagePanel.Size = new System.Drawing.Size(300, 300);
-            this.RoseWindImagePanel.TabIndex = 14;
-            // 
-            // RoseWindPictureBox
-            // 
-            this.RoseWindPictureBox.Location = new System.Drawing.Point(-1, -1);
-            this.RoseWindPictureBox.Name = "RoseWindPictureBox";
-            this.RoseWindPictureBox.Size = new System.Drawing.Size(300, 300);
-            this.RoseWindPictureBox.TabIndex = 0;
-            this.RoseWindPictureBox.TabStop = false;
-            // 
             // RoseWindLabel
             // 
             this.RoseWindLabel.AutoSize = true;
@@ -259,6 +227,23 @@ namespace TechnogenicSoilPollution.UC
             this.RoseWindLabel.Name = "RoseWindLabel";
             this.RoseWindLabel.Size = new System.Drawing.Size(0, 19);
             this.RoseWindLabel.TabIndex = 15;
+            // 
+            // RoseWindPictureBox
+            // 
+            this.RoseWindPictureBox.Location = new System.Drawing.Point(-1, -1);
+            this.RoseWindPictureBox.Name = "RoseWindPictureBox";
+            this.RoseWindPictureBox.Size = new System.Drawing.Size(300, 300);
+            this.RoseWindPictureBox.TabIndex = 0;
+            this.RoseWindPictureBox.TabStop = false;
+            // 
+            // RoseWindImagePanel
+            // 
+            this.RoseWindImagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RoseWindImagePanel.Controls.Add(this.RoseWindPictureBox);
+            this.RoseWindImagePanel.Location = new System.Drawing.Point(670, 217);
+            this.RoseWindImagePanel.Name = "RoseWindImagePanel";
+            this.RoseWindImagePanel.Size = new System.Drawing.Size(300, 300);
+            this.RoseWindImagePanel.TabIndex = 14;
             // 
             // UCMap
             // 
@@ -274,7 +259,7 @@ namespace TechnogenicSoilPollution.UC
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CalcPollutionBtn);
             this.Controls.Add(this.ExportMapBtn);
-            this.Controls.Add(this.SamplingPointBox);
+            this.Controls.Add(this.PivotPointsCLB);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.ChemicalElementsCB);
             this.Controls.Add(this.materialLabel1);
@@ -282,8 +267,8 @@ namespace TechnogenicSoilPollution.UC
             this.Size = new System.Drawing.Size(1031, 657);
             this.Load += new System.EventHandler(this.UCMap_Load);
             this.panel1.ResumeLayout(false);
-            this.RoseWindImagePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).EndInit();
+            this.RoseWindImagePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +278,7 @@ namespace TechnogenicSoilPollution.UC
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ComboBox ChemicalElementsCB;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.CheckedListBox SamplingPointBox;
+        private System.Windows.Forms.CheckedListBox PivotPointsCLB;
         private MaterialSkin.Controls.MaterialRaisedButton ExportMapBtn;
         private MaterialSkin.Controls.MaterialRaisedButton CalcPollutionBtn;
         private GMap.NET.WindowsForms.GMapControl Gmap;
@@ -303,8 +288,8 @@ namespace TechnogenicSoilPollution.UC
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox YearsCB;
         private MaterialSkin.Controls.MaterialRaisedButton PromptFormBtn;
-        private System.Windows.Forms.Panel RoseWindImagePanel;
-        private System.Windows.Forms.PictureBox RoseWindPictureBox;
         private MaterialSkin.Controls.MaterialLabel RoseWindLabel;
+        private System.Windows.Forms.PictureBox RoseWindPictureBox;
+        private System.Windows.Forms.Panel RoseWindImagePanel;
     }
 }

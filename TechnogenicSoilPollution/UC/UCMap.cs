@@ -39,10 +39,10 @@ namespace TechnogenicSoilPollution.UC
 
         private void UCMap_Load(object sender, EventArgs e)
         {
-            //sqlConnection.Open();
             LoadElementsCB();
             LoadPhasesCB();
             LoadYearsCB();
+            LoadPivotPoints();
 
             sqlConnection.Close();
         }
@@ -108,7 +108,7 @@ namespace TechnogenicSoilPollution.UC
         private void LoadElementsCB()
         {
             string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
-            System.Data.DataTable dataTable = new System.Data.DataTable();
+            DataTable dataTable = new DataTable();
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
@@ -121,7 +121,7 @@ namespace TechnogenicSoilPollution.UC
         private void LoadPhasesCB()
         {
             string dataFillingComboBox = "SELECT Name_phase FROM Phases";
-            System.Data.DataTable dataTable = new System.Data.DataTable();
+            DataTable dataTable = new DataTable();
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
@@ -134,13 +134,25 @@ namespace TechnogenicSoilPollution.UC
         private void LoadYearsCB()
         {
             string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
-            System.Data.DataTable dataTable = new System.Data.DataTable();
+            DataTable dataTable = new DataTable();
             SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
             YearsCB.DataSource = dataTable;
             YearsCB.ValueMember = "Year_sampling";
             YearsCB.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        //Загрузка номера опорных точек из базы данных
+        private void LoadPivotPoints()
+        {
+            string dataFillingComboBox = "SELECT Number_point FROM SamplingPoints";
+            DataTable dataTable = new DataTable();
+            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            adapter.Fill(dataTable);
+            PivotPointsCLB.DataSource = dataTable;
+            PivotPointsCLB.ValueMember = "Number_point";
         }
 
         List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();
@@ -213,6 +225,7 @@ namespace TechnogenicSoilPollution.UC
 
         #endregion
 
+        //Выборка розы ветров на основе выбранного года
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (YearsCB.SelectedIndex == 0)
@@ -227,7 +240,7 @@ namespace TechnogenicSoilPollution.UC
             }
         }
 
-        // Добавление пользовательского маркера
+        //Добавление пользовательского маркера
         private void Gmap_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Middle)
