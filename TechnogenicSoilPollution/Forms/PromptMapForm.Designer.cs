@@ -35,6 +35,7 @@ namespace TechnogenicSoilPollution.Forms
             this.CloseFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,7 +50,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(5, 191);
+            this.label7.Location = new System.Drawing.Point(5, 192);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(584, 40);
             this.label7.TabIndex = 40;
@@ -93,19 +94,32 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(5, 85);
+            this.label1.Location = new System.Drawing.Point(5, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(571, 80);
+            this.label1.Size = new System.Drawing.Size(597, 80);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Чтобы поствить свой маркер на карту, необходимо правой кнопкой мыши\r\nнажать на лю" +
-    "бое место.\r\nЧтобы убрать маркер, необходимо навести на маркер и нажать правой \r\n" +
-    "кнопкой мыши.";
+            this.label1.Text = "Чтобы поствить свой маркер на карту, необходимо колёсиком мыши нажать \r\nна любое " +
+    "место.\r\nЧтобы убрать маркер, необходимо навести на маркер и нажать левой \r\nкнопк" +
+    "ой мыши.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(5, 233);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(593, 120);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "В данном списке представлены направления и им принадлежащие опорные\r\nточки:\r\n1. С" +
+    "еверо-Запад  - 1 ,2, 3, 4;\r\n2. Северо-Восток - 5, 6, 7, 8;\r\n3. Юго-Запад - 9, 10" +
+    ";\r\n4. Юго-Восток - 11, 12, 13, 14.";
             // 
             // PromptMapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -129,5 +143,6 @@ namespace TechnogenicSoilPollution.Forms
         private MaterialSkin.Controls.MaterialRaisedButton CloseFormBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
