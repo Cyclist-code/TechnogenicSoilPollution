@@ -143,11 +143,12 @@ namespace TechnogenicSoilPollution.UC
                 {
                     for (int j = 0; j < MainDataGridView.Columns.Count; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = MainDataGridView.Rows[i].Cells[j].Value.ToString();
+                        worksheet.Cells[i + 2, j + 1] = MainDataGridView.Rows[i].Cells[j].Value;
                     }
                 }
 
                 worksheet.Columns.EntireColumn.AutoFit();
+
             }
             catch (Exception ex)
             {
