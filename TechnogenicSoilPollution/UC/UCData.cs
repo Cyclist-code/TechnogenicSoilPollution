@@ -104,11 +104,13 @@ namespace TechnogenicSoilPollution.UC
             sqlConnection.Close();
         }
 
+        //Обновление базы данных
         private void UpdateDataMethod()
         {
             
         }
 
+        //Удаление выделенной строки
         private void DeleteDataMethod()
         {
             try
@@ -137,6 +139,7 @@ namespace TechnogenicSoilPollution.UC
                 for (int i = 1; i < MainDataGridView.Columns.Count + 1; i++)
                 {
                     worksheet.Cells[1, i] = MainDataGridView.Columns[i - 1].HeaderText;
+                    worksheet.Cells[1, i].Font.Bold = true;
                 }
 
                 for (int i = 0; i < MainDataGridView.Rows.Count - 1; i++)
@@ -148,7 +151,11 @@ namespace TechnogenicSoilPollution.UC
                 }
 
                 worksheet.Columns.EntireColumn.AutoFit();
-
+                Range ShtRange;
+                ShtRange = worksheet.UsedRange;
+                ShtRange.Borders.ColorIndex = 1;
+                ShtRange.Borders.LineStyle = XlLineStyle.xlContinuous;
+                ShtRange.Borders.Weight = XlBorderWeight.xlThin;
             }
             catch (Exception ex)
             {
