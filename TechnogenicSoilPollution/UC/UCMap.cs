@@ -24,9 +24,10 @@ namespace TechnogenicSoilPollution.UC
 {
     public partial class UCMap : UserControl
     {
-        // Список маркеров
+        #region Списки маркеров
         GMapOverlay PointsSampling = new GMapOverlay("markers");
         GMapOverlay CustomMarkers = new GMapOverlay("user");
+        #endregion
 
         private SqlConnection sqlConnection = null;
 
@@ -37,6 +38,7 @@ namespace TechnogenicSoilPollution.UC
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
         }
 
+        #region Загрузка пользовательского контрола
         private void UCMap_Load(object sender, EventArgs e)
         {
             LoadElementsCB();
@@ -46,7 +48,9 @@ namespace TechnogenicSoilPollution.UC
 
             sqlConnection.Close();
         }
+        #endregion
 
+        #region Загрузка карты
         private void Gmap_Load(object sender, EventArgs e)
         {
             //Угол наклона карты
@@ -85,6 +89,9 @@ namespace TechnogenicSoilPollution.UC
 
             LoadPoints();
         }
+        #endregion
+
+        #region Обработчики кнопок
 
         private void ExportMapBtn_Click(object sender, EventArgs e)
         {
@@ -101,6 +108,37 @@ namespace TechnogenicSoilPollution.UC
             PromptMapForm promptMap = new PromptMapForm();
             promptMap.ShowDialog();
         }
+
+        #endregion
+
+        #region Работа с пользовательским маркером
+        //Добавление пользовательского маркера
+        private void Gmap_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)
+            {
+                Gmap.Overlays.Add(CustomMarkers);
+
+                double userLat = Gmap.FromLocalToLatLng(e.X, e.Y).Lat;
+                double userLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
+
+                GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(userLat, userLng), GMarkerGoogleType.blue_small);
+                customMarker.ToolTip = new GMapToolTip(customMarker);
+                customMarker.ToolTipText = "Метка пользователя";
+                CustomMarkers.Markers.Add(customMarker);
+            }
+        }
+
+        //Удаление пользовательского маркера
+        private void Gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                GMapOverlay mapOverlay = CustomMarkers;
+                mapOverlay.Markers.Remove(item);
+            }
+        }
+        #endregion
 
         #region Методы
 
@@ -225,7 +263,7 @@ namespace TechnogenicSoilPollution.UC
 
         #endregion
 
-        //Выборка розы ветров на основе выбранного года
+        #region Выборка розы ветров на основе выбранного года
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (YearsCB.SelectedIndex == 0)
@@ -239,32 +277,6 @@ namespace TechnogenicSoilPollution.UC
                 RoseWindLabel.Text = "Роза ветров за 1997 год";
             }
         }
-
-        //Добавление пользовательского маркера
-        private void Gmap_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Middle)
-            {
-                Gmap.Overlays.Add(CustomMarkers);
-
-                double userLat = Gmap.FromLocalToLatLng(e.X, e.Y).Lat;
-                double userLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
-
-                GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(userLat, userLng), GMarkerGoogleType.blue_small);
-                customMarker.ToolTip = new GMapToolTip(customMarker);
-                customMarker.ToolTipText = "Метка пользователя";
-                CustomMarkers.Markers.Add(customMarker);
-            }
-        }
-
-        //Удаление пользовательского маркера
-        private void Gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                GMapOverlay mapOverlay = CustomMarkers;
-                mapOverlay.Markers.Remove(item);
-            }
-        }
+        #endregion
     }
 }
