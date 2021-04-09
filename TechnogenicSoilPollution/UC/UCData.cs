@@ -24,6 +24,7 @@ namespace TechnogenicSoilPollution.UC
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
         }
 
+        #region Загрузка пользовательского контрола
         private void UCData_Load(object sender, EventArgs e)
         {
             sqlConnection.Open();
@@ -33,8 +34,9 @@ namespace TechnogenicSoilPollution.UC
 
             sqlConnection.Close();
         }
+        #endregion
 
-        #region Логика кнопок
+        #region Обработчики кнопок
 
         private void SelectDataFiltersBtn_Click(object sender, EventArgs e)
         {
