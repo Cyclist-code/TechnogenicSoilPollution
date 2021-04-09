@@ -29,6 +29,9 @@ namespace TechnogenicSoilPollution.UC
         GMapOverlay CustomMarkers = new GMapOverlay("user");
         #endregion
 
+        double xUserLat = 0;
+        double yUserLng = 0;
+
         private SqlConnection sqlConnection = null;
 
         public UCMap()
@@ -100,7 +103,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
-
+            CalculatePollution();
         }
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
@@ -119,10 +122,10 @@ namespace TechnogenicSoilPollution.UC
             {
                 Gmap.Overlays.Add(CustomMarkers);
 
-                double userLat = Gmap.FromLocalToLatLng(e.X, e.Y).Lat;
-                double userLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
+                xUserLat = Gmap.FromLocalToLatLng(e.X, e.Y).Lat;
+                yUserLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
 
-                GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(userLat, userLng), GMarkerGoogleType.blue_small);
+                GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(xUserLat, yUserLng), GMarkerGoogleType.blue_small);
                 customMarker.ToolTip = new GMapToolTip(customMarker);
                 customMarker.ToolTipText = "Метка пользователя";
                 CustomMarkers.Markers.Add(customMarker);
@@ -142,7 +145,7 @@ namespace TechnogenicSoilPollution.UC
 
         #region Методы
 
-        //Загрузка хим. элементов из базы данных
+        #region Загрузка хим. элементов из базы данных
         private void LoadElementsCB()
         {
             string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
@@ -154,8 +157,9 @@ namespace TechnogenicSoilPollution.UC
             ChemicalElementsCB.ValueMember = "Name_element";
             ChemicalElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion
 
-        //Загрузка фаз из базы данных
+        #region Загрузка фаз из базы данных
         private void LoadPhasesCB()
         {
             string dataFillingComboBox = "SELECT Name_phase FROM Phases";
@@ -167,8 +171,9 @@ namespace TechnogenicSoilPollution.UC
             PhasesCB.ValueMember = "Name_phase";
             PhasesCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion
 
-        //Загрузка годов из базы данных
+        #region Загрузка годов из базы данных
         private void LoadYearsCB()
         {
             string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
@@ -180,8 +185,9 @@ namespace TechnogenicSoilPollution.UC
             YearsCB.ValueMember = "Year_sampling";
             YearsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion
 
-        //Загрузка номера опорных точек из базы данных
+        #region Загрузка номера опорных точек из базы данных
         private void LoadPivotPoints()
         {
             string dataFillingComboBox = "SELECT Number_point FROM SamplingPoints";
@@ -192,11 +198,13 @@ namespace TechnogenicSoilPollution.UC
             PivotPointsCLB.DataSource = dataTable;
             PivotPointsCLB.ValueMember = "Number_point";
         }
+        #endregion
+
+        #region Загрзка точек из базы данных
 
         List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();
         SqlCommand sqlPointsCommand;
 
-        //Загрзка точек из базы данных
         private void LoadPoints()
         {
             PointsSampling.Clear();
@@ -219,7 +227,7 @@ namespace TechnogenicSoilPollution.UC
             }
             sqlDataReader.Close();
 
-            for(int i = 0; i < ListPoints.Count; i++)
+            for (int i = 0; i < ListPoints.Count; i++)
             {
                 GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
                 samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker);
@@ -229,13 +237,33 @@ namespace TechnogenicSoilPollution.UC
 
             Gmap.Overlays.Add(PointsSampling);
         }
+        #endregion
 
-        //Сохранение карты в PNG
+        #region Расчёт загрязнения
+        private void CalculatePollution()
+        {
+            //Координаты ИркАЗ
+            var xPlantLat = 52.191713;
+            var yPlantLng = 104.084576;
+
+            //константа (км) определяется высотой источника (её оценка составляет 15-20 высот источника)
+            double rMax = 5;
+
+            var x = xUserLat * xUserLat - 2 * xUserLat * xPlantLat + xPlantLat * xPlantLat;
+            var y = yUserLng * yUserLng - 2 * yUserLng * yPlantLng + yPlantLng * yPlantLng;
+
+            var r = Math.Sqrt((x + y));
+            r = Math.Round(r, 6);
+            MessageBox.Show(r + "");
+        }
+        #endregion
+
+        #region Сохранение карты в PNG
         private void SaveMapPNG()
         {
             try
             {
-                using(SaveFileDialog saveMapDialog = new SaveFileDialog())
+                using (SaveFileDialog saveMapDialog = new SaveFileDialog())
                 {
                     saveMapDialog.Filter = "PNG (*.png)|*.png";
                     Image imageMap = Gmap.ToImage();
@@ -260,6 +288,7 @@ namespace TechnogenicSoilPollution.UC
                 MessageBox.Show(ex.Message, "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
         #endregion
 
