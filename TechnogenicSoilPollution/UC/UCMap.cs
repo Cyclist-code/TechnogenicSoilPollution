@@ -27,6 +27,7 @@ namespace TechnogenicSoilPollution.UC
         #region Списки маркеров
         GMapOverlay PointsSampling = new GMapOverlay("markers");
         GMapOverlay CustomMarkers = new GMapOverlay("user");
+        GMapOverlay ResultOverlay = new GMapOverlay("result");
         #endregion
 
         #region Глобальные переменные
@@ -119,7 +120,6 @@ namespace TechnogenicSoilPollution.UC
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
             //CalculatePollution();
-            WindRose();
         }
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
@@ -258,23 +258,15 @@ namespace TechnogenicSoilPollution.UC
         #region Расчёт загрязнения
         private void CalculatePollution()
         {
-            //константа (км) определяется высотой источника (её оценка составляет 15-20 высот источника)
-            double rMax = 5;
 
-            var x = xUserLat * xUserLat - 2 * xUserLat * xPlantLat + xPlantLat * xPlantLat;
-            var y = yUserLng * yUserLng - 2 * yUserLng * yPlantLng + yPlantLng * yPlantLng;
-
-            var r = Math.Sqrt((x + y));
-            r = Math.Round(r, 6);
-            MessageBox.Show(r + "");
         }
         #endregion
 
         #region Вычисление розы ветров и угла направления ветра
-        private double WindRose()
+        private double WindRose(double x, double y)
         {
             //Угол напрваления ветра
-            double windAngle = 180 / Math.PI * Math.Atan((xUserLat - xPlantLat) / (yUserLng - yPlantLng));
+            double windAngle = 180 / Math.PI * Math.Atan((x - xPlantLat) / (y - yPlantLng));
             //Роза ветров за 1996 год
             double[] roseOne = { 1, 5, 5, 7, 8, 4, 13, 14 };
             //Роза ветров за 1997 год
@@ -282,7 +274,7 @@ namespace TechnogenicSoilPollution.UC
 
             double windRose = 0;
 
-            if (yUserLng - yPlantLng <= 0)
+            if (y - yPlantLng <= 0)
                 windAngle += 180;
             if (windAngle < 0)
                 windAngle += 360;
@@ -329,6 +321,24 @@ namespace TechnogenicSoilPollution.UC
         }
         #endregion
 
+        #region Вычисление концентрации примеси в точке с координатами (x,y)
+        private void CalcConcentration(double x, double y, double tet1, double tet2)
+        {
+            double windRose = WindRose(x, y);
+
+            //константа (км) определяется высотой источника (её оценка составляет 15-20 высот источника)
+            double rMax = 5;
+
+            //Нахождение расстояния
+            double xx = x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat;
+            double yy = y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng;
+            double r = Math.Sqrt((xx + yy));
+
+            double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);
+            
+        }
+        #endregion
+
         #region Сохранение карты в PNG
         private void SaveMapPNG()
         {
@@ -363,7 +373,7 @@ namespace TechnogenicSoilPollution.UC
 
         #endregion
 
-        #region Выборкаизображения розы ветров на основе выбранного года
+        #region Выборка изображения розы ветров на основе выбранного года
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (YearsCB.SelectedIndex == 0)
@@ -377,6 +387,6 @@ namespace TechnogenicSoilPollution.UC
                 RoseWindLabel.Text = "Роза ветров за 1997 год";
             }
         }
-        #endregion   
+        #endregion
     }
 }
