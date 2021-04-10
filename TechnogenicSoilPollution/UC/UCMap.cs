@@ -29,8 +29,23 @@ namespace TechnogenicSoilPollution.UC
         GMapOverlay CustomMarkers = new GMapOverlay("user");
         #endregion
 
+        #region Глобальные переменные
+        //Координаты ИркАЗ
+        readonly double xPlantLat = 52.191713;
+        readonly double yPlantLng = 104.084576;
+
+        //Координаты пользовательского маркера
         double xUserLat = 0;
         double yUserLng = 0;
+
+        //Координаты 1 опорной точки
+        double xSPOneLat = 0;
+        double ySPOneLng = 0;
+
+        //Координаты 2 опорной точки
+        double xSPTwoLat = 0;
+        double ySPTwoLng = 0;
+        #endregion
 
         private SqlConnection sqlConnection = null;
 
@@ -103,7 +118,8 @@ namespace TechnogenicSoilPollution.UC
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
-            CalculatePollution();
+            //CalculatePollution();
+            WindRose();
         }
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
@@ -190,9 +206,9 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка номера опорных точек из базы данных
         private void LoadPivotPoints()
         {
-            string dataFillingComboBox = "SELECT Number_point FROM SamplingPoints";
+            string dataFillingCLB = "SELECT Number_point FROM SamplingPoints";
             DataTable dataTable = new DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlCommand commandFilling = new SqlCommand(dataFillingCLB, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
             PivotPointsCLB.DataSource = dataTable;
@@ -242,10 +258,6 @@ namespace TechnogenicSoilPollution.UC
         #region Расчёт загрязнения
         private void CalculatePollution()
         {
-            //Координаты ИркАЗ
-            var xPlantLat = 52.191713;
-            var yPlantLng = 104.084576;
-
             //константа (км) определяется высотой источника (её оценка составляет 15-20 высот источника)
             double rMax = 5;
 
@@ -255,6 +267,65 @@ namespace TechnogenicSoilPollution.UC
             var r = Math.Sqrt((x + y));
             r = Math.Round(r, 6);
             MessageBox.Show(r + "");
+        }
+        #endregion
+
+        #region Вычисление розы ветров и угла направления ветра
+        private double WindRose()
+        {
+            //Угол напрваления ветра
+            double windAngle = 180 / Math.PI * Math.Atan((xUserLat - xPlantLat) / (yUserLng - yPlantLng));
+            //Роза ветров за 1996 год
+            double[] roseOne = { 1, 5, 5, 7, 8, 4, 13, 14 };
+            //Роза ветров за 1997 год
+            double[] roseTwo = { 1, 5, 3, 17, 7, 9, 18, 5 };
+
+            double windRose = 0;
+
+            if (yUserLng - yPlantLng <= 0)
+                windAngle += 180;
+            if (windAngle < 0)
+                windAngle += 360;
+
+            if (YearsCB.SelectedIndex == 0)
+            {
+                if (windAngle >= 0 && windAngle <= 45)
+                    windRose = roseOne[0] + (roseOne[1] - roseOne[2]) * windAngle / 45;
+                else if (windAngle >= 45 && windAngle <= 90)
+                    windRose = roseOne[1] + (roseOne[2] - roseOne[1]) * (windAngle - 45) / 45;
+                else if (windAngle >= 90 && windAngle < 135)
+                    windRose = roseOne[2] + (roseOne[3] - roseOne[2]) * (windAngle - 90) / 45;
+                else if (windAngle >= 135 && windAngle <= 180)
+                    windRose = roseOne[3] + (roseOne[4] - roseOne[3]) * (windAngle - 135) / 45;
+                else if (windAngle >= 180 && windAngle < 225)
+                    windRose = roseOne[4] + (roseOne[5] - roseOne[4]) * (windAngle - 180) / 45;
+                else if (windAngle >= 225 && windAngle < 270)
+                    windRose = roseOne[5] + (roseOne[6] - roseOne[5]) * (windAngle - 225) / 45;
+                else if (windAngle >= 270 && windAngle < 315)
+                    windRose = roseOne[6] + (roseOne[7] - roseOne[6]) * (windAngle - 270) / 45;
+                else windRose = roseOne[7] + (roseOne[0] - roseOne[7]) * (windAngle - 315) / 45;
+            }
+
+            if (YearsCB.SelectedIndex == 1)
+            {
+                if (windAngle >= 0 && windAngle <= 45)
+                    windRose = roseTwo[0] + (roseTwo[1] - roseTwo[2]) * windAngle / 45;
+                else if (windAngle >= 45 && windAngle <= 90)
+                    windRose = roseTwo[1] + (roseTwo[2] - roseTwo[1]) * (windAngle - 45) / 45;
+                else if (windAngle >= 90 && windAngle < 135)
+                    windRose = roseTwo[2] + (roseTwo[3] - roseTwo[2]) * (windAngle - 90) / 45;
+                else if (windAngle >= 135 && windAngle <= 180)
+                    windRose = roseTwo[3] + (roseTwo[4] - roseTwo[3]) * (windAngle - 135) / 45;
+                else if (windAngle >= 180 && windAngle < 225)
+                    windRose = roseTwo[4] + (roseTwo[5] - roseTwo[4]) * (windAngle - 180) / 45;
+                else if (windAngle >= 225 && windAngle < 270)
+                    windRose = roseTwo[5] + (roseTwo[6] - roseTwo[5]) * (windAngle - 225) / 45;
+                else if (windAngle >= 270 && windAngle < 315)
+                    windRose = roseTwo[6] + (roseTwo[7] - roseTwo[6]) * (windAngle - 270) / 45;
+                else windRose = roseTwo[7] + (roseTwo[0] - roseTwo[7]) * (windAngle - 315) / 45;
+            }
+
+            return windRose;
         }
         #endregion
 
@@ -292,7 +363,7 @@ namespace TechnogenicSoilPollution.UC
 
         #endregion
 
-        #region Выборка розы ветров на основе выбранного года
+        #region Выборкаизображения розы ветров на основе выбранного года
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (YearsCB.SelectedIndex == 0)
@@ -306,6 +377,6 @@ namespace TechnogenicSoilPollution.UC
                 RoseWindLabel.Text = "Роза ветров за 1997 год";
             }
         }
-        #endregion
+        #endregion   
     }
 }
