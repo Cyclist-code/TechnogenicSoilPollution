@@ -123,6 +123,7 @@ namespace TechnogenicSoilPollution
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расчёт и визуализация техногенного загрязнения почвенного покрова";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.SideMenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

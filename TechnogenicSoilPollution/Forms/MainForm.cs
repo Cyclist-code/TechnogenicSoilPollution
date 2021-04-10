@@ -59,5 +59,13 @@ namespace TechnogenicSoilPollution
                 }
             }
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Вы действительно хотите выйди из приложения?", "Выход", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                e.Cancel = false;
+            else 
+                e.Cancel = true;
+        }
     }
 }
