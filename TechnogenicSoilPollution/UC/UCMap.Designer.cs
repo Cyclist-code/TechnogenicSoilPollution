@@ -78,7 +78,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(847, 16);
+            this.materialLabel2.Location = new System.Drawing.Point(785, 16);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(123, 19);
@@ -89,7 +89,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.PivotPointsCLB.CheckOnClick = true;
             this.PivotPointsCLB.FormattingEnabled = true;
-            this.PivotPointsCLB.Location = new System.Drawing.Point(851, 38);
+            this.PivotPointsCLB.Location = new System.Drawing.Point(789, 38);
             this.PivotPointsCLB.Name = "PivotPointsCLB";
             this.PivotPointsCLB.Size = new System.Drawing.Size(119, 154);
             this.PivotPointsCLB.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportMapBtn
             // 
             this.ExportMapBtn.Depth = 0;
-            this.ExportMapBtn.Location = new System.Drawing.Point(759, 590);
+            this.ExportMapBtn.Location = new System.Drawing.Point(670, 590);
             this.ExportMapBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportMapBtn.Name = "ExportMapBtn";
             this.ExportMapBtn.Primary = true;
@@ -110,7 +110,7 @@ namespace TechnogenicSoilPollution.UC
             // CalcPollutionBtn
             // 
             this.CalcPollutionBtn.Depth = 0;
-            this.CalcPollutionBtn.Location = new System.Drawing.Point(905, 590);
+            this.CalcPollutionBtn.Location = new System.Drawing.Point(856, 590);
             this.CalcPollutionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.CalcPollutionBtn.Name = "CalcPollutionBtn";
             this.CalcPollutionBtn.Primary = true;
@@ -206,13 +206,13 @@ namespace TechnogenicSoilPollution.UC
             // PromptFormBtn
             // 
             this.PromptFormBtn.Depth = 0;
-            this.PromptFormBtn.Location = new System.Drawing.Point(653, 590);
+            this.PromptFormBtn.Location = new System.Drawing.Point(914, 16);
             this.PromptFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.PromptFormBtn.Name = "PromptFormBtn";
             this.PromptFormBtn.Primary = true;
-            this.PromptFormBtn.Size = new System.Drawing.Size(100, 40);
+            this.PromptFormBtn.Size = new System.Drawing.Size(105, 48);
             this.PromptFormBtn.TabIndex = 13;
-            this.PromptFormBtn.Text = "Подсказка";
+            this.PromptFormBtn.Text = "Помощь при расчётах";
             this.PromptFormBtn.UseVisualStyleBackColor = true;
             this.PromptFormBtn.Click += new System.EventHandler(this.PromptFormBtn_Click);
             // 
