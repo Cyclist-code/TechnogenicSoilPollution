@@ -25,9 +25,9 @@ namespace TechnogenicSoilPollution.UC
     public partial class UCMap : UserControl
     {
         #region Списки маркеров
-        GMapOverlay PointsSampling = new GMapOverlay("markers");
-        GMapOverlay CustomMarkers = new GMapOverlay("user");
-        GMapOverlay ResultOverlay = new GMapOverlay("result");
+        GMapOverlay PointsSamplingOverlay = new GMapOverlay("samplingpoints");
+        GMapOverlay CustomMarkersOverlay = new GMapOverlay("user");
+        GMapOverlay ResulCalcPollutionOverlay = new GMapOverlay("result");
         #endregion
 
         #region Глобальные переменные
@@ -119,7 +119,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
-            //CalculatePollution();
+
         }
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace TechnogenicSoilPollution.UC
         {
             if (e.Button == MouseButtons.Middle)
             {
-                Gmap.Overlays.Add(CustomMarkers);
+                Gmap.Overlays.Add(CustomMarkersOverlay);
 
                 xUserLat = Gmap.FromLocalToLatLng(e.X, e.Y).Lat;
                 yUserLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
@@ -144,7 +144,7 @@ namespace TechnogenicSoilPollution.UC
                 GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(xUserLat, yUserLng), GMarkerGoogleType.blue_small);
                 customMarker.ToolTip = new GMapToolTip(customMarker);
                 customMarker.ToolTipText = "Метка пользователя";
-                CustomMarkers.Markers.Add(customMarker);
+                CustomMarkersOverlay.Markers.Add(customMarker);
             }
         }
 
@@ -153,7 +153,7 @@ namespace TechnogenicSoilPollution.UC
         {
             if (e.Button == MouseButtons.Left)
             {
-                GMapOverlay mapOverlay = CustomMarkers;
+                GMapOverlay mapOverlay = CustomMarkersOverlay;
                 mapOverlay.Markers.Remove(item);
             }
         }
@@ -223,16 +223,16 @@ namespace TechnogenicSoilPollution.UC
 
         private void LoadPoints()
         {
-            PointsSampling.Clear();
+            PointsSamplingOverlay.Clear();
             sqlConnection.Open();
 
             sqlPointsCommand = new SqlCommand("SELECT * FROM SamplingPoints", sqlConnection);
             SqlDataReader sqlDataReader = sqlPointsCommand.ExecuteReader();
 
-            GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(52.191713, 104.084576), GMarkerGoogleType.red_small);
+            GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(xPlantLat, yPlantLng), GMarkerGoogleType.red_small);
             plantMarker.ToolTip = new GMapRoundedToolTip(plantMarker);
             plantMarker.ToolTipText = "Алюминиевый Завод";
-            PointsSampling.Markers.Add(plantMarker);
+            PointsSamplingOverlay.Markers.Add(plantMarker);
 
             if (sqlDataReader.HasRows)
             {
@@ -248,10 +248,10 @@ namespace TechnogenicSoilPollution.UC
                 GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
                 samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker);
                 samplingMarker.ToolTipText = "Точка пробоотбора";
-                PointsSampling.Markers.Add(samplingMarker);
+                PointsSamplingOverlay.Markers.Add(samplingMarker);
             }
 
-            Gmap.Overlays.Add(PointsSampling);
+            Gmap.Overlays.Add(PointsSamplingOverlay);
         }
         #endregion
 
@@ -329,13 +329,13 @@ namespace TechnogenicSoilPollution.UC
             //константа (км) определяется высотой источника (её оценка составляет 15-20 высот источника)
             double rMax = 5;
 
-            //Нахождение расстояния
+            //Нахождение расстояния r
             double xx = x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat;
             double yy = y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng;
             double r = Math.Sqrt((xx + yy));
 
+            //Вычисление концентрации
             double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);
-            
         }
         #endregion
 
