@@ -27,7 +27,7 @@ namespace TechnogenicSoilPollution.UC
         #region Списки маркеров
         GMapOverlay PointsSamplingOverlay = new GMapOverlay("samplingpoints");
         GMapOverlay CustomMarkersOverlay = new GMapOverlay("user");
-        GMapOverlay ResulCalcPollutionOverlay = new GMapOverlay("result");
+        GMapOverlay ResultCalcPollutionOverlay = new GMapOverlay("result");
         #endregion
 
         #region Глобальные переменные

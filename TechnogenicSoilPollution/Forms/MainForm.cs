@@ -18,20 +18,25 @@ namespace TechnogenicSoilPollution
         {
             InitializeComponent();
 
+            #region Установка стиля окна
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            #endregion
 
             PanelLoadUserControl.Controls.Add(HomePage);
         }
 
+        #region Открытие окна со справкой
         private void BtnOpenHelp_Click(object sender, EventArgs e)
         {
             ReferenceProgramForm programForm = new ReferenceProgramForm();
             programForm.ShowDialog();
         }
+        #endregion
 
+        #region Переходы между UserControl
         private void OpenPageBtn(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -59,13 +64,17 @@ namespace TechnogenicSoilPollution
                 }
             }
         }
+        #endregion
 
+        #region Предупреждение перед закрытием приложения
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите выйди из приложения?", "Выход", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Вы действительно хотите выйди из приложения?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 e.Cancel = false;
-            else 
+            else
                 e.Cancel = true;
         }
+        #endregion
+
     }
 }

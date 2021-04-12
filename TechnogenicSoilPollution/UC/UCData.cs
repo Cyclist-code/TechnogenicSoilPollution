@@ -13,9 +13,12 @@ namespace TechnogenicSoilPollution.UC
 {
     public partial class UCData : UserControl
     {
+
+        #region Глобальные переменные
         private SqlConnection sqlConnection = null;
         private SqlDataAdapter adapter = null;
         private System.Data.DataTable table = null;
+        #endregion
 
         public UCData()
         {
@@ -62,7 +65,7 @@ namespace TechnogenicSoilPollution.UC
 
         #region Методы
 
-        //Загрузка элементов в ComboBox
+        #region Загрузка химического элементов в ComboBox
         private void LoadElementsCB()
         {
             string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
@@ -74,8 +77,9 @@ namespace TechnogenicSoilPollution.UC
             SelectElementsCB.ValueMember = "Name_element";
             SelectElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion
 
-        //Загрузка годов в ComboBox
+        #region Загрузка годов пробоотбора в ComboBox
         private void LoadYearsCB()
         {
             string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
@@ -87,8 +91,9 @@ namespace TechnogenicSoilPollution.UC
             SelectYearCB.ValueMember = "Year_sampling";
             SelectYearCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion
 
-        //Загрузка данных на основе выборки
+        #region Загрузка данных на основе выборки из 2 ComboBox
         private void SelectFilterData()
         {
             sqlConnection.Open();
@@ -105,14 +110,16 @@ namespace TechnogenicSoilPollution.UC
 
             sqlConnection.Close();
         }
+        #endregion
 
-        //Обновление базы данных
+        #region Обновление базы данных
         private void UpdateDataMethod()
         {
-            
-        }
 
-        //Удаление выделенной строки
+        }
+        #endregion
+
+        #region Удаление выделенной строки
         private void DeleteDataMethod()
         {
             try
@@ -122,13 +129,14 @@ namespace TechnogenicSoilPollution.UC
                     MainDataGridView.Rows.Remove(dataRow);
                 }
             }
-            catch(InvalidOperationException exception)
+            catch (InvalidOperationException exception)
             {
                 MessageBox.Show(exception.Message, "Ошибка при удалении", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
-        //Экспорт данных в Excel
+        #region Экспорт данных в Excel
         private void ExportDataExcel()
         {
             Microsoft.Office.Interop.Excel.Application ExcelFile = new Microsoft.Office.Interop.Excel.Application();
@@ -187,7 +195,8 @@ namespace TechnogenicSoilPollution.UC
 
             ExcelFile.Quit();
         }
+        #endregion
 
-        #endregion      
+        #endregion
     }
 }
