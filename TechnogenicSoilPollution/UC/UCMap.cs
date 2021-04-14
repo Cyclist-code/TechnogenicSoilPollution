@@ -238,7 +238,7 @@ namespace TechnogenicSoilPollution.UC
             {
                 while (sqlDataReader.Read())
                 {
-                    ListPoints.Add(new CoordinatesPoint(Convert.ToDouble(sqlDataReader[4]), Convert.ToDouble(sqlDataReader[5])));
+                    ListPoints.Add(new CoordinatesPoint(Convert.ToInt32(sqlDataReader[2]), Convert.ToDouble(sqlDataReader[4]), Convert.ToDouble(sqlDataReader[5])));
                 }
             }
             sqlDataReader.Close();
@@ -247,7 +247,7 @@ namespace TechnogenicSoilPollution.UC
             {
                 GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
                 samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker);
-                samplingMarker.ToolTipText = "Точка пробоотбора";
+                samplingMarker.ToolTipText = "Точка пробоотбора №" + ListPoints[i].numberPoint;
                 PointsSamplingOverlay.Markers.Add(samplingMarker);
             }
 
