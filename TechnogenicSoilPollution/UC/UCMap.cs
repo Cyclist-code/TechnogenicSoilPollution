@@ -142,7 +142,11 @@ namespace TechnogenicSoilPollution.UC
                 yUserLng = Gmap.FromLocalToLatLng(e.X, e.Y).Lng;
 
                 GMarkerGoogle customMarker = new GMarkerGoogle(new PointLatLng(xUserLat, yUserLng), GMarkerGoogleType.blue_small);
-                customMarker.ToolTip = new GMapToolTip(customMarker);
+                customMarker.ToolTip = new GMapToolTip(customMarker)
+                {
+                    Foreground = new SolidBrush(Color.Black),
+                    Stroke = new Pen(new SolidBrush(Color.Black))
+                };
                 customMarker.ToolTipText = "Метка пользователя";
                 CustomMarkersOverlay.Markers.Add(customMarker);
             }
@@ -230,7 +234,12 @@ namespace TechnogenicSoilPollution.UC
             SqlDataReader sqlDataReader = sqlPointsCommand.ExecuteReader();
 
             GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(xPlantLat, yPlantLng), GMarkerGoogleType.red_small);
-            plantMarker.ToolTip = new GMapRoundedToolTip(plantMarker);
+            plantMarker.ToolTip = new GMapRoundedToolTip(plantMarker)
+            {
+                Foreground = new SolidBrush(Color.Black),
+                Stroke = new Pen(new SolidBrush(Color.Black)),
+                Font = new Font("Arial", 9, FontStyle.Bold)
+            };
             plantMarker.ToolTipText = "Алюминиевый Завод";
             PointsSamplingOverlay.Markers.Add(plantMarker);
 
@@ -246,7 +255,12 @@ namespace TechnogenicSoilPollution.UC
             for (int i = 0; i < ListPoints.Count; i++)
             {
                 GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
-                samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker);
+                samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker)
+                {
+                    Foreground = new SolidBrush(Color.Black),
+                    Stroke = new Pen(new SolidBrush(Color.Black)),
+                    Font = new Font("Arial", 9, FontStyle.Bold)
+                };
                 samplingMarker.ToolTipText = "Точка пробоотбора №" + ListPoints[i].numberPoint;
                 PointsSamplingOverlay.Markers.Add(samplingMarker);
             }
