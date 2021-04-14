@@ -93,6 +93,7 @@ namespace TechnogenicSoilPollution.UC
             this.PivotPointsCLB.Name = "PivotPointsCLB";
             this.PivotPointsCLB.Size = new System.Drawing.Size(119, 154);
             this.PivotPointsCLB.TabIndex = 4;
+            this.PivotPointsCLB.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.PivotPointsCLB_ItemCheck);
             // 
             // ExportMapBtn
             // 

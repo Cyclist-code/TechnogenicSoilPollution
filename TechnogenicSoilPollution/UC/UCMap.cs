@@ -388,5 +388,16 @@ namespace TechnogenicSoilPollution.UC
             }
         }
         #endregion
+
+        #region Ограничение на выборку опорных точек
+        private void PivotPointsCLB_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked && PivotPointsCLB.CheckedItems.Count >= 2)
+            {
+                e.NewValue = CheckState.Unchecked;
+                MessageBox.Show("Вы выбрали уже 2 опорные точки для расчёта.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
     }
 }
