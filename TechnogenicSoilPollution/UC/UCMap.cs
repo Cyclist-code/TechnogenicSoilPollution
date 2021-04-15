@@ -409,7 +409,7 @@ namespace TechnogenicSoilPollution.UC
             if (e.NewValue == CheckState.Checked && PivotPointsCLB.CheckedItems.Count >= 2)
             {
                 e.NewValue = CheckState.Unchecked;
-                MessageBox.Show("Вы выбрали уже 2 опорные точки для расчёта.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("2 опорные точки для расчёта уже выбраны.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         #endregion
