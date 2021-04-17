@@ -336,7 +336,7 @@ namespace TechnogenicSoilPollution.UC
         #endregion
 
         #region Вычисление концентрации примеси в точке с координатами (x,y)
-        private void CalcConcentration(double x, double y, double tet1, double tet2)
+        private void CalcFieldConcentration(double x, double y, double tet1, double tet2)
         {
             double windRose = WindRose(x, y);
 
@@ -344,9 +344,9 @@ namespace TechnogenicSoilPollution.UC
             double rMax = 5;
 
             //Нахождение расстояния r
-            double xx = x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat;
-            double yy = y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng;
-            double r = Math.Sqrt((xx + yy));
+            double oneSD = x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat;
+            double twoSD = y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng;
+            double r = Math.Sqrt((oneSD + twoSD));
 
             //Вычисление концентрации
             double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);

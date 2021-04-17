@@ -66,7 +66,7 @@ namespace TechnogenicSoilPollution
         }
         #endregion
 
-        #region Предупреждение перед закрытием приложения
+        #region Подтверждение закрытия приложения
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Вы действительно хотите выйти из приложения?", "Выход из приложения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

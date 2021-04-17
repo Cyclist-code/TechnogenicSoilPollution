@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
@@ -68,10 +63,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка химического элементов в ComboBox
         private void LoadElementsCB()
         {
-            string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
+            string selectData = "SELECT Name_element FROM ChemicalElements";
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
             SelectElementsCB.DataSource = dataTable;
             SelectElementsCB.ValueMember = "Name_element";
@@ -82,9 +77,9 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка годов пробоотбора в ComboBox
         private void LoadYearsCB()
         {
-            string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
+            string selectData = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
             System.Data.DataTable dataTable = new System.Data.DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
+            SqlCommand commandFilling = new SqlCommand(selectData, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
             adapter.Fill(dataTable);
             SelectYearCB.DataSource = dataTable;
