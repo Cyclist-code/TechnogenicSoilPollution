@@ -52,10 +52,10 @@ namespace TechnogenicSoilPollution.Forms
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(5, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(584, 40);
+            this.label7.Size = new System.Drawing.Size(597, 40);
             this.label7.TabIndex = 40;
-            this.label7.Text = "Для правильного расчёта примесей, необходимо выбирать опорные точки \r\nтолько с од" +
-    "ного направления.\r\n";
+            this.label7.Text = "Для правильного расчёта примесей, необходимо выбирать 2 опорные точки \r\nтолько с " +
+    "одного направления.\r\n";
             // 
             // label6
             // 
@@ -96,11 +96,11 @@ namespace TechnogenicSoilPollution.Forms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(5, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(597, 80);
+            this.label1.Size = new System.Drawing.Size(592, 80);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Чтобы поствить свой маркер на карту, необходимо колёсиком мыши нажать \r\nна любое " +
-    "место.\r\nЧтобы убрать маркер, необходимо навести на маркер и нажать левой \r\nкнопк" +
-    "ой мыши.";
+            this.label1.Text = "Чтобы поствить маркер на карту, необходимо правой кнопокй мыши нажать\r\nна любое м" +
+    "есто.\r\nЧтобы убрать маркер, необходимо навести на маркер и нажать левой \r\nкнопко" +
+    "й мыши.";
             // 
             // label3
             // 
