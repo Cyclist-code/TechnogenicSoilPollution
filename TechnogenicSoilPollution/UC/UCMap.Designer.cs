@@ -43,11 +43,11 @@ namespace TechnogenicSoilPollution.UC
             this.YearsCB = new System.Windows.Forms.ComboBox();
             this.PromptFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.RoseWindLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
             this.RoseWindImagePanel = new System.Windows.Forms.Panel();
+            this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).BeginInit();
             this.RoseWindImagePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -56,7 +56,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(649, 16);
+            this.materialLabel1.Location = new System.Drawing.Point(681, 16);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(75, 19);
@@ -67,7 +67,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.ChemicalElementsCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChemicalElementsCB.FormattingEnabled = true;
-            this.ChemicalElementsCB.Location = new System.Drawing.Point(653, 38);
+            this.ChemicalElementsCB.Location = new System.Drawing.Point(685, 38);
             this.ChemicalElementsCB.Name = "ChemicalElementsCB";
             this.ChemicalElementsCB.Size = new System.Drawing.Size(130, 26);
             this.ChemicalElementsCB.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(830, 16);
+            this.materialLabel2.Location = new System.Drawing.Point(862, 16);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(123, 19);
@@ -89,7 +89,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.PivotPointsCLB.CheckOnClick = true;
             this.PivotPointsCLB.FormattingEnabled = true;
-            this.PivotPointsCLB.Location = new System.Drawing.Point(834, 38);
+            this.PivotPointsCLB.Location = new System.Drawing.Point(866, 38);
             this.PivotPointsCLB.Name = "PivotPointsCLB";
             this.PivotPointsCLB.Size = new System.Drawing.Size(119, 154);
             this.PivotPointsCLB.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportMapBtn
             // 
             this.ExportMapBtn.Depth = 0;
-            this.ExportMapBtn.Location = new System.Drawing.Point(653, 600);
+            this.ExportMapBtn.Location = new System.Drawing.Point(686, 571);
             this.ExportMapBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportMapBtn.Name = "ExportMapBtn";
             this.ExportMapBtn.Primary = true;
@@ -111,7 +111,7 @@ namespace TechnogenicSoilPollution.UC
             // CalcPollutionBtn
             // 
             this.CalcPollutionBtn.Depth = 0;
-            this.CalcPollutionBtn.Location = new System.Drawing.Point(813, 600);
+            this.CalcPollutionBtn.Location = new System.Drawing.Point(845, 571);
             this.CalcPollutionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.CalcPollutionBtn.Name = "CalcPollutionBtn";
             this.CalcPollutionBtn.Primary = true;
@@ -165,7 +165,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(649, 78);
+            this.materialLabel3.Location = new System.Drawing.Point(681, 78);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(49, 19);
@@ -176,7 +176,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.PhasesCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhasesCB.FormattingEnabled = true;
-            this.PhasesCB.Location = new System.Drawing.Point(653, 100);
+            this.PhasesCB.Location = new System.Drawing.Point(685, 100);
             this.PhasesCB.Name = "PhasesCB";
             this.PhasesCB.Size = new System.Drawing.Size(130, 26);
             this.PhasesCB.TabIndex = 10;
@@ -187,7 +187,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(649, 144);
+            this.materialLabel4.Location = new System.Drawing.Point(681, 144);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(39, 19);
@@ -198,7 +198,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.YearsCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.YearsCB.FormattingEnabled = true;
-            this.YearsCB.Location = new System.Drawing.Point(653, 166);
+            this.YearsCB.Location = new System.Drawing.Point(685, 166);
             this.YearsCB.Name = "YearsCB";
             this.YearsCB.Size = new System.Drawing.Size(130, 26);
             this.YearsCB.TabIndex = 12;
@@ -207,7 +207,7 @@ namespace TechnogenicSoilPollution.UC
             // PromptFormBtn
             // 
             this.PromptFormBtn.Depth = 0;
-            this.PromptFormBtn.Location = new System.Drawing.Point(708, 214);
+            this.PromptFormBtn.Location = new System.Drawing.Point(741, 511);
             this.PromptFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.PromptFormBtn.Name = "PromptFormBtn";
             this.PromptFormBtn.Primary = true;
@@ -223,28 +223,28 @@ namespace TechnogenicSoilPollution.UC
             this.RoseWindLabel.Depth = 0;
             this.RoseWindLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.RoseWindLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RoseWindLabel.Location = new System.Drawing.Point(725, 543);
+            this.RoseWindLabel.Location = new System.Drawing.Point(743, 465);
             this.RoseWindLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.RoseWindLabel.Name = "RoseWindLabel";
             this.RoseWindLabel.Size = new System.Drawing.Size(0, 19);
             this.RoseWindLabel.TabIndex = 15;
             // 
-            // RoseWindPictureBox
-            // 
-            this.RoseWindPictureBox.Location = new System.Drawing.Point(-1, -1);
-            this.RoseWindPictureBox.Name = "RoseWindPictureBox";
-            this.RoseWindPictureBox.Size = new System.Drawing.Size(300, 270);
-            this.RoseWindPictureBox.TabIndex = 0;
-            this.RoseWindPictureBox.TabStop = false;
-            // 
             // RoseWindImagePanel
             // 
             this.RoseWindImagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RoseWindImagePanel.Controls.Add(this.RoseWindPictureBox);
-            this.RoseWindImagePanel.Location = new System.Drawing.Point(653, 265);
+            this.RoseWindImagePanel.Location = new System.Drawing.Point(685, 215);
             this.RoseWindImagePanel.Name = "RoseWindImagePanel";
-            this.RoseWindImagePanel.Size = new System.Drawing.Size(300, 270);
+            this.RoseWindImagePanel.Size = new System.Drawing.Size(300, 240);
             this.RoseWindImagePanel.TabIndex = 14;
+            // 
+            // RoseWindPictureBox
+            // 
+            this.RoseWindPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.RoseWindPictureBox.Name = "RoseWindPictureBox";
+            this.RoseWindPictureBox.Size = new System.Drawing.Size(300, 240);
+            this.RoseWindPictureBox.TabIndex = 0;
+            this.RoseWindPictureBox.TabStop = false;
             // 
             // UCMap
             // 
@@ -268,8 +268,8 @@ namespace TechnogenicSoilPollution.UC
             this.Size = new System.Drawing.Size(1031, 657);
             this.Load += new System.EventHandler(this.UCMap_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).EndInit();
             this.RoseWindImagePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
