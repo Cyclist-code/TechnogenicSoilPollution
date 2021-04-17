@@ -134,7 +134,7 @@ namespace TechnogenicSoilPollution.UC
         //Добавление пользовательского маркера
         private void Gmap_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Middle)
+            if (e.Button == MouseButtons.Right)
             {
                 Gmap.Overlays.Add(CustomMarkersOverlay);
 
@@ -168,10 +168,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка хим. элементов из базы данных
         private void LoadElementsCB()
         {
-            string dataFillingComboBox = "SELECT Name_element FROM ChemicalElements";
+            string selectData = "SELECT Name_element FROM ChemicalElements";
             DataTable dataTable = new DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
             ChemicalElementsCB.DataSource = dataTable;
             ChemicalElementsCB.ValueMember = "Name_element";
@@ -182,10 +182,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка фаз из базы данных
         private void LoadPhasesCB()
         {
-            string dataFillingComboBox = "SELECT Name_phase FROM Phases";
+            string selectData = "SELECT Name_phase FROM Phases";
             DataTable dataTable = new DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
             PhasesCB.DataSource = dataTable;
             PhasesCB.ValueMember = "Name_phase";
@@ -196,10 +196,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка годов из базы данных
         private void LoadYearsCB()
         {
-            string dataFillingComboBox = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
+            string selectData = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
             DataTable dataTable = new DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingComboBox, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
             YearsCB.DataSource = dataTable;
             YearsCB.ValueMember = "Year_sampling";
@@ -210,10 +210,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка номера опорных точек из базы данных
         private void LoadPivotPoints()
         {
-            string dataFillingCLB = "SELECT Number_point FROM SamplingPoints";
+            string selectDataCLB = "SELECT Number_point FROM SamplingPoints";
             DataTable dataTable = new DataTable();
-            SqlCommand commandFilling = new SqlCommand(dataFillingCLB, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandFilling);
+            SqlCommand commandSelect = new SqlCommand(selectDataCLB, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
             PivotPointsCLB.DataSource = dataTable;
             PivotPointsCLB.ValueMember = "Number_point";
