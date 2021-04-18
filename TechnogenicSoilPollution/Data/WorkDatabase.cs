@@ -9,6 +9,8 @@ namespace TechnogenicSoilPollution.Data
     public static class WorkDatabase
     {
         private static SqlConnection sqlConnection = null;
+        private static SqlDataAdapter adapter = null;
+        private static System.Data.DataTable table = null;
 
         static WorkDatabase()
         {
@@ -101,6 +103,25 @@ namespace TechnogenicSoilPollution.Data
             }
 
             ExcelFile.Quit();
+        }
+        #endregion
+
+        #region Загрузка данных на основе выборки из 2 ComboBox
+        public static void SelectFilterData(ComboBox comboBoxOne, ComboBox comboBoxTwo, DataGridView dataGridView)
+        {
+            sqlConnection.Open();
+
+            string selectData = $"SELECT SamplingPoints.Direction, SamplingPoints.Number_point, SamplingPoints.Distance, SamplingPoints.Latitude, SamplingPoints.Longitude," +
+                $" Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
+                $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
+                $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
+                $" ChemicalElements.Name_element = '{comboBoxOne.SelectedValue}' AND SamplingPoints.Year_sampling = '{comboBoxTwo.SelectedValue}'";
+            adapter = new SqlDataAdapter(selectData, sqlConnection);
+            table = new System.Data.DataTable();
+            adapter.Fill(table);
+            dataGridView.DataSource = table;
+
+            sqlConnection.Close();
         }
         #endregion
 
