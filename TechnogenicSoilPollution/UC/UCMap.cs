@@ -52,10 +52,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка пользовательского контрола
         private void UCMap_Load(object sender, EventArgs e)
         {
-            LoadElementsCB();
-            LoadPhasesCB();
-            LoadYearsCB();
-            LoadPivotPoints();
+            WorkMapCalc.LoadElementsCB(ChemicalElementsCB);
+            WorkMapCalc.LoadPhasesCB(PhasesCB);
+            WorkMapCalc.LoadYearsCB(YearsCB);
+            WorkMapCalc.LoadPivotPoints(PivotPointsCLB);
 
             sqlConnection.Close();
         }
@@ -102,16 +102,21 @@ namespace TechnogenicSoilPollution.UC
         }
         #endregion
 
-        #region Обработчики кнопок
+        #region Обработчики событий
 
         private void ExportMapBtn_Click(object sender, EventArgs e)
         {
-            SaveMapPNG();
+            WorkMapCalc.SaveMapPNG(Gmap);
         }
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            WorkMapCalc.ImageRoseWind(YearsCB, RoseWindPictureBox, RoseWindLabel);
         }
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
@@ -155,62 +160,18 @@ namespace TechnogenicSoilPollution.UC
         }
         #endregion
 
+        #region Ограничение на выборку опорных точек
+        private void PivotPointsCLB_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked && PivotPointsCLB.CheckedItems.Count >= 2)
+            {
+                e.NewValue = CheckState.Unchecked;
+                MessageBox.Show("2 опорные точки для расчёта уже выбраны.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
+
         #region Методы
-
-        #region Загрузка хим. элементов из базы данных
-        private void LoadElementsCB()
-        {
-            string selectData = "SELECT Name_element FROM ChemicalElements";
-            DataTable dataTable = new DataTable();
-            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
-            adapter.Fill(dataTable);
-            ChemicalElementsCB.DataSource = dataTable;
-            ChemicalElementsCB.ValueMember = "Name_element";
-            ChemicalElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-        #endregion
-
-        #region Загрузка фаз из базы данных
-        private void LoadPhasesCB()
-        {
-            string selectData = "SELECT Name_phase FROM Phases";
-            DataTable dataTable = new DataTable();
-            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
-            adapter.Fill(dataTable);
-            PhasesCB.DataSource = dataTable;
-            PhasesCB.ValueMember = "Name_phase";
-            PhasesCB.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-        #endregion
-
-        #region Загрузка годов из базы данных
-        private void LoadYearsCB()
-        {
-            string selectData = "SELECT DISTINCT Year_sampling FROM SamplingPoints";
-            DataTable dataTable = new DataTable();
-            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
-            adapter.Fill(dataTable);
-            YearsCB.DataSource = dataTable;
-            YearsCB.ValueMember = "Year_sampling";
-            YearsCB.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-        #endregion
-
-        #region Загрузка номера опорных точек из базы данных
-        private void LoadPivotPoints()
-        {
-            string selectDataCLB = "SELECT Number_point FROM SamplingPoints";
-            DataTable dataTable = new DataTable();
-            SqlCommand commandSelect = new SqlCommand(selectDataCLB, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
-            adapter.Fill(dataTable);
-            PivotPointsCLB.DataSource = dataTable;
-            PivotPointsCLB.ValueMember = "Number_point";
-        }
-        #endregion
 
         #region Загрзка точек из базы данных
 
@@ -345,65 +306,6 @@ namespace TechnogenicSoilPollution.UC
         }
         #endregion
 
-        #region Сохранение карты в PNG
-        private void SaveMapPNG()
-        {
-            try
-            {
-                using (SaveFileDialog saveMapDialog = new SaveFileDialog())
-                {
-                    saveMapDialog.Filter = "PNG (*.png)|*.png";
-                    Image imageMap = Gmap.ToImage();
-
-                    if (imageMap != null)
-                    {
-                        using (imageMap)
-                        {
-                            if (saveMapDialog.ShowDialog() == DialogResult.OK)
-                            {
-                                string fileName = saveMapDialog.FileName;
-                                imageMap.Save(fileName);
-                                MessageBox.Show("Карта сохранена в директории: " + Environment.NewLine + saveMapDialog.FileName,
-                                    "Сохранение карты", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        #endregion
-
-        #endregion
-
-        #region Выборка изображения розы ветров на основе выбранного года
-        private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (YearsCB.SelectedIndex == 0)
-            {
-                RoseWindPictureBox.Image = Properties.Resources.Rose_Wind_1996;
-                RoseWindLabel.Text = "Роза ветров за 1996 год";
-            }
-            if (YearsCB.SelectedIndex == 1)
-            {
-                RoseWindPictureBox.Image = Properties.Resources.Rose_Wind_1997;
-                RoseWindLabel.Text = "Роза ветров за 1997 год";
-            }
-        }
-        #endregion
-
-        #region Ограничение на выборку опорных точек
-        private void PivotPointsCLB_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked && PivotPointsCLB.CheckedItems.Count >= 2)
-            {
-                e.NewValue = CheckState.Unchecked;
-                MessageBox.Show("2 опорные точки для расчёта уже выбраны.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        #endregion
+        #endregion       
     }
 }
