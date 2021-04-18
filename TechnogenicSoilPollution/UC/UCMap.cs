@@ -38,14 +38,6 @@ namespace TechnogenicSoilPollution.UC
         //Координаты пользовательского маркера
         double xUserLat = 0;
         double yUserLng = 0;
-
-        //Координаты 1 опорной точки
-        double xSPOneLat = 0;
-        double ySPOneLng = 0;
-
-        //Координаты 2 опорной точки
-        double xSPTwoLat = 0;
-        double ySPTwoLng = 0;
         #endregion
 
         private SqlConnection sqlConnection = null;
