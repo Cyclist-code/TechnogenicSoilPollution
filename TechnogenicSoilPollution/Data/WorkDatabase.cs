@@ -22,13 +22,14 @@ namespace TechnogenicSoilPollution.Data
         #region Загрузка химического элементов в ComboBox
         public static void LoadElementsCB(ComboBox comboBox)
         {
-            string selectData = "SELECT Name_element FROM ChemicalElements";
+            string selectData = "SELECT Id_element, Name_element FROM ChemicalElements";
             System.Data.DataTable dataTable = new System.Data.DataTable();
             SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
             comboBox.DataSource = dataTable;
-            comboBox.ValueMember = "Name_element";
+            comboBox.ValueMember = "Id_element";
+            comboBox.DisplayMember = "Name_element";
             comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         #endregion
@@ -57,11 +58,15 @@ namespace TechnogenicSoilPollution.Data
                 $"FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
                 $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
                 $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
-                $" ChemicalElements.Name_element = '{comboBoxOne.SelectedValue}' AND SamplingPoints.Year_sampling = '{comboBoxTwo.SelectedValue}'";
+                $" ChemicalElements.Id_element = '{comboBoxOne.SelectedValue}' AND SamplingPoints.Year_sampling = '{comboBoxTwo.SelectedValue}'";
             adapter = new SqlDataAdapter(selectData, sqlConnection);
             dataSet = new DataSet();
             adapter.Fill(dataSet);
             dataGridView.DataSource = dataSet.Tables[0];
+
+            //dataGridView.Columns["Id_point"].Visible = false;
+            //dataGridView.Columns["Id_phase"].Visible = false;
+            //dataGridView.Columns["Id_content"].Visible = false;
 
             sqlConnection.Close();
         }
@@ -79,6 +84,48 @@ namespace TechnogenicSoilPollution.Data
             {
                 MessageBox.Show("Добавление новой строки возможно\nтолько при выбранных данных.", "Новая строка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        #endregion
+
+        #region Обновление данных
+        public static void UpdateDataBtn(DataGridView dataGridView, ComboBox comboBox)
+        {
+            sqlConnection.Open();
+
+            if (dataSet != null)
+            {
+                for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+                {
+                    if (dataSet.Tables[0].Rows[i].RowState == DataRowState.Modified)
+                    {
+                        string updateData = "UPDATE SamplingPoints SET Direction = @Direction, Number_point = @Number_point, Distance = @Distance, " +
+                        "Latitude = @Latitude, Longitude = @Longitude, Year_sampling = @Year_sampling WHERE Id_point = @Id_point";
+                        updateData += " UPDATE ContentElements SET Content_elements = @Content_elements, " +
+                            "Stocks_elements = @Stocks_elements WHERE Id_content = @Id_content";
+                        SqlCommand command = new SqlCommand(updateData, sqlConnection);
+                        command.Parameters.AddWithValue("@Direction", dataGridView.Rows[i].Cells[0].Value);
+                        command.Parameters.AddWithValue("@Number_point", dataGridView.Rows[i].Cells[1].Value);
+                        command.Parameters.AddWithValue("@Distance", dataGridView.Rows[i].Cells[2].Value);
+                        command.Parameters.AddWithValue("@Latitude", dataGridView.Rows[i].Cells[3].Value);
+                        command.Parameters.AddWithValue("@Longitude", dataGridView.Rows[i].Cells[4].Value);
+                        command.Parameters.AddWithValue("@Year_sampling", comboBox.SelectedValue.ToString());
+                        command.Parameters.AddWithValue("@Content_elements", dataGridView.Rows[i].Cells[6].Value);
+                        command.Parameters.AddWithValue("@Stocks_elements", dataGridView.Rows[i].Cells[7].Value);
+                        command.Parameters.AddWithValue("@Id_point", Convert.ToInt32(dataGridView.CurrentRow.Cells[8].Value));
+                        command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[10].Value));
+                        adapter.UpdateCommand = command;
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Данные успешно обновлены.", "Обновление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Обновление данных возможно\nтолько при выбранных данных.", "Обновление данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            sqlConnection.Close();
         }
         #endregion
 
