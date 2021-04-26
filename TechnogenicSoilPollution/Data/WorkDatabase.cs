@@ -45,6 +45,60 @@ namespace TechnogenicSoilPollution.Data
             comboBox.ValueMember = "Year_sampling";
             comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        #endregion      
+
+        #region Загрузка данных на основе выборки из 2 ComboBox
+        public static void SelectFilterData(ComboBox comboBoxOne, ComboBox comboBoxTwo, DataGridView dataGridView)
+        {
+            sqlConnection.Open();
+
+            string selectData = $"SELECT SamplingPoints.Direction, SamplingPoints.Number_point, SamplingPoints.Distance, SamplingPoints.Latitude, SamplingPoints.Longitude," +
+                $" Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements, SamplingPoints.Id_point, Phases.Id_phase, ContentElements.Id_content " +
+                $"FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
+                $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
+                $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
+                $" ChemicalElements.Name_element = '{comboBoxOne.SelectedValue}' AND SamplingPoints.Year_sampling = '{comboBoxTwo.SelectedValue}'";
+            adapter = new SqlDataAdapter(selectData, sqlConnection);
+            dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            dataGridView.DataSource = dataSet.Tables[0];
+
+            sqlConnection.Close();
+        }
+        #endregion
+
+        #region Добавление новой строки в DataGridView
+        public static void AddNewRowMethod()
+        {
+            if (dataSet != null)
+            {
+                DataRow newRow = dataSet.Tables[0].NewRow();
+                dataSet.Tables[0].Rows.Add(newRow);
+            }
+            else
+            {
+                MessageBox.Show("Добавление новой строки возможно\nтолько при выбранных данных.", "Новая строка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
+
+        #region Удаление выбранной строки
+        public static void DeleteDataMethod(DataGridView dataGridView)
+        {
+            sqlConnection.Open();
+
+            foreach(DataGridViewRow row in dataGridView.SelectedRows)
+            {
+                string deleteData = "DELETE FROM ContentElements WHERE Id_content = @Id_content";
+                SqlCommand command = new SqlCommand(deleteData, sqlConnection);
+                command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[10].Value));
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Данные успешно удалены.", "Удаление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            sqlConnection.Close();
+        }
         #endregion
 
         #region Экспорт данных в Excel
@@ -107,41 +161,5 @@ namespace TechnogenicSoilPollution.Data
             ExcelFile.Quit();
         }
         #endregion
-
-        #region Загрузка данных на основе выборки из 2 ComboBox
-        public static void SelectFilterData(ComboBox comboBoxOne, ComboBox comboBoxTwo, DataGridView dataGridView)
-        {
-            sqlConnection.Open();
-
-            string selectData = $"SELECT SamplingPoints.Direction, SamplingPoints.Number_point, SamplingPoints.Distance, SamplingPoints.Latitude, SamplingPoints.Longitude," +
-                $" Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
-                $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
-                $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
-                $" ChemicalElements.Name_element = '{comboBoxOne.SelectedValue}' AND SamplingPoints.Year_sampling = '{comboBoxTwo.SelectedValue}'";
-            adapter = new SqlDataAdapter(selectData, sqlConnection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            dataGridView.DataSource = dataSet.Tables[0];
-
-            sqlConnection.Close();
-        }
-        #endregion
-
-        #region Добавление новой строки в DataGridView
-        public static void AddNewRowMethod()
-        {
-            if (dataSet != null)
-            {
-                DataRow newRow = dataSet.Tables[0].NewRow();
-                dataSet.Tables[0].Rows.Add(newRow);
-            }
-            else
-            {
-                MessageBox.Show("Добавление новой строки возможно\nтолько при выбранных данных.", "Новая строка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        #endregion
-
-
     }
 }

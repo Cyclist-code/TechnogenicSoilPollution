@@ -56,7 +56,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void DeleteDataBtn_Click(object sender, EventArgs e)
         {
-            
+            WorkDatabase.DeleteDataMethod(MainDataGridView);
         }
 
         private void ExportDataBtn_Click(object sender, EventArgs e)
