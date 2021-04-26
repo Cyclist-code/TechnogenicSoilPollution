@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.Data;
 
 namespace TechnogenicSoilPollution.Data
 {
@@ -10,7 +11,8 @@ namespace TechnogenicSoilPollution.Data
     {
         private static SqlConnection sqlConnection = null;
         private static SqlDataAdapter adapter = null;
-        private static System.Data.DataTable table = null;
+        //private static System.Data.DataTable table = null;
+        private static DataSet dataSet = null;
 
         static WorkDatabase()
         {
@@ -117,13 +119,29 @@ namespace TechnogenicSoilPollution.Data
                 $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
                 $" ChemicalElements.Name_element = '{comboBoxOne.SelectedValue}' AND SamplingPoints.Year_sampling = '{comboBoxTwo.SelectedValue}'";
             adapter = new SqlDataAdapter(selectData, sqlConnection);
-            table = new System.Data.DataTable();
-            adapter.Fill(table);
-            dataGridView.DataSource = table;
+            dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            dataGridView.DataSource = dataSet.Tables[0];
 
             sqlConnection.Close();
         }
         #endregion
+
+        #region Добавление новой строки в DataGridView
+        public static void AddNewRowMethod()
+        {
+            if (dataSet != null)
+            {
+                DataRow newRow = dataSet.Tables[0].NewRow();
+                dataSet.Tables[0].Rows.Add(newRow);
+            }
+            else
+            {
+                MessageBox.Show("Добавление новой строки возможно\nтолько при выбранных данных.", "Новая строка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
+
 
     }
 }

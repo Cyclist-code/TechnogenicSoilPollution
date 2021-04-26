@@ -41,7 +41,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void AddNewRowBtn_Click(object sender, EventArgs e)
         {
-
+            WorkDatabase.AddNewRowMethod();
         }
 
         private void UpdateDataBtn_Click(object sender, EventArgs e)
