@@ -31,6 +31,14 @@ namespace TechnogenicSoilPollution.UC
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.MainDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DeleteDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ExportDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -40,14 +48,8 @@ namespace TechnogenicSoilPollution.UC
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SelectElementsCB = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddNewRowBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.AddDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +68,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             // MainDataGridView
             // 
+            this.MainDataGridView.AllowUserToAddRows = false;
             this.MainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -81,42 +84,92 @@ namespace TechnogenicSoilPollution.UC
             this.MainDataGridView.Size = new System.Drawing.Size(1021, 526);
             this.MainDataGridView.TabIndex = 2;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Direction";
+            this.Column1.HeaderText = "Направление";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Number_point";
+            this.Column2.HeaderText = "№ точки";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Distance";
+            this.Column3.HeaderText = "Расстояние";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Latitude";
+            this.Column4.HeaderText = "Широта";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Longitude";
+            this.Column5.HeaderText = "Долгота";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Name_phase";
+            this.Column6.HeaderText = "Фаза";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Content_elements";
+            this.Column7.HeaderText = "Содержание";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 130;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Stocks_elements";
+            this.Column8.HeaderText = "Запасы";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 120;
+            // 
             // UpdateDataBtn
             // 
             this.UpdateDataBtn.Depth = 0;
-            this.UpdateDataBtn.Location = new System.Drawing.Point(363, 600);
+            this.UpdateDataBtn.Location = new System.Drawing.Point(465, 596);
             this.UpdateDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.UpdateDataBtn.Name = "UpdateDataBtn";
             this.UpdateDataBtn.Primary = true;
-            this.UpdateDataBtn.Size = new System.Drawing.Size(100, 40);
+            this.UpdateDataBtn.Size = new System.Drawing.Size(130, 44);
             this.UpdateDataBtn.TabIndex = 3;
-            this.UpdateDataBtn.Text = "Обновить";
+            this.UpdateDataBtn.Text = "Обновить данные";
             this.UpdateDataBtn.UseVisualStyleBackColor = true;
             this.UpdateDataBtn.Click += new System.EventHandler(this.UpdateDataBtn_Click);
             // 
             // DeleteDataBtn
             // 
             this.DeleteDataBtn.Depth = 0;
-            this.DeleteDataBtn.Location = new System.Drawing.Point(469, 600);
+            this.DeleteDataBtn.Location = new System.Drawing.Point(737, 596);
             this.DeleteDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteDataBtn.Name = "DeleteDataBtn";
             this.DeleteDataBtn.Primary = true;
-            this.DeleteDataBtn.Size = new System.Drawing.Size(100, 40);
+            this.DeleteDataBtn.Size = new System.Drawing.Size(130, 44);
             this.DeleteDataBtn.TabIndex = 4;
-            this.DeleteDataBtn.Text = "Удалить";
+            this.DeleteDataBtn.Text = "Удалить данные";
             this.DeleteDataBtn.UseVisualStyleBackColor = true;
             this.DeleteDataBtn.Click += new System.EventHandler(this.DeleteDataBtn_Click);
             // 
             // ExportDataBtn
             // 
             this.ExportDataBtn.Depth = 0;
-            this.ExportDataBtn.Location = new System.Drawing.Point(575, 600);
+            this.ExportDataBtn.Location = new System.Drawing.Point(873, 596);
             this.ExportDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDataBtn.Name = "ExportDataBtn";
             this.ExportDataBtn.Primary = true;
-            this.ExportDataBtn.Size = new System.Drawing.Size(140, 40);
+            this.ExportDataBtn.Size = new System.Drawing.Size(130, 44);
             this.ExportDataBtn.TabIndex = 5;
-            this.ExportDataBtn.Text = "Экпортировать";
+            this.ExportDataBtn.Text = "Экспорт данных";
             this.ExportDataBtn.UseVisualStyleBackColor = true;
             this.ExportDataBtn.Click += new System.EventHandler(this.ExportDataBtn_Click);
             // 
@@ -182,60 +235,38 @@ namespace TechnogenicSoilPollution.UC
             this.SelectElementsCB.Size = new System.Drawing.Size(121, 21);
             this.SelectElementsCB.TabIndex = 11;
             // 
-            // Column1
+            // AddNewRowBtn
             // 
-            this.Column1.DataPropertyName = "Direction";
-            this.Column1.HeaderText = "Направление";
-            this.Column1.Name = "Column1";
+            this.AddNewRowBtn.Depth = 0;
+            this.AddNewRowBtn.Location = new System.Drawing.Point(329, 596);
+            this.AddNewRowBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddNewRowBtn.Name = "AddNewRowBtn";
+            this.AddNewRowBtn.Primary = true;
+            this.AddNewRowBtn.Size = new System.Drawing.Size(130, 44);
+            this.AddNewRowBtn.TabIndex = 12;
+            this.AddNewRowBtn.Text = "Добавить строку";
+            this.AddNewRowBtn.UseVisualStyleBackColor = true;
+            this.AddNewRowBtn.Click += new System.EventHandler(this.AddNewRowBtn_Click);
             // 
-            // Column2
+            // AddDataBtn
             // 
-            this.Column2.DataPropertyName = "Number_point";
-            this.Column2.HeaderText = "№ точки";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Distance";
-            this.Column3.HeaderText = "Расстояние";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Latitude";
-            this.Column4.HeaderText = "Широта";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Longitude";
-            this.Column5.HeaderText = "Долгота";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Name_phase";
-            this.Column6.HeaderText = "Фаза";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Content_elements";
-            this.Column7.HeaderText = "Содержание";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 130;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Stocks_elements";
-            this.Column8.HeaderText = "Запасы";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 120;
+            this.AddDataBtn.Depth = 0;
+            this.AddDataBtn.Location = new System.Drawing.Point(601, 596);
+            this.AddDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AddDataBtn.Name = "AddDataBtn";
+            this.AddDataBtn.Primary = true;
+            this.AddDataBtn.Size = new System.Drawing.Size(130, 44);
+            this.AddDataBtn.TabIndex = 13;
+            this.AddDataBtn.Text = "Добавить данные";
+            this.AddDataBtn.UseVisualStyleBackColor = true;
+            this.AddDataBtn.Click += new System.EventHandler(this.AddDataBtn_Click);
             // 
             // UCData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.AddDataBtn);
+            this.Controls.Add(this.AddNewRowBtn);
             this.Controls.Add(this.SelectElementsCB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -277,5 +308,7 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private MaterialSkin.Controls.MaterialRaisedButton AddNewRowBtn;
+        private MaterialSkin.Controls.MaterialRaisedButton AddDataBtn;
     }
 }

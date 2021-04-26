@@ -39,14 +39,24 @@ namespace TechnogenicSoilPollution.UC
             WorkDatabase.SelectFilterData(SelectElementsCB, SelectYearCB, MainDataGridView);
         }
 
+        private void AddNewRowBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void UpdateDataBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddDataBtn_Click(object sender, EventArgs e)
         {
 
         }
 
         private void DeleteDataBtn_Click(object sender, EventArgs e)
         {
-            DeleteDataMethod();
+            
         }
 
         private void ExportDataBtn_Click(object sender, EventArgs e)
@@ -54,34 +64,6 @@ namespace TechnogenicSoilPollution.UC
             WorkDatabase.ExportDataExcel(MainDataGridView);
         }
 
-        #endregion
-
-        #region Методы
-
-        #region Обновление базы данных
-        private void UpdateDataMethod()
-        {
-
-        }
-        #endregion
-
-        #region Удаление выделенной строки
-        private void DeleteDataMethod()
-        {
-            try
-            {
-                foreach (DataGridViewRow dataRow in MainDataGridView.SelectedRows)
-                {
-                    MainDataGridView.Rows.Remove(dataRow);
-                }
-            }
-            catch (InvalidOperationException exception)
-            {
-                MessageBox.Show(exception.Message, "Ошибка при удалении", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        #endregion
-
-        #endregion
+        #endregion       
     }
 }
