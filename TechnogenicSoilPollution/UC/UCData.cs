@@ -46,12 +46,12 @@ namespace TechnogenicSoilPollution.UC
 
         private void UpdateDataBtn_Click(object sender, EventArgs e)
         {
-            //WorkDatabase.UpdateDataBtn(MainDataGridView, SelectYearCB);
+            WorkDatabase.UpdateDataBtn(MainDataGridView, SelectYearCB);
         }
 
         private void AddDataBtn_Click(object sender, EventArgs e)
         {
-
+            WorkDatabase.AddNewDataMethod(SelectYearCB, SelectElementsCB, MainDataGridView);
         }
 
         private void DeleteDataBtn_Click(object sender, EventArgs e)
