@@ -45,11 +45,10 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SelectYearCB = new System.Windows.Forms.ComboBox();
             this.SelectDataFiltersBtn = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SelectElementsCB = new System.Windows.Forms.ComboBox();
             this.AddNewRowBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.AddDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.ReferenceDataBaseBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +136,7 @@ namespace TechnogenicSoilPollution.UC
             // UpdateDataBtn
             // 
             this.UpdateDataBtn.Depth = 0;
-            this.UpdateDataBtn.Location = new System.Drawing.Point(465, 596);
+            this.UpdateDataBtn.Location = new System.Drawing.Point(388, 596);
             this.UpdateDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.UpdateDataBtn.Name = "UpdateDataBtn";
             this.UpdateDataBtn.Primary = true;
@@ -150,7 +149,7 @@ namespace TechnogenicSoilPollution.UC
             // DeleteDataBtn
             // 
             this.DeleteDataBtn.Depth = 0;
-            this.DeleteDataBtn.Location = new System.Drawing.Point(737, 596);
+            this.DeleteDataBtn.Location = new System.Drawing.Point(660, 596);
             this.DeleteDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteDataBtn.Name = "DeleteDataBtn";
             this.DeleteDataBtn.Primary = true;
@@ -163,7 +162,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportDataBtn
             // 
             this.ExportDataBtn.Depth = 0;
-            this.ExportDataBtn.Location = new System.Drawing.Point(873, 596);
+            this.ExportDataBtn.Location = new System.Drawing.Point(796, 596);
             this.ExportDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDataBtn.Name = "ExportDataBtn";
             this.ExportDataBtn.Primary = true;
@@ -207,26 +206,6 @@ namespace TechnogenicSoilPollution.UC
             this.SelectDataFiltersBtn.UseVisualStyleBackColor = true;
             this.SelectDataFiltersBtn.Click += new System.EventHandler(this.SelectDataFiltersBtn_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(2, 604);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 36);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "\"-\" - означает, что для выбранного элемента\r\nне проводидись измеренеия.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(2, 586);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Подсказка:";
-            // 
             // SelectElementsCB
             // 
             this.SelectElementsCB.FormattingEnabled = true;
@@ -238,7 +217,7 @@ namespace TechnogenicSoilPollution.UC
             // AddNewRowBtn
             // 
             this.AddNewRowBtn.Depth = 0;
-            this.AddNewRowBtn.Location = new System.Drawing.Point(329, 596);
+            this.AddNewRowBtn.Location = new System.Drawing.Point(252, 596);
             this.AddNewRowBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddNewRowBtn.Name = "AddNewRowBtn";
             this.AddNewRowBtn.Primary = true;
@@ -251,7 +230,7 @@ namespace TechnogenicSoilPollution.UC
             // AddDataBtn
             // 
             this.AddDataBtn.Depth = 0;
-            this.AddDataBtn.Location = new System.Drawing.Point(601, 596);
+            this.AddDataBtn.Location = new System.Drawing.Point(524, 596);
             this.AddDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddDataBtn.Name = "AddDataBtn";
             this.AddDataBtn.Primary = true;
@@ -261,15 +240,27 @@ namespace TechnogenicSoilPollution.UC
             this.AddDataBtn.UseVisualStyleBackColor = true;
             this.AddDataBtn.Click += new System.EventHandler(this.AddDataBtn_Click);
             // 
+            // ReferenceDataBaseBtn
+            // 
+            this.ReferenceDataBaseBtn.Depth = 0;
+            this.ReferenceDataBaseBtn.Location = new System.Drawing.Point(116, 596);
+            this.ReferenceDataBaseBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ReferenceDataBaseBtn.Name = "ReferenceDataBaseBtn";
+            this.ReferenceDataBaseBtn.Primary = true;
+            this.ReferenceDataBaseBtn.Size = new System.Drawing.Size(130, 44);
+            this.ReferenceDataBaseBtn.TabIndex = 14;
+            this.ReferenceDataBaseBtn.Text = "Справка";
+            this.ReferenceDataBaseBtn.UseVisualStyleBackColor = true;
+            this.ReferenceDataBaseBtn.Click += new System.EventHandler(this.ReferenceDataBaseBtn_Click);
+            // 
             // UCData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ReferenceDataBaseBtn);
             this.Controls.Add(this.AddDataBtn);
             this.Controls.Add(this.AddNewRowBtn);
             this.Controls.Add(this.SelectElementsCB);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.SelectDataFiltersBtn);
             this.Controls.Add(this.SelectYearCB);
             this.Controls.Add(this.materialLabel2);
@@ -297,8 +288,6 @@ namespace TechnogenicSoilPollution.UC
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ComboBox SelectYearCB;
         private MaterialSkin.Controls.MaterialRaisedButton SelectDataFiltersBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox SelectElementsCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -310,5 +299,6 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private MaterialSkin.Controls.MaterialRaisedButton AddNewRowBtn;
         private MaterialSkin.Controls.MaterialRaisedButton AddDataBtn;
+        private MaterialSkin.Controls.MaterialRaisedButton ReferenceDataBaseBtn;
     }
 }

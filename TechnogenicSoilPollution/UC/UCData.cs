@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.Data;
+using TechnogenicSoilPollution.Forms;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -37,6 +38,12 @@ namespace TechnogenicSoilPollution.UC
         private void SelectDataFiltersBtn_Click(object sender, EventArgs e)
         {
             WorkDatabase.SelectFilterData(SelectElementsCB, SelectYearCB, MainDataGridView);
+        }
+
+        private void ReferenceDataBaseBtn_Click(object sender, EventArgs e)
+        {
+            ReferenceWorkDBForm workDBForm = new ReferenceWorkDBForm();
+            workDBForm.ShowDialog();
         }
 
         private void AddNewRowBtn_Click(object sender, EventArgs e)

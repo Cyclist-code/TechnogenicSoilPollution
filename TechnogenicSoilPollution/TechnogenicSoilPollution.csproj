@@ -114,6 +114,12 @@
     <Compile Include="Forms\ReferenceProgramForm.Designer.cs">
       <DependentUpon>ReferenceProgramForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReferenceWorkDBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReferenceWorkDBForm.Designer.cs">
+      <DependentUpon>ReferenceWorkDBForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC\UCData.cs">
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReferenceProgramForm.resx">
       <DependentUpon>ReferenceProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReferenceWorkDBForm.resx">
+      <DependentUpon>ReferenceWorkDBForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
