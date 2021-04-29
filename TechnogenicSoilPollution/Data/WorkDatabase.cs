@@ -52,19 +52,17 @@ namespace TechnogenicSoilPollution.Data
         {
             sqlConnection.Open();
 
-            string selectData = $"SELECT SamplingPoints.Direction, SamplingPoints.Number_point, SamplingPoints.Distance, SamplingPoints.Latitude, SamplingPoints.Longitude," +
-                $" Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements, SamplingPoints.Id_point, Phases.Id_phase, ContentElements.Id_content " +
-                $"FROM ChemicalElements,SamplingPoints, Phases, ContentElements " +
-                $"WHERE ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase" +
-                $" AND ContentElements.Id_points = SamplingPoints.Id_point AND" +
-                $" ChemicalElements.Id_element = '{SelectElementsCB.SelectedValue}' AND SamplingPoints.Year_sampling = '{SelectYearCB.SelectedValue}'";
+            string selectData = $"SELECT SamplingPoints.Direction, SamplingPoints.Number_point, SamplingPoints.Distance, SamplingPoints.Latitude, SamplingPoints.Longitude, " +
+                $"Phases.Name_phase, ContentElements.Content_elements, ContentElements.Stocks_elements, SamplingPoints.Id_point, ContentElements.Id_content " +
+                $"FROM ContentElements INNER JOIN SamplingPoints ON ContentElements.Id_points = SamplingPoints.Id_point INNER JOIN Phases ON ContentElements.Id_phases = Phases.Id_phase " +
+                $"INNER JOIN ChemicalElements ON ContentElements.Id_elements = ChemicalElements.Id_element WHERE " +
+                $"ChemicalElements.Id_element = '{SelectElementsCB.SelectedValue}' AND SamplingPoints.Year_sampling = '{SelectYearCB.SelectedValue}'";
             adapter = new SqlDataAdapter(selectData, sqlConnection);
             dataSet = new DataSet();
             adapter.Fill(dataSet);
             dataGridView.DataSource = dataSet.Tables[0];
 
             dataGridView.Columns["Id_point"].Visible = false;
-            dataGridView.Columns["Id_phase"].Visible = false;
             dataGridView.Columns["Id_content"].Visible = false;
 
             sqlConnection.Close();
