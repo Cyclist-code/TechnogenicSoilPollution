@@ -207,18 +207,22 @@ namespace TechnogenicSoilPollution.Data
 
             try
             {
-                for (int i = 1; i < dataGridView.Columns.Count + 1; i++)
-                {
-                    worksheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
-                    worksheet.Cells[1, i].Font.Bold = true;
-                }
+                int k = 1;
 
-                for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
                     for (int j = 0; j < dataGridView.Columns.Count; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value;
+                        if (dataGridView.Columns[j].Visible)
+                        {
+                            worksheet.Cells[1, k] = dataGridView.Columns[j].HeaderText;
+                            worksheet.Cells[1, k].Font.Bold = true;
+                            worksheet.Cells[i + 2, k] = dataGridView.Rows[i].Cells[j].Value;
+                            k++;
+                        }                       
                     }
+
+                    k = 1;
                 }
 
                 worksheet.Columns.EntireColumn.AutoFit();
