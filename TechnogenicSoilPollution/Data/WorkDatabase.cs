@@ -179,12 +179,20 @@ namespace TechnogenicSoilPollution.Data
 
             foreach (DataGridViewRow row in dataGridView.SelectedRows)
             {
-                string deleteData = "DELETE FROM ContentElements WHERE Id_content = @Id_content";
-                SqlCommand command = new SqlCommand(deleteData, sqlConnection);
-                command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[10].Value));
-                command.ExecuteNonQuery();
+                if (dataGridView.CurrentRow.Cells[10].Value != DBNull.Value)
+                {
+                    string deleteData = "DELETE FROM ContentElements WHERE Id_content = @Id_content";
+                    SqlCommand command = new SqlCommand(deleteData, sqlConnection);
+                    command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[10].Value));
+                    command.ExecuteNonQuery();
 
-                MessageBox.Show("Данные успешно удалены.", "Удаление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Данные успешно удалены.", "Удаление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Пустую строку удалить нельзя.", "Удаление строки", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
 
             sqlConnection.Close();
