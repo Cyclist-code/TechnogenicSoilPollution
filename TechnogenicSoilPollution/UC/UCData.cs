@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.Data;
 using TechnogenicSoilPollution.Forms;
+using System.Drawing;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -29,8 +30,18 @@ namespace TechnogenicSoilPollution.UC
             WorkDatabase.LoadElementsCB(SelectElementsCB);
             WorkDatabase.LoadYearsCB(SelectYearCB);
             WorkDatabase.LoadPhasesCB(SelectPhasesCB);
+            ToolTipPhasesCB();
 
             sqlConnection.Close();
+        }
+        #endregion
+
+        #region Подсказка при наведении на LoadPhasesCB
+        private void ToolTipPhasesCB()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(materialLabelPhase, "Данный выпадающий список нужен\nтолько для добавления новых данных");
+            toolTip.SetToolTip(SelectPhasesCB, "Данный выпадающий список нужен\nтолько для добавления новых данных");
         }
         #endregion
 
