@@ -18,6 +18,21 @@ namespace TechnogenicSoilPollution.Data
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
         }
 
+        #region Загрузка фаз пробоотбора в ComboBox
+        public static void LoadPhasesCB(ComboBox comboBox)
+        {
+            string selectData = "SELECT * FROM Phases";
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
+            adapter.Fill(dataTable);
+            comboBox.DataSource = dataTable;
+            comboBox.ValueMember = "Id_phase";
+            comboBox.DisplayMember = "Name_phase";
+            comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+        #endregion
+
         #region Загрузка химического элементов в ComboBox
         public static void LoadElementsCB(ComboBox comboBox)
         {

@@ -28,6 +28,7 @@ namespace TechnogenicSoilPollution.UC
 
             WorkDatabase.LoadElementsCB(SelectElementsCB);
             WorkDatabase.LoadYearsCB(SelectYearCB);
+            WorkDatabase.LoadPhasesCB(SelectPhasesCB);
 
             sqlConnection.Close();
         }
