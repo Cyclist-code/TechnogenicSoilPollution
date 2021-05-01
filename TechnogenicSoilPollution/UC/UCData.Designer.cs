@@ -90,6 +90,7 @@ namespace TechnogenicSoilPollution.UC
             this.MainDataGridView.Name = "MainDataGridView";
             this.MainDataGridView.Size = new System.Drawing.Size(1021, 526);
             this.MainDataGridView.TabIndex = 2;
+            this.MainDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.MainDataGridView_DataError);
             // 
             // Column1
             // 
@@ -145,7 +146,7 @@ namespace TechnogenicSoilPollution.UC
             // UpdateDataBtn
             // 
             this.UpdateDataBtn.Depth = 0;
-            this.UpdateDataBtn.Location = new System.Drawing.Point(388, 596);
+            this.UpdateDataBtn.Location = new System.Drawing.Point(383, 596);
             this.UpdateDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.UpdateDataBtn.Name = "UpdateDataBtn";
             this.UpdateDataBtn.Primary = true;
@@ -158,7 +159,7 @@ namespace TechnogenicSoilPollution.UC
             // DeleteDataBtn
             // 
             this.DeleteDataBtn.Depth = 0;
-            this.DeleteDataBtn.Location = new System.Drawing.Point(660, 596);
+            this.DeleteDataBtn.Location = new System.Drawing.Point(655, 596);
             this.DeleteDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteDataBtn.Name = "DeleteDataBtn";
             this.DeleteDataBtn.Primary = true;
@@ -171,7 +172,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportDataBtn
             // 
             this.ExportDataBtn.Depth = 0;
-            this.ExportDataBtn.Location = new System.Drawing.Point(796, 596);
+            this.ExportDataBtn.Location = new System.Drawing.Point(791, 596);
             this.ExportDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDataBtn.Name = "ExportDataBtn";
             this.ExportDataBtn.Primary = true;
@@ -226,7 +227,7 @@ namespace TechnogenicSoilPollution.UC
             // AddNewRowBtn
             // 
             this.AddNewRowBtn.Depth = 0;
-            this.AddNewRowBtn.Location = new System.Drawing.Point(252, 596);
+            this.AddNewRowBtn.Location = new System.Drawing.Point(247, 596);
             this.AddNewRowBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddNewRowBtn.Name = "AddNewRowBtn";
             this.AddNewRowBtn.Primary = true;
@@ -239,7 +240,7 @@ namespace TechnogenicSoilPollution.UC
             // AddDataBtn
             // 
             this.AddDataBtn.Depth = 0;
-            this.AddDataBtn.Location = new System.Drawing.Point(524, 596);
+            this.AddDataBtn.Location = new System.Drawing.Point(519, 596);
             this.AddDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddDataBtn.Name = "AddDataBtn";
             this.AddDataBtn.Primary = true;
@@ -252,7 +253,7 @@ namespace TechnogenicSoilPollution.UC
             // ReferenceDataBaseBtn
             // 
             this.ReferenceDataBaseBtn.Depth = 0;
-            this.ReferenceDataBaseBtn.Location = new System.Drawing.Point(116, 596);
+            this.ReferenceDataBaseBtn.Location = new System.Drawing.Point(111, 596);
             this.ReferenceDataBaseBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ReferenceDataBaseBtn.Name = "ReferenceDataBaseBtn";
             this.ReferenceDataBaseBtn.Primary = true;
@@ -288,7 +289,7 @@ namespace TechnogenicSoilPollution.UC
             // SelectPhasesCB
             // 
             this.SelectPhasesCB.FormattingEnabled = true;
-            this.SelectPhasesCB.Location = new System.Drawing.Point(58, 2);
+            this.SelectPhasesCB.Location = new System.Drawing.Point(58, 3);
             this.SelectPhasesCB.Name = "SelectPhasesCB";
             this.SelectPhasesCB.Size = new System.Drawing.Size(119, 21);
             this.SelectPhasesCB.TabIndex = 15;

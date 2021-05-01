@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.Data;
 using TechnogenicSoilPollution.Forms;
-using System.Drawing;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -83,6 +82,14 @@ namespace TechnogenicSoilPollution.UC
             WorkDatabase.ExportDataExcel(MainDataGridView);
         }
 
-        #endregion       
+        #endregion
+
+        #region Обработка ошибок при вводе неверного формата в DataGridView
+        private void MainDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Данная ячейка имела неверный формат данных.", "Ошибка формата данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        #endregion
+
     }
 }
