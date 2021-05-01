@@ -69,7 +69,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void AddDataBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.AddNewDataMethod(SelectYearCB, SelectElementsCB, MainDataGridView);
+            WorkDatabase.AddNewDataMethod(SelectYearCB, SelectElementsCB, SelectPhasesCB, MainDataGridView);
         }
 
         private void DeleteDataBtn_Click(object sender, EventArgs e)

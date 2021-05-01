@@ -124,7 +124,7 @@ namespace TechnogenicSoilPollution.Data
                         command.Parameters.AddWithValue("@Content_elements", dataGridView.Rows[i].Cells[6].Value);
                         command.Parameters.AddWithValue("@Stocks_elements", dataGridView.Rows[i].Cells[7].Value);
                         command.Parameters.AddWithValue("@Id_point", Convert.ToInt32(dataGridView.CurrentRow.Cells[8].Value));
-                        command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[10].Value));
+                        command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[9].Value));
                         adapter.UpdateCommand = command;
                         command.ExecuteNonQuery();
 
@@ -142,7 +142,7 @@ namespace TechnogenicSoilPollution.Data
         #endregion
 
         #region Добавление новых данных
-        public static void AddNewDataMethod(ComboBox SelectYearCB, ComboBox SelectElementsCB, DataGridView dataGridView)
+        public static void AddNewDataMethod(ComboBox SelectYearCB, ComboBox SelectElementsCB, ComboBox SelectPhasesCB, DataGridView dataGridView)
         {
             sqlConnection.Open();
 
@@ -154,8 +154,8 @@ namespace TechnogenicSoilPollution.Data
                     {
                         string insertData = "INSERT INTO SamplingPoints (Direction, Number_point, Distance, Latitude, Longitude, Year_sampling)" +
                         "VALUES (@Direction, @Number_point, @Distance, @Latitude, @Longitude, @Year_sampling)";
-                        insertData += "INSERT INTO ContentElements (Id_elements, Content_elements, Stocks_elements) " +
-                            "VALUES (@Id_elements, @Content_elements, @Stocks_elements)";
+                        insertData += "INSERT INTO ContentElements (Id_elements, Id_phases, Id_points, Content_elements, Stocks_elements) " +
+                            "VALUES (@Id_elements, @Id_phases, SCOPE_IDENTITY(), @Content_elements, @Stocks_elements)";
 
                         SqlCommand command = new SqlCommand(insertData, sqlConnection);
                         command.Parameters.AddWithValue("@Direction", dataGridView.Rows[i].Cells[0].Value);
@@ -165,10 +165,9 @@ namespace TechnogenicSoilPollution.Data
                         command.Parameters.AddWithValue("@Longitude", dataGridView.Rows[i].Cells[4].Value);
                         command.Parameters.AddWithValue("@Year_sampling", SelectYearCB.SelectedValue.ToString());
                         command.Parameters.AddWithValue("@Id_elements", int.Parse(SelectElementsCB.SelectedValue.ToString()));
+                        command.Parameters.AddWithValue("@Id_phases", int.Parse(SelectPhasesCB.SelectedValue.ToString()));
                         command.Parameters.AddWithValue("@Content_elements", dataGridView.Rows[i].Cells[6].Value);
-                        command.Parameters.AddWithValue("@Stocks_elements", dataGridView.Rows[i].Cells[7].Value);
-
-                        //TODO: Продумать и сделать добавление id трёх таблиц: элементы, фазы и точки.                        
+                        command.Parameters.AddWithValue("@Stocks_elements", dataGridView.Rows[i].Cells[7].Value);                        
                         adapter.InsertCommand = command;
                         command.ExecuteNonQuery();
 
@@ -192,11 +191,11 @@ namespace TechnogenicSoilPollution.Data
 
             foreach (DataGridViewRow row in dataGridView.SelectedRows)
             {
-                if (dataGridView.CurrentRow.Cells[10].Value != DBNull.Value)
+                if (dataGridView.CurrentRow.Cells[9].Value != DBNull.Value)
                 {
                     string deleteData = "DELETE FROM ContentElements WHERE Id_content = @Id_content";
                     SqlCommand command = new SqlCommand(deleteData, sqlConnection);
-                    command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[10].Value));
+                    command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[9].Value));
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Данные успешно удалены.", "Удаление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -31,14 +31,6 @@ namespace TechnogenicSoilPollution.UC
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.MainDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DeleteDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ExportDataBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -54,6 +46,14 @@ namespace TechnogenicSoilPollution.UC
             this.SelectPhasesCB = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MainDataGridView)).BeginInit();
             this.panelPhases.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,57 +91,6 @@ namespace TechnogenicSoilPollution.UC
             this.MainDataGridView.Size = new System.Drawing.Size(1021, 526);
             this.MainDataGridView.TabIndex = 2;
             this.MainDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.MainDataGridView_DataError);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Direction";
-            this.Column1.HeaderText = "Направление";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Number_point";
-            this.Column2.HeaderText = "№ точки";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Distance";
-            this.Column3.HeaderText = "Расстояние";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Latitude";
-            this.Column4.HeaderText = "Широта";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Longitude";
-            this.Column5.HeaderText = "Долгота";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Name_phase";
-            this.Column6.HeaderText = "Фаза";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Content_elements";
-            this.Column7.HeaderText = "Содержание";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 130;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Stocks_elements";
-            this.Column8.HeaderText = "Запасы";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 120;
             // 
             // UpdateDataBtn
             // 
@@ -314,6 +263,58 @@ namespace TechnogenicSoilPollution.UC
             this.panel2.Size = new System.Drawing.Size(157, 30);
             this.panel2.TabIndex = 19;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Direction";
+            this.Column1.HeaderText = "Направление";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Number_point";
+            this.Column2.HeaderText = "№ точки";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Distance";
+            this.Column3.HeaderText = "Расстояние";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Latitude";
+            this.Column4.HeaderText = "Широта";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Longitude";
+            this.Column5.HeaderText = "Долгота";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Name_phase";
+            this.Column6.HeaderText = "Фаза";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Content_elements";
+            this.Column7.HeaderText = "Содержание";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 130;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Stocks_elements";
+            this.Column8.HeaderText = "Запасы";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 120;
+            // 
             // UCData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +358,11 @@ namespace TechnogenicSoilPollution.UC
         private MaterialSkin.Controls.MaterialRaisedButton AddNewRowBtn;
         private MaterialSkin.Controls.MaterialRaisedButton AddDataBtn;
         private MaterialSkin.Controls.MaterialRaisedButton ReferenceDataBaseBtn;
+        private System.Windows.Forms.Panel panelPhases;
+        private MaterialSkin.Controls.MaterialLabel materialLabelPhase;
+        private System.Windows.Forms.ComboBox SelectPhasesCB;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -365,10 +371,5 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Panel panelPhases;
-        private MaterialSkin.Controls.MaterialLabel materialLabelPhase;
-        private System.Windows.Forms.ComboBox SelectPhasesCB;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
