@@ -34,14 +34,21 @@ namespace TechnogenicSoilPollution.Data
         #region Загрузка хим. элементов из базы данных
         public static void LoadElementsCB(ComboBox ChemicalElementsCB)
         {
+            sqlConnection.Open();
+
             string selectData = "SELECT Name_element FROM ChemicalElements";
-            DataTable dataTable = new DataTable();
             SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
-            adapter.Fill(dataTable);
-            ChemicalElementsCB.DataSource = dataTable;
-            ChemicalElementsCB.ValueMember = "Name_element";
+            SqlDataReader reader = commandSelect.ExecuteReader();
+            while (reader.Read())
+            {
+                string subname = reader.GetString(0);
+                ChemicalElementsCB.Items.Add(subname);
+            }
+            ChemicalElementsCB.SelectedIndex = 0;
             ChemicalElementsCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            reader.Close();
+
+            sqlConnection.Close();
         }
         #endregion
 
