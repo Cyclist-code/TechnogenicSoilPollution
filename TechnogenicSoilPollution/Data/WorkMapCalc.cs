@@ -55,14 +55,21 @@ namespace TechnogenicSoilPollution.Data
         #region Загрузка фаз из базы данных
         public static void LoadPhasesCB(ComboBox PhasesCB)
         {
+            sqlConnection.Open();
+
             string selectData = "SELECT Name_phase FROM Phases";
-            DataTable dataTable = new DataTable();
             SqlCommand commandSelect = new SqlCommand(selectData, sqlConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
-            adapter.Fill(dataTable);
-            PhasesCB.DataSource = dataTable;
-            PhasesCB.ValueMember = "Name_phase";
+            SqlDataReader reader = commandSelect.ExecuteReader();
+            while (reader.Read())
+            {
+                string subname = reader.GetString(0);
+                PhasesCB.Items.Add(subname);
+            }
+            PhasesCB.SelectedIndex = 0;
             PhasesCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            reader.Close();
+
+            sqlConnection.Close();
         }
         #endregion
 
