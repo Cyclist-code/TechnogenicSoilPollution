@@ -87,16 +87,21 @@ namespace TechnogenicSoilPollution.Data
         }
         #endregion
 
-        #region Загрузка номера опорных точек из базы данных
+        #region Загрузка опорных точек из базы данных
         public static void LoadPivotPoints(CheckedListBox PivotPointsCLB)
         {
-            string selectDataCLB = "SELECT Number_point FROM SamplingPoints";
+            string selectDataCLB = "SELECT Id_point FROM SamplingPoints";
             DataTable dataTable = new DataTable();
-            SqlCommand commandSelect = new SqlCommand(selectDataCLB, sqlConnection);
+            SqlCommand commandSelect = new SqlCommand();
+            commandSelect.Connection = sqlConnection;
+            commandSelect.CommandText = selectDataCLB;
             SqlDataAdapter adapter = new SqlDataAdapter(commandSelect);
             adapter.Fill(dataTable);
-            PivotPointsCLB.DataSource = dataTable;
-            PivotPointsCLB.ValueMember = "Number_point";
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                PivotPointsCLB.Items.Add(dataTable.Rows[i]["Id_point"]);
+            }
         }
         #endregion
 
