@@ -39,6 +39,9 @@ namespace TechnogenicSoilPollution.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CloseFormBtn
@@ -57,7 +60,7 @@ namespace TechnogenicSoilPollution.Forms
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(6, 217);
+            this.panel2.Location = new System.Drawing.Point(6, 321);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 1);
             this.panel2.TabIndex = 37;
@@ -74,7 +77,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(5, 173);
+            this.label7.Location = new System.Drawing.Point(5, 277);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(582, 40);
             this.label7.TabIndex = 35;
@@ -85,7 +88,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(5, 153);
+            this.label6.Location = new System.Drawing.Point(5, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 20);
             this.label6.TabIndex = 34;
@@ -95,7 +98,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(5, 221);
+            this.label3.Location = new System.Drawing.Point(5, 325);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(302, 20);
             this.label3.TabIndex = 33;
@@ -127,19 +130,50 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(5, 241);
+            this.label4.Location = new System.Drawing.Point(5, 345);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(589, 40);
             this.label4.TabIndex = 38;
             this.label4.Text = "Для того, чтобы отобразить изменения данных, пользователю нужно снова\r\nнажать на " +
     "кнопку \"Выбрать\".";
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(6, 253);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(580, 1);
+            this.panel3.TabIndex = 39;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(5, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(240, 20);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Добавление новых данных:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(5, 172);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(571, 80);
+            this.label8.TabIndex = 37;
+            this.label8.Text = resources.GetString("label8.Text");
+            // 
             // ReferenceWorkDBForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 500);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -170,5 +204,8 @@ namespace TechnogenicSoilPollution.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
     }
 }
