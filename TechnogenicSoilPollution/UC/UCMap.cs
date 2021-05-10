@@ -225,7 +225,14 @@ namespace TechnogenicSoilPollution.UC
         #region Расчёт загрязнения
         private void CalculatePollution()
         {
+            if (PivotPointsCLB.CheckedItems.Count != 0)
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("Выберите опорные точки для расчёта.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         #endregion
 
