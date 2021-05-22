@@ -215,66 +215,73 @@ namespace TechnogenicSoilPollution.Data
 
         #region Экспорт данных в Excel
         public static void ExportDataExcel(DataGridView dataGridView)
-        {
-            Microsoft.Office.Interop.Excel.Application ExcelFile = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = ExcelFile.Workbooks.Add(Type.Missing);
-            Worksheet worksheet = null;
-            worksheet = workbook.ActiveSheet;
-
-            try
+        {         
+            if (dataSet != null)
             {
-                int k = 1;
+                Microsoft.Office.Interop.Excel.Application ExcelFile = new Microsoft.Office.Interop.Excel.Application();
+                Workbook workbook = ExcelFile.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = null;
+                worksheet = workbook.ActiveSheet;
 
-                for (int i = 0; i < dataGridView.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dataGridView.Columns.Count; j++)
-                    {
-                        if (dataGridView.Columns[j].Visible)
-                        {
-                            worksheet.Cells[1, k] = dataGridView.Columns[j].HeaderText;
-                            worksheet.Cells[1, k].Font.Bold = true;
-                            worksheet.Cells[i + 2, k] = dataGridView.Rows[i].Cells[j].Value;
-                            k++;
-                        }                       
-                    }
-
-                    k = 1;
-                }
-
-                worksheet.Columns.EntireColumn.AutoFit();
-                Range ShtRange;
-                ShtRange = worksheet.UsedRange;
-                ShtRange.Borders.ColorIndex = 1;
-                ShtRange.Borders.LineStyle = XlLineStyle.xlContinuous;
-                ShtRange.Borders.Weight = XlBorderWeight.xlThin;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Title = "Сохранение в Excel",
-                Filter = "Документ Excel (*.xlsx)|*xlsx"
-            };
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
                 try
                 {
-                    workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                        XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                    MessageBox.Show("Документ Excel сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx",
-                                    "Сохранение документа Excel", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    int k = 1;
+
+                    for (int i = 0; i < dataGridView.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGridView.Columns.Count; j++)
+                        {
+                            if (dataGridView.Columns[j].Visible)
+                            {
+                                worksheet.Cells[1, k] = dataGridView.Columns[j].HeaderText;
+                                worksheet.Cells[1, k].Font.Bold = true;
+                                worksheet.Cells[i + 2, k] = dataGridView.Rows[i].Cells[j].Value;
+                                k++;
+                            }
+                        }
+
+                        k = 1;
+                    }
+
+                    worksheet.Columns.EntireColumn.AutoFit();
+                    Range ShtRange;
+                    ShtRange = worksheet.UsedRange;
+                    ShtRange.Borders.ColorIndex = 1;
+                    ShtRange.Borders.LineStyle = XlLineStyle.xlContinuous;
+                    ShtRange.Borders.Weight = XlBorderWeight.xlThin;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
 
-            ExcelFile.Quit();
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Title = "Сохранение в Excel",
+                    Filter = "Документ Excel (*.xlsx)|*xlsx"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                            XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                        MessageBox.Show("Документ Excel сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx",
+                                        "Сохранение документа Excel", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                ExcelFile.Quit();
+            }
+            else
+            {
+                MessageBox.Show("Экспорт данных в Excel возможет\nтолько при выбранных данных.", "Экспорт данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }                   
         }
         #endregion
 
