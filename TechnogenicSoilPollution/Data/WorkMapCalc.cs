@@ -1,30 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
-using System.IO;
-using GMap.NET;
-using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
-using GMap.NET.WindowsForms.Markers;
-using GMap.NET.WindowsForms.ToolTips;
-using System.Windows.Input;
-using TechnogenicSoilPollution.Data;
-using TechnogenicSoilPollution.Forms;
 
 namespace TechnogenicSoilPollution.Data
 {
     public static class WorkMapCalc
     {
+        #region Глобальные переменные
         private static SqlConnection sqlConnection = null;
+        #endregion
 
         static WorkMapCalc()
         {

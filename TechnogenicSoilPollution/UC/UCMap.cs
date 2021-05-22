@@ -1,22 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
-using System.IO;
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
-using System.Windows.Input;
 using TechnogenicSoilPollution.Data;
 using TechnogenicSoilPollution.Forms;
 
@@ -38,9 +30,9 @@ namespace TechnogenicSoilPollution.UC
         //Координаты пользовательского маркера
         double xUserLat = 0;
         double yUserLng = 0;
-        #endregion
 
         private SqlConnection sqlConnection = null;
+        #endregion
 
         public UCMap()
         {
@@ -304,9 +296,7 @@ namespace TechnogenicSoilPollution.UC
             double rMax = 5;
 
             //Нахождение расстояния r
-            double oneSD = x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat;
-            double twoSD = y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng;
-            double r = Math.Sqrt((oneSD + twoSD));
+            double r = Math.Sqrt((x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat) + (y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng));
 
             //Вычисление концентрации
             double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);
