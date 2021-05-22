@@ -5,6 +5,8 @@ using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
 using GMap.NET.WindowsForms;
+using GMap.NET;
+using GMap.NET.MapProviders;
 
 namespace TechnogenicSoilPollution.Data
 {
@@ -18,6 +20,45 @@ namespace TechnogenicSoilPollution.Data
         {
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
         }
+
+        #region Настройки карты
+        public static void MapSettings(GMapControl Gmap)
+        {
+            //Угол наклона карты
+            Gmap.Bearing = 0;
+            //Перетаскивание левой кнопкой мыши
+            Gmap.CanDragMap = true;
+            //Перетаскивание карты левой кнопкой мыши
+            Gmap.DragButton = MouseButtons.Left;
+
+            //Максимальное приближение
+            Gmap.MaxZoom = 13;
+            //Минимальное приближение
+            Gmap.MinZoom = 12;
+            //Приближение при загрузке
+            Gmap.Zoom = 12;
+
+            //Курсор мыши в центр карты
+            Gmap.MouseWheelZoomType = MouseWheelZoomType.MousePositionWithoutCenter;
+            //Скрытие внешней сетки карты
+            Gmap.ShowTileGridLines = false;
+            //Красный крест по центру
+            Gmap.ShowCenter = false;
+            //Отключение негативного режима
+            Gmap.NegativeMode = false;
+            //Разрешение полигонов
+            Gmap.PolygonsEnabled = true;
+            //Разрешение маршрутов
+            Gmap.RoutesEnabled = true;
+
+            //Провайдер для отображения карты
+            Gmap.MapProvider = GMapProviders.YandexMap;
+            //Загрузка карты через интернет
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            //Начальные координаты для загрузки карты
+            Gmap.Position = new PointLatLng(52.192972, 104.087009);
+        }
+        #endregion
 
         #region Загрузка хим. элементов из базы данных
         public static void LoadElementsCB(ComboBox ChemicalElementsCB)
