@@ -9,9 +9,11 @@ namespace TechnogenicSoilPollution.Data
 {
     public static class WorkDatabase
     {
+        #region Глобальные переменные
         private static SqlConnection sqlConnection = null;
         private static SqlDataAdapter adapter = null;
         private static DataSet dataSet = null;
+        #endregion
 
         static WorkDatabase()
         {
@@ -273,6 +275,15 @@ namespace TechnogenicSoilPollution.Data
             }
 
             ExcelFile.Quit();
+        }
+        #endregion
+
+        #region Подсказка при наведении на LoadPhasesCB
+        public static void ToolTipPhasesCB(System.Windows.Forms.Label materialLabelPhase, ComboBox SelectPhasesCB)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(materialLabelPhase, "Данный выпадающий список нужен\nтолько для добавления новых данных");
+            toolTip.SetToolTip(SelectPhasesCB, "Данный выпадающий список нужен\nтолько для добавления новых данных");
         }
         #endregion
     }

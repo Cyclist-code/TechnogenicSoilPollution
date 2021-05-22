@@ -9,7 +9,6 @@ namespace TechnogenicSoilPollution.UC
 {
     public partial class UCData : UserControl
     {
-
         #region Глобальные переменные
         private SqlConnection sqlConnection = null;
         #endregion
@@ -29,18 +28,9 @@ namespace TechnogenicSoilPollution.UC
             WorkDatabase.LoadElementsCB(SelectElementsCB);
             WorkDatabase.LoadYearsCB(SelectYearCB);
             WorkDatabase.LoadPhasesCB(SelectPhasesCB);
-            ToolTipPhasesCB();
+            WorkDatabase.ToolTipPhasesCB(materialLabelPhase, SelectPhasesCB);
 
             sqlConnection.Close();
-        }
-        #endregion
-
-        #region Подсказка при наведении на LoadPhasesCB
-        private void ToolTipPhasesCB()
-        {
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(materialLabelPhase, "Данный выпадающий список нужен\nтолько для добавления новых данных");
-            toolTip.SetToolTip(SelectPhasesCB, "Данный выпадающий список нужен\nтолько для добавления новых данных");
         }
         #endregion
 
