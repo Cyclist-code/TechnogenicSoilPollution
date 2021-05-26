@@ -42,6 +42,8 @@ namespace TechnogenicSoilPollution.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // CloseFormBtn
@@ -165,11 +167,32 @@ namespace TechnogenicSoilPollution.Forms
             this.label8.TabIndex = 37;
             this.label8.Text = resources.GetString("label8.Text");
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(5, 392);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(534, 40);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Незаполненные ячейки означают, что для выбранного элемента не \r\nпроводились измер" +
+    "ения.";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(6, 388);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(580, 1);
+            this.panel4.TabIndex = 40;
+            // 
             // ReferenceWorkDBForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 500);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -187,7 +210,7 @@ namespace TechnogenicSoilPollution.Forms
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "ReferenceWorkDBForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Справка при работе с базой данных";
+            this.Text = "Ч";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +230,7 @@ namespace TechnogenicSoilPollution.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -70,7 +70,7 @@ namespace TechnogenicSoilPollution.Forms
             // CloseFormBtn
             // 
             this.CloseFormBtn.Depth = 0;
-            this.CloseFormBtn.Location = new System.Drawing.Point(488, 398);
+            this.CloseFormBtn.Location = new System.Drawing.Point(488, 448);
             this.CloseFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.CloseFormBtn.Name = "CloseFormBtn";
             this.CloseFormBtn.Primary = true;
@@ -118,7 +118,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.ClientSize = new System.Drawing.Size(600, 500);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -126,8 +126,8 @@ namespace TechnogenicSoilPollution.Forms
             this.Controls.Add(this.CloseFormBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(600, 450);
-            this.MinimumSize = new System.Drawing.Size(600, 450);
+            this.MaximumSize = new System.Drawing.Size(600, 500);
+            this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "PromptMapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подсказка для работы с картой и расчётами";
