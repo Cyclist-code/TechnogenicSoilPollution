@@ -210,7 +210,7 @@ namespace TechnogenicSoilPollution.Forms
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "ReferenceWorkDBForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ч";
+            this.Text = "Подсказка для работы с базой данных";
             this.ResumeLayout(false);
             this.PerformLayout();
 
