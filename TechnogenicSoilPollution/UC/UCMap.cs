@@ -38,6 +38,8 @@ namespace TechnogenicSoilPollution.UC
             InitializeComponent();
 
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
+
+            PaintingLegend();
         }
 
         #region Загрузка пользовательского контрола
@@ -130,6 +132,17 @@ namespace TechnogenicSoilPollution.UC
         #endregion
 
         #region Методы
+
+        #region Раскраска легенды
+        private void PaintingLegend()
+        {
+            pictureBoxLightGreen.BackColor = Color.FromArgb(140, 0, 255, 0);
+            pictureBoxGreen.BackColor = Color.FromArgb(140, 21, 144, 100);
+            pictureBoxYellow.BackColor = Color.FromArgb(140, 255, 255, 0);
+            pictureBoxOrange.BackColor = Color.FromArgb(140, 255, 128, 0);
+            pictureBoxRed.BackColor = Color.FromArgb(140, 255, 0, 0);
+        }
+        #endregion
 
         #region Загрзка точек из базы данных
 
