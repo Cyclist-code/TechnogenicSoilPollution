@@ -42,8 +42,8 @@ namespace TechnogenicSoilPollution.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -165,16 +165,6 @@ namespace TechnogenicSoilPollution.Forms
             this.label1.TabIndex = 19;
             this.label1.Text = resources.GetString("label1.Text");
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(89, 371);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 20);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "kgostev@gmail.com";
-            // 
             // linkLabelGitHub
             // 
             this.linkLabelGitHub.AutoSize = true;
@@ -186,13 +176,28 @@ namespace TechnogenicSoilPollution.Forms
             this.linkLabelGitHub.TabStop = true;
             this.linkLabelGitHub.Text = "Cyclist-code";
             // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmail.Location = new System.Drawing.Point(89, 371);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxEmail.Multiline = true;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.ReadOnly = true;
+            this.textBoxEmail.Size = new System.Drawing.Size(180, 20);
+            this.textBoxEmail.TabIndex = 34;
+            this.textBoxEmail.Text = "CyclistCode@gmail.com";
+            this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ReferenceProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 500);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.linkLabelGitHub);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -232,7 +237,7 @@ namespace TechnogenicSoilPollution.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabelGitHub;
+        private System.Windows.Forms.TextBox textBoxEmail;
     }
 }
