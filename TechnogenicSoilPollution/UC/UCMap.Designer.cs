@@ -46,23 +46,23 @@ namespace TechnogenicSoilPollution.UC
             this.RoseWindImagePanel = new System.Windows.Forms.Panel();
             this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxLightGreen = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBoxGreen = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBoxYellow = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBoxOrange = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBoxRed = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOrange = new System.Windows.Forms.PictureBox();
+            this.pictureBoxYellow = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGreen = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLightGreen = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.RoseWindImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLightGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxYellow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxYellow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLightGreen)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -71,7 +71,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(681, 16);
+            this.materialLabel1.Location = new System.Drawing.Point(653, 15);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(75, 19);
@@ -82,7 +82,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.ChemicalElementsCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChemicalElementsCB.FormattingEnabled = true;
-            this.ChemicalElementsCB.Location = new System.Drawing.Point(685, 38);
+            this.ChemicalElementsCB.Location = new System.Drawing.Point(657, 37);
             this.ChemicalElementsCB.Name = "ChemicalElementsCB";
             this.ChemicalElementsCB.Size = new System.Drawing.Size(130, 26);
             this.ChemicalElementsCB.TabIndex = 2;
@@ -113,7 +113,7 @@ namespace TechnogenicSoilPollution.UC
             // ExportMapBtn
             // 
             this.ExportMapBtn.Depth = 0;
-            this.ExportMapBtn.Location = new System.Drawing.Point(875, 600);
+            this.ExportMapBtn.Location = new System.Drawing.Point(845, 583);
             this.ExportMapBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportMapBtn.Name = "ExportMapBtn";
             this.ExportMapBtn.Primary = true;
@@ -126,7 +126,7 @@ namespace TechnogenicSoilPollution.UC
             // CalcPollutionBtn
             // 
             this.CalcPollutionBtn.Depth = 0;
-            this.CalcPollutionBtn.Location = new System.Drawing.Point(657, 600);
+            this.CalcPollutionBtn.Location = new System.Drawing.Point(656, 583);
             this.CalcPollutionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.CalcPollutionBtn.Name = "CalcPollutionBtn";
             this.CalcPollutionBtn.Primary = true;
@@ -180,7 +180,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(681, 78);
+            this.materialLabel3.Location = new System.Drawing.Point(653, 77);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(49, 19);
@@ -191,7 +191,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.PhasesCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhasesCB.FormattingEnabled = true;
-            this.PhasesCB.Location = new System.Drawing.Point(685, 100);
+            this.PhasesCB.Location = new System.Drawing.Point(657, 99);
             this.PhasesCB.Name = "PhasesCB";
             this.PhasesCB.Size = new System.Drawing.Size(130, 26);
             this.PhasesCB.TabIndex = 10;
@@ -202,7 +202,7 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(681, 144);
+            this.materialLabel4.Location = new System.Drawing.Point(653, 143);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(39, 19);
@@ -213,7 +213,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.YearsCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.YearsCB.FormattingEnabled = true;
-            this.YearsCB.Location = new System.Drawing.Point(685, 166);
+            this.YearsCB.Location = new System.Drawing.Point(657, 165);
             this.YearsCB.Name = "YearsCB";
             this.YearsCB.Size = new System.Drawing.Size(130, 26);
             this.YearsCB.TabIndex = 12;
@@ -222,7 +222,7 @@ namespace TechnogenicSoilPollution.UC
             // PromptFormBtn
             // 
             this.PromptFormBtn.Depth = 0;
-            this.PromptFormBtn.Location = new System.Drawing.Point(741, 203);
+            this.PromptFormBtn.Location = new System.Drawing.Point(730, 522);
             this.PromptFormBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.PromptFormBtn.Name = "PromptFormBtn";
             this.PromptFormBtn.Primary = true;
@@ -238,7 +238,7 @@ namespace TechnogenicSoilPollution.UC
             this.RoseWindLabel.Depth = 0;
             this.RoseWindLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.RoseWindLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RoseWindLabel.Location = new System.Drawing.Point(743, 503);
+            this.RoseWindLabel.Location = new System.Drawing.Point(775, 472);
             this.RoseWindLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.RoseWindLabel.Name = "RoseWindLabel";
             this.RoseWindLabel.Size = new System.Drawing.Size(0, 19);
@@ -248,16 +248,16 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.RoseWindImagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RoseWindImagePanel.Controls.Add(this.RoseWindPictureBox);
-            this.RoseWindImagePanel.Location = new System.Drawing.Point(685, 253);
+            this.RoseWindImagePanel.Location = new System.Drawing.Point(745, 218);
             this.RoseWindImagePanel.Name = "RoseWindImagePanel";
-            this.RoseWindImagePanel.Size = new System.Drawing.Size(300, 240);
+            this.RoseWindImagePanel.Size = new System.Drawing.Size(240, 240);
             this.RoseWindImagePanel.TabIndex = 14;
             // 
             // RoseWindPictureBox
             // 
             this.RoseWindPictureBox.Location = new System.Drawing.Point(-1, -1);
             this.RoseWindPictureBox.Name = "RoseWindPictureBox";
-            this.RoseWindPictureBox.Size = new System.Drawing.Size(300, 240);
+            this.RoseWindPictureBox.Size = new System.Drawing.Size(240, 240);
             this.RoseWindPictureBox.TabIndex = 0;
             this.RoseWindPictureBox.TabStop = false;
             // 
@@ -265,83 +265,47 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(679, 548);
+            this.label1.Location = new System.Drawing.Point(678, 256);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 18);
             this.label1.TabIndex = 17;
             this.label1.Text = "< 2";
             // 
-            // pictureBoxLightGreen
-            // 
-            this.pictureBoxLightGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxLightGreen.Location = new System.Drawing.Point(657, 547);
-            this.pictureBoxLightGreen.Name = "pictureBoxLightGreen";
-            this.pictureBoxLightGreen.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxLightGreen.TabIndex = 16;
-            this.pictureBoxLightGreen.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(747, 548);
+            this.label2.Location = new System.Drawing.Point(678, 292);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 19;
             this.label2.Text = "3 - 5";
             // 
-            // pictureBoxGreen
-            // 
-            this.pictureBoxGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxGreen.Location = new System.Drawing.Point(725, 547);
-            this.pictureBoxGreen.Name = "pictureBoxGreen";
-            this.pictureBoxGreen.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxGreen.TabIndex = 18;
-            this.pictureBoxGreen.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(822, 548);
+            this.label3.Location = new System.Drawing.Point(678, 328);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 18);
             this.label3.TabIndex = 21;
             this.label3.Text = "6 - 9";
             // 
-            // pictureBoxYellow
-            // 
-            this.pictureBoxYellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxYellow.Location = new System.Drawing.Point(800, 547);
-            this.pictureBoxYellow.Name = "pictureBoxYellow";
-            this.pictureBoxYellow.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxYellow.TabIndex = 20;
-            this.pictureBoxYellow.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(892, 548);
+            this.label4.Location = new System.Drawing.Point(678, 364);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 23;
             this.label4.Text = "10 - 13";
             // 
-            // pictureBoxOrange
-            // 
-            this.pictureBoxOrange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxOrange.Location = new System.Drawing.Point(870, 547);
-            this.pictureBoxOrange.Name = "pictureBoxOrange";
-            this.pictureBoxOrange.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxOrange.TabIndex = 22;
-            this.pictureBoxOrange.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(978, 548);
+            this.label5.Location = new System.Drawing.Point(678, 400);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 18);
             this.label5.TabIndex = 25;
@@ -350,11 +314,47 @@ namespace TechnogenicSoilPollution.UC
             // pictureBoxRed
             // 
             this.pictureBoxRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxRed.Location = new System.Drawing.Point(956, 547);
+            this.pictureBoxRed.Location = new System.Drawing.Point(656, 399);
             this.pictureBoxRed.Name = "pictureBoxRed";
             this.pictureBoxRed.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxRed.TabIndex = 24;
             this.pictureBoxRed.TabStop = false;
+            // 
+            // pictureBoxOrange
+            // 
+            this.pictureBoxOrange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxOrange.Location = new System.Drawing.Point(656, 363);
+            this.pictureBoxOrange.Name = "pictureBoxOrange";
+            this.pictureBoxOrange.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxOrange.TabIndex = 22;
+            this.pictureBoxOrange.TabStop = false;
+            // 
+            // pictureBoxYellow
+            // 
+            this.pictureBoxYellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxYellow.Location = new System.Drawing.Point(656, 327);
+            this.pictureBoxYellow.Name = "pictureBoxYellow";
+            this.pictureBoxYellow.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxYellow.TabIndex = 20;
+            this.pictureBoxYellow.TabStop = false;
+            // 
+            // pictureBoxGreen
+            // 
+            this.pictureBoxGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxGreen.Location = new System.Drawing.Point(656, 291);
+            this.pictureBoxGreen.Name = "pictureBoxGreen";
+            this.pictureBoxGreen.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxGreen.TabIndex = 18;
+            this.pictureBoxGreen.TabStop = false;
+            // 
+            // pictureBoxLightGreen
+            // 
+            this.pictureBoxLightGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxLightGreen.Location = new System.Drawing.Point(656, 255);
+            this.pictureBoxLightGreen.Name = "pictureBoxLightGreen";
+            this.pictureBoxLightGreen.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxLightGreen.TabIndex = 16;
+            this.pictureBoxLightGreen.TabStop = false;
             // 
             // UCMap
             // 
@@ -390,11 +390,11 @@ namespace TechnogenicSoilPollution.UC
             this.panel1.ResumeLayout(false);
             this.RoseWindImagePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RoseWindPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLightGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxYellow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxYellow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLightGreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
