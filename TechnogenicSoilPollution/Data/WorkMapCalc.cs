@@ -34,9 +34,9 @@ namespace TechnogenicSoilPollution.Data
             //Максимальное приближение
             Gmap.MaxZoom = 13;
             //Минимальное приближение
-            Gmap.MinZoom = 12;
+            Gmap.MinZoom = 11;
             //Приближение при загрузке
-            Gmap.Zoom = 12;
+            Gmap.Zoom = 11;
 
             //Курсор мыши в центр карты
             Gmap.MouseWheelZoomType = MouseWheelZoomType.MousePositionWithoutCenter;
