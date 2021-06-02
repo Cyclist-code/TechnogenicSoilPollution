@@ -38,12 +38,12 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(49, 30);
+            this.label1.Location = new System.Drawing.Point(11, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(933, 138);
+            this.label1.Size = new System.Drawing.Size(1021, 138);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Расчёт и визуализация степени техногенного \r\nзагрязнения территорий в зоне влияни" +
-    "я \r\nИркутского алюминиевого завода";
+            this.label1.Text = "Расчёт и визуализация техногенного загрязнения \r\nтерриторий в зоне влияния Иркутс" +
+    "кого \r\nалюминиевого завода";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
