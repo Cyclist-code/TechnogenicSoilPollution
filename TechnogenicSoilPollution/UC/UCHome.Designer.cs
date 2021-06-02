@@ -42,8 +42,8 @@ namespace TechnogenicSoilPollution.UC
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(933, 138);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Расчёт и визуализация степени техногенного \r\nзагрязнения почвенного покрова в зон" +
-    "е\r\n влияния Иркутского Алюминиевого Завода";
+            this.label1.Text = "Расчёт и визуализация степени техногенного \r\nзагрязнения территорий в зоне влияни" +
+    "я \r\nИркутского алюминиевого завода";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
