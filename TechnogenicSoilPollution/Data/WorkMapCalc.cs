@@ -51,8 +51,10 @@ namespace TechnogenicSoilPollution.Data
             //Разрешение маршрутов
             Gmap.RoutesEnabled = true;
 
+            //Русская локализация карты
+            GMapProvider.Language = LanguageType.Russian;
             //Провайдер для отображения карты
-            Gmap.MapProvider = GMapProviders.YandexMap;
+            Gmap.MapProvider = GMapProviders.GoogleMap;
             //Загрузка карты через интернет
             GMaps.Instance.Mode = AccessMode.ServerOnly;
             //Начальные координаты для загрузки карты
