@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing;
@@ -7,7 +6,6 @@ using System.Windows.Forms;
 using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-using GMap.NET.WindowsForms.ToolTips;
 using TechnogenicSoilPollution.Data;
 using TechnogenicSoilPollution.Forms;
 
@@ -15,8 +13,7 @@ namespace TechnogenicSoilPollution.UC
 {
     public partial class UCMap : UserControl
     {
-        #region Списки маркеров
-        GMapOverlay PointsSamplingOverlay = new GMapOverlay("samplingpoints");
+        #region Слои
         GMapOverlay CustomMarkersOverlay = new GMapOverlay("user");
         GMapOverlay ResultCalcPollutionOverlay = new GMapOverlay("result");
         #endregion
@@ -58,7 +55,7 @@ namespace TechnogenicSoilPollution.UC
         private void Gmap_Load(object sender, EventArgs e)
         {
             WorkMapCalc.MapSettings(Gmap);
-            LoadPoints();
+            WorkMapCalc.LoadPointsMap(Gmap);
         }
         #endregion
 
@@ -141,55 +138,6 @@ namespace TechnogenicSoilPollution.UC
             pictureBoxYellow.BackColor = Color.FromArgb(140, 255, 255, 0);
             pictureBoxOrange.BackColor = Color.FromArgb(140, 255, 128, 0);
             pictureBoxRed.BackColor = Color.FromArgb(140, 255, 0, 0);
-        }
-        #endregion
-
-        #region Загрзка точек из базы данных
-
-        List<CoordinatesPoint> ListPoints = new List<CoordinatesPoint>();
-        SqlCommand sqlPointsCommand;
-
-        private void LoadPoints()
-        {
-            PointsSamplingOverlay.Clear();
-            sqlConnection.Open();
-
-            sqlPointsCommand = new SqlCommand("SELECT * FROM SamplingPoints", sqlConnection);
-            SqlDataReader sqlDataReader = sqlPointsCommand.ExecuteReader();
-
-            GMarkerGoogle plantMarker = new GMarkerGoogle(new PointLatLng(xPlantLat, yPlantLng), GMarkerGoogleType.red_small);
-            plantMarker.ToolTip = new GMapRoundedToolTip(plantMarker)
-            {
-                Foreground = new SolidBrush(Color.Black),
-                Stroke = new Pen(new SolidBrush(Color.Black)),
-                Font = new Font("Arial", 9, FontStyle.Bold)
-            };
-            plantMarker.ToolTipText = "Алюминиевый Завод";
-            PointsSamplingOverlay.Markers.Add(plantMarker);
-
-            if (sqlDataReader.HasRows)
-            {
-                while (sqlDataReader.Read())
-                {
-                    ListPoints.Add(new CoordinatesPoint(Convert.ToInt32(sqlDataReader[2]), Convert.ToDouble(sqlDataReader[4]), Convert.ToDouble(sqlDataReader[5])));
-                }
-            }
-            sqlDataReader.Close();
-
-            for (int i = 0; i < ListPoints.Count; i++)
-            {
-                GMarkerGoogle samplingMarker = new GMarkerGoogle(new PointLatLng(ListPoints[i].x, ListPoints[i].y), GMarkerGoogleType.black_small);
-                samplingMarker.ToolTip = new GMapRoundedToolTip(samplingMarker)
-                {
-                    Foreground = new SolidBrush(Color.Black),
-                    Stroke = new Pen(new SolidBrush(Color.Black)),
-                    Font = new Font("Arial", 9, FontStyle.Bold)
-                };
-                samplingMarker.ToolTipText = "Точка пробоотбора №" + ListPoints[i].numberPoint;
-                PointsSamplingOverlay.Markers.Add(samplingMarker);
-            }
-
-            Gmap.Overlays.Add(PointsSamplingOverlay);
         }
         #endregion
 
