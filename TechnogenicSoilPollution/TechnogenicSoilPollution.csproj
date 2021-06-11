@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CoordinatesPoint.cs" />
+    <Compile Include="Data\GMapPoint.cs" />
     <Compile Include="Data\WorkDatabase.cs" />
     <Compile Include="Data\WorkMapCalc.cs" />
     <Compile Include="Forms\MainForm.cs">
