@@ -26,25 +26,25 @@ namespace TechnogenicSoilPollution.Data
             : base(p)
         {
             point_ = p;
-            if (qt > 180)
+            if (qt > 10)
             {
-                brush = new SolidBrush(Color.FromArgb(80, 255, 0, 0));
+                brush = new SolidBrush(Color.FromArgb(140, 255, 0, 0));
             }
-            else if (qt > 110)
+            else if (qt > 1)
             {
-                brush = new SolidBrush(Color.FromArgb(80, 255, 128, 0));
+                brush = new SolidBrush(Color.FromArgb(140, 255, 128, 0));
             }
-            else if (qt > 60)
+            else if (qt > 0.06)
             {
-                brush = new SolidBrush(Color.FromArgb(80, 255, 255, 0));
+                brush = new SolidBrush(Color.FromArgb(140, 255, 255, 0));
             }
-            else if (qt > 20)
+            else if (qt > 0.01)
             {
-                brush = new SolidBrush(Color.FromArgb(80, 21, 144, 100));
+                brush = new SolidBrush(Color.FromArgb(140, 21, 144, 100));
             }
             else
             {
-                brush = new SolidBrush(Color.FromArgb(80, 0, 255, 0));
+                brush = new SolidBrush(Color.FromArgb(140, 0, 255, 0));
             }
         }
 

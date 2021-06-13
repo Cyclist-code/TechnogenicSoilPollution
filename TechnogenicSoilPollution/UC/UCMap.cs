@@ -8,6 +8,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using TechnogenicSoilPollution.Data;
 using TechnogenicSoilPollution.Forms;
+using System.Text;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -68,7 +69,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
-
+            CalculatePollution();
         }
 
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,9 +145,104 @@ namespace TechnogenicSoilPollution.UC
         #region Расчёт загрязнения
         private void CalculatePollution()
         {
+            string chemicalElements = ChemicalElementsCB.SelectedItem.ToString();
+            string phase = PhasesCB.SelectedItem.ToString();
+
             if (PivotPointsCLB.CheckedItems.Count != 0)
             {
+                StringBuilder builder = new StringBuilder();
 
+                builder.Append("(");
+                for (int i = 0; i < PivotPointsCLB.CheckedItems.Count; i++)
+                {
+                    builder.Append(PivotPointsCLB.CheckedItems[i].ToString() + ",");
+                }
+                builder.Remove(builder.Length - 1, 1);
+                builder.Append(")");
+
+                double x = 0, y = 0;
+                double rezult;
+                int counter = 0;
+
+                double[] qt = new double[PivotPointsCLB.CheckedItems.Count];
+                double[] windt = new double[PivotPointsCLB.CheckedItems.Count];
+                double[] rt = new double[PivotPointsCLB.CheckedItems.Count];
+
+                string selectData = $"SELECT Latitude, Longitude, Content_elements, Stocks_elements " +
+                    $"FROM SamplingPoints, ChemicalElements, Phases, ContentElements WHERE SamplingPoints.Id_point IN" + builder
+                    + $" AND ContentElements.Id_elements = ChemicalElements.Id_element AND ContentElements.Id_phases = Phases.Id_phase " +
+                    $"AND ContentElements.Id_points = SamplingPoints.Id_point " +
+                    $"AND ChemicalElements.Name_element='{chemicalElements}' AND Phases.Name_phase = '{phase}'";
+                SqlCommand command = new SqlCommand(selectData, sqlConnection);
+
+                sqlConnection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    x = (double)reader["Latitude"];
+                    y = (double)reader["Longitude"];
+                    if (reader["Content_elements"] != DBNull.Value)
+                    {
+                        rezult = (double)reader["Content_elements"];
+                    }
+                    else
+                    {
+                        rezult = (double)reader["Stocks_elements"];
+                    }
+                    qt[counter] = rezult;
+                    windt[counter] = WindRose(x, y);
+                    rt[counter] = DistanceR(x, y) * 6371;
+                    counter++;
+                }
+
+                sqlConnection.Close();
+
+                double tet1 = 0, tet2 = 0;
+                double temp1, temp2;
+                double rMax = 5;
+                double[] tempQt = new double[PivotPointsCLB.CheckedItems.Count];
+                double MNK = double.MaxValue, mnk = 0;
+
+                for (temp1 = 1; temp1 <= 10000; temp1 += 1)
+                {
+                    for (temp2 = -2; temp2 < 2; temp2 += 0.01)
+                    {
+                        for (int i = 0; i < PivotPointsCLB.CheckedItems.Count; i++)
+                        {
+                            tempQt[i] = windt[i] * temp1 * Math.Pow(rt[i], temp2) * Math.Exp(-2 * rMax / rt[i]);
+                            mnk += Math.Pow(tempQt[i] - qt[i], 2);
+                        }
+
+                        if (mnk < MNK)
+                        {
+                            MNK = mnk;
+                            tet1 = temp1;
+                            tet2 = temp2;
+                        }
+
+                        mnk = 0;
+                    }
+                }
+
+                ResultCalcPollutionOverlay.Clear();
+                ResultCalcPollutionOverlay.Markers.Clear();
+
+                for (double i = 52.237752; i > 52.126720; i -= 0.0005)
+                {
+                    for (double j = 104.020258; j < 104.194542; j += 0.0005)
+                    {
+                        CalcFieldConcentration(i, j, tet1, tet2);
+                    }
+                }
+
+                if (Gmap.Overlays.Contains(ResultCalcPollutionOverlay))
+                {
+                    Gmap.Overlays.Clear();
+                }
+                Gmap.Overlays.Add(ResultCalcPollutionOverlay);
+
+                WorkMapCalc.LoadPointsMap(Gmap);
             }
             else
             {
@@ -155,11 +251,15 @@ namespace TechnogenicSoilPollution.UC
         }
         #endregion
 
+        private double DistanceR(double x, double y) =>
+            //Math.Sqrt((x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat) + (y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng));
+            Math.Sqrt(Math.Pow(x - xPlantLat, 2) + Math.Pow(y - yPlantLng, 2));
+
         #region Вычисление розы ветров и угла направления ветра
         private double WindRose(double x, double y)
         {
             //Угол напрваления ветра
-            double windAngle = 180 / Math.PI * Math.Atan((x - xPlantLat) / (y - yPlantLng));
+            double windAngle = Math.Atan((x - xPlantLat) / (y - yPlantLng)) * (180 / Math.PI);
             //Роза ветров за 1996 год
             double[] roseOne = { 1, 5, 5, 7, 8, 4, 13, 14 };
             //Роза ветров за 1997 год
@@ -191,7 +291,7 @@ namespace TechnogenicSoilPollution.UC
                 else windRose = roseOne[7] + (roseOne[0] - roseOne[7]) * (windAngle - 315) / 45;
             }
 
-            if (YearsCB.SelectedIndex == 1)
+            else if (YearsCB.SelectedIndex == 1)
             {
                 if (windAngle >= 0 && windAngle <= 45)
                     windRose = roseTwo[0] + (roseTwo[1] - roseTwo[2]) * windAngle / 45;
@@ -223,10 +323,14 @@ namespace TechnogenicSoilPollution.UC
             double rMax = 5;
 
             //Нахождение расстояния r
-            double r = Math.Sqrt((x * x - 2 * x * xPlantLat + xPlantLat * xPlantLat) + (y * y - 2 * y * yPlantLng + yPlantLng * yPlantLng));
+            double r = DistanceR(x, y) * 6371;
+            //double angle = Math.Sin(xPlantLat * Math.PI / 180) * Math.Sin(x * Math.PI / 180) + Math.Cos(xPlantLat * Math.PI / 180) * Math.Cos(x * Math.PI / 180) * Math.Cos(yPlantLng * Math.PI / 180 - y * Math.PI / 180);
+            //double rt = Math.Acos(angle) * 6371;
 
             //Вычисление концентрации
             double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);
+            GMapPoint point = new GMapPoint(new PointLatLng(x, y), Q);
+            ResultCalcPollutionOverlay.Markers.Add(point);
         }
         #endregion
 
