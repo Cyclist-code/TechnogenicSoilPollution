@@ -26,7 +26,7 @@ namespace TechnogenicSoilPollution.Data
             : base(p)
         {
             point_ = p;
-            if (qt > 12)
+            if (qt > 13)
             {
                 brush = new SolidBrush(Color.FromArgb(80, 255, 0, 0));
             }
