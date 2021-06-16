@@ -274,7 +274,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(679, 402);
+            this.label12.Location = new System.Drawing.Point(679, 421);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 18);
             this.label12.TabIndex = 47;
@@ -283,7 +283,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(50)))), ((int)(((byte)(200)))), ((int)(((byte)(240)))));
-            this.pictureBox8.Location = new System.Drawing.Point(657, 400);
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Location = new System.Drawing.Point(657, 419);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(20, 20);
             this.pictureBox8.TabIndex = 46;
@@ -293,7 +294,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(679, 348);
+            this.label11.Location = new System.Drawing.Point(679, 367);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 18);
             this.label11.TabIndex = 45;
@@ -302,7 +303,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
-            this.pictureBox7.Location = new System.Drawing.Point(657, 348);
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Location = new System.Drawing.Point(657, 367);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(20, 20);
             this.pictureBox7.TabIndex = 44;
@@ -312,7 +314,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(679, 375);
+            this.label10.Location = new System.Drawing.Point(679, 394);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 18);
             this.label10.TabIndex = 43;
@@ -321,7 +323,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(50)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
-            this.pictureBox6.Location = new System.Drawing.Point(657, 374);
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(657, 393);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(20, 20);
             this.pictureBox6.TabIndex = 42;
@@ -331,7 +334,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(679, 323);
+            this.label6.Location = new System.Drawing.Point(679, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 18);
             this.label6.TabIndex = 41;
@@ -341,7 +344,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(679, 297);
+            this.label7.Location = new System.Drawing.Point(679, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 18);
             this.label7.TabIndex = 40;
@@ -351,7 +354,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(679, 271);
+            this.label8.Location = new System.Drawing.Point(679, 290);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 18);
             this.label8.TabIndex = 39;
@@ -361,7 +364,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(679, 245);
+            this.label9.Location = new System.Drawing.Point(679, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 18);
             this.label9.TabIndex = 38;
@@ -371,7 +374,7 @@ namespace TechnogenicSoilPollution.UC
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(679, 219);
+            this.label13.Location = new System.Drawing.Point(679, 238);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 18);
             this.label13.TabIndex = 37;
@@ -380,7 +383,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(50)))));
-            this.pictureBox5.Location = new System.Drawing.Point(657, 322);
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(657, 341);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(20, 20);
             this.pictureBox5.TabIndex = 36;
@@ -389,7 +393,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.pictureBox4.Location = new System.Drawing.Point(657, 296);
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(657, 315);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.TabIndex = 35;
@@ -398,7 +403,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.pictureBox3.Location = new System.Drawing.Point(657, 270);
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(657, 289);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(20, 20);
             this.pictureBox3.TabIndex = 34;
@@ -407,7 +413,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1.Location = new System.Drawing.Point(657, 218);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(657, 237);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.TabIndex = 32;
@@ -416,7 +423,8 @@ namespace TechnogenicSoilPollution.UC
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pictureBox2.Location = new System.Drawing.Point(657, 244);
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(657, 263);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(20, 20);
             this.pictureBox2.TabIndex = 33;
