@@ -10,7 +10,7 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Collections.Generic;
-using TechnogenicSoilPollution.Data;
+using TechnogenicSoilPollution.Helpers;
 
 namespace TechnogenicSoilPollution.Controllers
 {

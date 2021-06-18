@@ -93,10 +93,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CoordinatesPoint.cs" />
-    <Compile Include="Data\GMapPoint.cs" />
-    <Compile Include="Data\WorkDatabase.cs" />
-    <Compile Include="Data\WorkMapCalc.cs" />
+    <Compile Include="Controllers\DatabaseController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +119,8 @@
     <Compile Include="Forms\ReferenceWorkDBForm.Designer.cs">
       <DependentUpon>ReferenceWorkDBForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CoordinatesPoint.cs" />
+    <Compile Include="Helpers\GMapPoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC\UCData.cs">

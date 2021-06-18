@@ -6,7 +6,8 @@ using System.Windows.Forms;
 using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-using TechnogenicSoilPollution.Data;
+using TechnogenicSoilPollution.Controllers;
+using TechnogenicSoilPollution.Helpers;
 using TechnogenicSoilPollution.Forms;
 using System.Text;
 
@@ -41,10 +42,10 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка пользовательского контрола
         private void UCMap_Load(object sender, EventArgs e)
         {
-            WorkMapCalc.LoadElementsCB(ChemicalElementsCB);
-            WorkMapCalc.LoadPhasesCB(PhasesCB);
-            WorkMapCalc.LoadYearsCB(YearsCB);
-            WorkMapCalc.LoadPivotPoints(PivotPointsCLB);
+            MapController.LoadElementsCB(ChemicalElementsCB);
+            MapController.LoadPhasesCB(PhasesCB);
+            MapController.LoadYearsCB(YearsCB);
+            MapController.LoadPivotPoints(PivotPointsCLB);
 
             sqlConnection.Close();
         }
@@ -53,8 +54,8 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка карты
         private void Gmap_Load(object sender, EventArgs e)
         {
-            WorkMapCalc.MapSettings(Gmap);
-            WorkMapCalc.LoadPointsMap(Gmap);
+            MapController.MapSettings(Gmap);
+            MapController.LoadPointsMap(Gmap);
         }
         #endregion
 
@@ -62,7 +63,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void ExportMapBtn_Click(object sender, EventArgs e)
         {
-            WorkMapCalc.SaveMapPNG(Gmap);
+            MapController.SaveMapPNG(Gmap);
         }
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
@@ -72,7 +73,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            WorkMapCalc.ImageRoseWind(YearsCB, RoseWindPictureBox, RoseWindLabel);
+            MapController.ImageRoseWind(YearsCB, RoseWindPictureBox, RoseWindLabel);
         }
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
@@ -231,7 +232,7 @@ namespace TechnogenicSoilPollution.UC
                 }
                 Gmap.Overlays.Add(ResultCalcPollutionOverlay);
 
-                WorkMapCalc.LoadPointsMap(Gmap);
+                MapController.LoadPointsMap(Gmap);
             }
             else
             {
@@ -339,7 +340,6 @@ namespace TechnogenicSoilPollution.UC
         #endregion
 
         #region Вычисление концентрации примеси в точке с координатами (x,y)
-
         private void CalcFieldConcentration(double x, double y, double tet1, double tet2)
         {
             double windRose = WindRose(x, y);

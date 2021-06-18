@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
-using TechnogenicSoilPollution.Data;
+using TechnogenicSoilPollution.Controllers;
 using TechnogenicSoilPollution.Forms;
 
 namespace TechnogenicSoilPollution.UC
@@ -25,10 +25,10 @@ namespace TechnogenicSoilPollution.UC
         {
             sqlConnection.Open();
 
-            WorkDatabase.LoadElementsCB(SelectElementsCB);
-            WorkDatabase.LoadYearsCB(SelectYearCB);
-            WorkDatabase.LoadPhasesCB(SelectPhasesCB);
-            WorkDatabase.ToolTipPhasesCB(materialLabelPhase, SelectPhasesCB);
+            DatabaseController.LoadElementsCB(SelectElementsCB);
+            DatabaseController.LoadYearsCB(SelectYearCB);
+            DatabaseController.LoadPhasesCB(SelectPhasesCB);
+            DatabaseController.ToolTipPhasesCB(materialLabelPhase, SelectPhasesCB);
 
             sqlConnection.Close();
         }
@@ -38,7 +38,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void SelectDataFiltersBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.SelectFilterData(SelectElementsCB, SelectYearCB, MainDataGridView);
+            DatabaseController.SelectFilterData(SelectElementsCB, SelectYearCB, MainDataGridView);
         }
 
         private void ReferenceDataBaseBtn_Click(object sender, EventArgs e)
@@ -49,27 +49,27 @@ namespace TechnogenicSoilPollution.UC
 
         private void AddNewRowBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.AddNewRowMethod();
+            DatabaseController.AddNewRowMethod();
         }
 
         private void UpdateDataBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.UpdateDataBtn(MainDataGridView, SelectYearCB);
+            DatabaseController.UpdateDataBtn(MainDataGridView, SelectYearCB);
         }
 
         private void AddDataBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.AddNewDataMethod(SelectYearCB, SelectElementsCB, SelectPhasesCB, MainDataGridView);
+            DatabaseController.AddNewDataMethod(SelectYearCB, SelectElementsCB, SelectPhasesCB, MainDataGridView);
         }
 
         private void DeleteDataBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.DeleteDataMethod(MainDataGridView);
+            DatabaseController.DeleteDataMethod(MainDataGridView);
         }
 
         private void ExportDataBtn_Click(object sender, EventArgs e)
         {
-            WorkDatabase.ExportDataExcel(MainDataGridView);
+            DatabaseController.ExportDataExcel(MainDataGridView);
         }
 
         #endregion
