@@ -218,14 +218,14 @@ namespace TechnogenicSoilPollution.UC
                 ResultCalcPollutionOverlay.Clear();
                 ResultCalcPollutionOverlay.Markers.Clear();
 
-                for (double i = 52.237935; i > 52.126720; i -= 0.0005)
+                for (double i = 52.246740; i > 52.126720; i -= 0.0005)
                 {
-                    for (double j = 103.995105; j < 104.194542; j += 0.0005)
+                    for (double j = 103.992177; j < 104.194542; j += 0.0005)
                     {
                         CalcFieldConcentration(i, j, tet1, tet2);
                     }
                 }
-
+                
                 if (Gmap.Overlays.Contains(ResultCalcPollutionOverlay))
                 {
                     Gmap.Overlays.Clear();
@@ -249,7 +249,8 @@ namespace TechnogenicSoilPollution.UC
         private double WindRose(double x, double y)
         {
             //Угол напрваления ветра
-            double windAngle = Math.Atan((x - xPlantLat) / (y - yPlantLng)) * 180 / Math.PI + 45;
+            double windAngleOne = Math.Atan((x - xPlantLat) / (y - yPlantLng)) * 180 / Math.PI - 170;
+            double windAngleTwo = Math.Atan((x - xPlantLat) / (y - yPlantLng)) * 180 / Math.PI - 90;
             //Роза ветров за 1996 год
             double[] roseOne = { 1, 5, 5, 7, 8, 4, 13, 14 };
             //Роза ветров за 1997 год
@@ -257,82 +258,60 @@ namespace TechnogenicSoilPollution.UC
 
             double windRose = 0;
 
-            /*if (windAngle < 0)
-                windAngle += 360;
-            if (windAngle > 360)
-                windAngle -= 360;*/
-           
-
             if (YearsCB.SelectedIndex == 0)
             {
-                /*if (windAngle >= 0 && windAngle <= 45)
-                    windRose = roseOne[0] + (roseOne[1] - roseOne[2]) * windAngle / 45;
-                else if (windAngle >= 45 && windAngle <= 90)
-                    windRose = roseOne[1] + (roseOne[2] - roseOne[1]) * (windAngle - 45) / 45;
-                else if (windAngle >= 90 && windAngle <= 135)
-                    windRose = roseOne[2] + (roseOne[3] - roseOne[2]) * (windAngle - 90) / 45;
-                else if (windAngle >= 135 && windAngle <= 180)
-                    windRose = roseOne[3] + (roseOne[4] - roseOne[3]) * (windAngle - 135) / 45;
-                else if (windAngle >= 180 && windAngle <= 225)
-                    windRose = roseOne[4] + (roseOne[5] - roseOne[4]) * (windAngle - 180) / 45;
-                else if (windAngle >= 225 && windAngle <= 270)
-                    windRose = roseOne[5] + (roseOne[6] - roseOne[5]) * (windAngle - 225) / 45;
-                else if (windAngle >= 270 && windAngle <= 315)
-                    windRose = roseOne[6] + (roseOne[7] - roseOne[6]) * (windAngle - 270) / 45;
-                else if (windAngle >= 315 && windAngle <= 360)
-                    windRose = roseOne[7] + (roseOne[0] - roseOne[7]) * (windAngle - 315) / 45;*/
                 if (y - yPlantLng < 0)
                 {
-                    windAngle += 180;
+                    windAngleOne += 180;
                 }
-                if (windAngle < 0)
+                if (windAngleOne < 0)
                 {
-                    windAngle += 360;
+                    windAngleOne += 360;
                 }
-                if (windAngle >= 0 && windAngle <= 45)
-                    windRose = (roseOne[1] * windAngle + roseOne[0] * (45 - windAngle)) / 45;
-                else if (windAngle >= 45 && windAngle <= 90)
-                    windRose = (roseOne[2] * (windAngle - 45) + roseOne[1] * (90 - windAngle)) / 45;
-                else if (windAngle >= 90 && windAngle <= 135)
-                    windRose = (roseOne[3] * (windAngle - 90) + roseOne[2] * (135 - windAngle)) / 45;
-                else if (windAngle >= 135 && windAngle <= 180)
-                    windRose = (roseOne[4] * (windAngle - 135) + roseOne[3] * (180 - windAngle)) / 45;
-                else if (windAngle >= 180 && windAngle <= 225)
-                    windRose = (roseOne[5] * (windAngle - 180) + roseOne[4] * (225 - windAngle)) / 45;
-                else if (windAngle >= 225 && windAngle <= 270)
-                    windRose = (roseOne[6] * (windAngle - 225) + roseOne[5] * (270 - windAngle)) / 45;
-                else if (windAngle >= 270 && windAngle <= 315)
-                    windRose = (roseOne[7] * (windAngle - 270) + roseOne[6] * (315 - windAngle)) / 45;
-                else if (windAngle >= 315 && windAngle <= 360)
-                    windRose = (roseOne[0] * (windAngle - 315) + roseOne[7] * (360 - windAngle)) / 45;
+                if (windAngleOne >= 0 && windAngleOne <= 45)
+                    windRose = roseOne[3] + (roseOne[4] - roseOne[3]) * windAngleOne / 45;
+                else if (windAngleOne >= 45 && windAngleOne <= 90)
+                    windRose = roseOne[4] + (roseOne[5] - roseOne[4]) * (windAngleOne - 45) / 45;
+                else if (windAngleOne >= 90 && windAngleOne <= 135)
+                    windRose = roseOne[5] + (roseOne[6] - roseOne[5]) * (windAngleOne - 90) / 45;
+                else if (windAngleOne >= 135 && windAngleOne <= 180)
+                    windRose = roseOne[6] + (roseOne[7] - roseOne[6]) * (windAngleOne - 135) / 45;
+                else if (windAngleOne >= 180 && windAngleOne <= 225)
+                    windRose = roseOne[7] + (roseOne[0] - roseOne[7]) * (windAngleOne - 180) / 45;
+                else if (windAngleOne >= 225 && windAngleOne <= 270)
+                    windRose = roseOne[0] + (roseOne[1] - roseOne[0]) * (windAngleOne - 225) / 45;
+                else if (windAngleOne >= 270 && windAngleOne <= 315)
+                    windRose = roseOne[1] + (roseOne[2] - roseOne[1]) * (windAngleOne - 270) / 45;
+                else if (windAngleOne >= 315 && windAngleOne <= 360)
+                    windRose = roseOne[2] + (roseOne[3] - roseOne[2]) * (windAngleOne - 315) / 45;
             }
 
             else if (YearsCB.SelectedIndex == 1)
             {
                 if (y - yPlantLng <= 0)
                 {
-                    windAngle += 180;
+                    windAngleTwo += 180;
                 }
-                if (windAngle < 0)
+                if (windAngleTwo < 0)
                 {
-                    windAngle += 360;
+                    windAngleTwo += 360;
                 }
-                if (windAngle >= 0 && windAngle <= 45)
-                    windRose = roseTwo[2] + (roseTwo[3] - roseTwo[2]) * windAngle / 45;
-                else if (windAngle >= 45 && windAngle <= 90)
-                    windRose = roseTwo[3] + (roseTwo[4] - roseTwo[3]) * (windAngle - 45) / 45;
-                else if (windAngle >= 90 && windAngle <= 135)
-                    windRose = roseTwo[4] + (roseTwo[5] - roseTwo[4]) * (windAngle - 90) / 45;
-                else if (windAngle >= 135 && windAngle <= 180)
-                    windRose = roseTwo[5] + (roseTwo[6] - roseTwo[5]) * (windAngle - 135) / 45;
-                else if (windAngle >= 180 && windAngle <= 225)
-                    windRose = roseTwo[6] + (roseTwo[7] - roseTwo[6]) * (windAngle - 180) / 45;
-                else if (windAngle >= 225 && windAngle <= 270)
-                    windRose = roseTwo[7] + (roseTwo[0] - roseTwo[7]) * (windAngle - 225) / 45;
-                else if (windAngle >= 270 && windAngle <= 315)
-                    windRose = roseTwo[0] + (roseTwo[1] - roseTwo[0]) * (windAngle - 270) / 45;
-                else if (windAngle >= 315 && windAngle <= 360)
-                    windRose = roseTwo[1] + (roseTwo[2] - roseTwo[1]) * (windAngle - 315) / 45;
+                if (windAngleTwo >= 0 && windAngleTwo <= 45)
+                    windRose = roseTwo[5] + (roseTwo[6] - roseTwo[5]) * windAngleTwo / 45;
+                else if (windAngleTwo >= 45 && windAngleTwo <= 90)
+                    windRose = roseTwo[6] + (roseTwo[7] - roseTwo[6]) * (windAngleTwo - 45) / 45;
+                else if (windAngleTwo >= 90 && windAngleTwo <= 135)
+                    windRose = roseTwo[7] + (roseTwo[0] - roseTwo[7]) * (windAngleTwo - 90) / 45;
+                else if (windAngleTwo >= 135 && windAngleTwo <= 180)
+                    windRose = roseTwo[0] + (roseTwo[1] - roseTwo[0]) * (windAngleTwo - 135) / 45;
+                else if (windAngleTwo >= 180 && windAngleTwo <= 225)
+                    windRose = roseTwo[1] + (roseTwo[2] - roseTwo[1]) * (windAngleTwo - 180) / 45;
+                else if (windAngleTwo >= 225 && windAngleTwo <= 270)
+                    windRose = roseTwo[2] + (roseTwo[3] - roseTwo[2]) * (windAngleTwo - 225) / 45;
+                else if (windAngleTwo >= 270 && windAngleTwo <= 315)
+                    windRose = roseTwo[3] + (roseTwo[4] - roseTwo[3]) * (windAngleTwo - 270) / 45;
+                else if (windAngleTwo >= 315 && windAngleTwo <= 360)
+                    windRose = roseTwo[4] + (roseTwo[5] - roseTwo[4]) * (windAngleTwo - 315) / 45;
             }
 
             return windRose;
