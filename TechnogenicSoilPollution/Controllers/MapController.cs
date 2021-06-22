@@ -58,6 +58,8 @@ namespace TechnogenicSoilPollution.Controllers
             Gmap.PolygonsEnabled = true;
             //Разрешение маршрутов
             Gmap.RoutesEnabled = true;
+            //Шкала масштабирования
+            Gmap.MapScaleInfoEnabled = true;
 
             //Русская локализация карты
             GMapProvider.Language = LanguageType.Russian;
