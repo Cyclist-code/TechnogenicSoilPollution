@@ -233,6 +233,9 @@ namespace TechnogenicSoilPollution.UC
                 Gmap.Overlays.Add(ResultCalcPollutionOverlay);
 
                 MapController.LoadPointsMap(Gmap);
+
+                Gmap.Width++;
+                Gmap.Width--;
             }
             else
             {
