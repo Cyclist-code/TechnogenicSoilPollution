@@ -101,7 +101,7 @@ namespace TechnogenicSoilPollution.UC
                     Foreground = new SolidBrush(Color.Black),
                     Stroke = new Pen(new SolidBrush(Color.Black))
                 };
-                customMarker.ToolTipText = "Метка пользователя";
+                customMarker.ToolTipText = "Метка пользователя" + " (" + Convert.ToDouble(Math.Round(xUserLat, 6)) + "; " + Convert.ToDouble(Math.Round(yUserLng, 6)) + ")";
                 CustomMarkersOverlay.Markers.Add(customMarker);
             }
         }
