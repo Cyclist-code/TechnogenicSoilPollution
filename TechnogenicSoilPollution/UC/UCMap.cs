@@ -171,18 +171,26 @@ namespace TechnogenicSoilPollution.UC
                 {
                     x = (double)reader["Latitude"];
                     y = (double)reader["Longitude"];
-                    if (reader["Content_elements"] != DBNull.Value)
+                    try
                     {
-                        rezult = (double)reader["Content_elements"];
+                        if (reader["Content_elements"] != DBNull.Value)
+                        {
+                            rezult = (double)reader["Content_elements"];
+                        }
+                        else
+                        {
+                            rezult = (double)reader["Stocks_elements"];
+                        }
+
+                        qt[counter] = rezult;
+                        windt[counter] = WindRose(x, y);
+                        rt[counter] = GetR(x, y) * 6371;
+                        counter++;
                     }
-                    else
+                    catch
                     {
-                        rezult = (double)reader["Stocks_elements"];
-                    }
-                    qt[counter] = rezult;
-                    windt[counter] = WindRose(x, y);
-                    rt[counter] = GetR(x, y) * 6371;
-                    counter++;
+                        MessageBox.Show("Для данного элемента не проводились измерения", "Нет измерений", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }                                       
                 }
 
                 sqlConnection.Close();
