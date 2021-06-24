@@ -12,4 +12,4 @@
 - Билиотека для дизайна WinForms MaterialSkin;
 - Библиотека для работы с картой GMap.NET.
 ## Документация
-[Документация приложения](https://github.com/Cyclist-code/TechnogenicSoilPollution/wiki/Документация)
+[Документация приложения](https://github.com/Cyclist-code/TechnogenicSoilPollution/wiki)
