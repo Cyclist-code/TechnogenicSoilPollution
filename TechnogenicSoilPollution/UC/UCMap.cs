@@ -149,7 +149,7 @@ namespace TechnogenicSoilPollution.UC
                 builder.Remove(builder.Length - 1, 1);
                 builder.Append(")");
 
-                double x = 0, y = 0;
+                double x, y;
                 double rezult;
                 int counter = 0;
 
@@ -183,8 +183,8 @@ namespace TechnogenicSoilPollution.UC
                         }
 
                         qt[counter] = rezult;
-                        windt[counter] = WindRose(x, y);
-                        rt[counter] = GetR(x, y) * 6371;
+                        windt[counter] = MapController.WindRose(x, y, xPlantLat, yPlantLng, YearsCB);
+                        rt[counter] = MapController.GetR(x, y, xPlantLat, yPlantLng) * 6371;
                         counter++;
                     }
                     catch
@@ -250,95 +250,18 @@ namespace TechnogenicSoilPollution.UC
                 MessageBox.Show("Выберите опорные точки для расчёта.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        #endregion
-
-        #region Переход от декартовых к полярным координатам 
-        private double GetR(double x, double y) => Math.Sqrt(Math.Pow(x - xPlantLat, 2) + Math.Pow(y - yPlantLng, 2));
-        #endregion
-
-        #region Вычисление розы ветров и угла направления ветра
-        private double WindRose(double x, double y)
-        {
-            //Угол напрваления ветра
-            double windAngleOne = Math.Atan((x - xPlantLat) / (y - yPlantLng)) * 180 / Math.PI - 170;
-            double windAngleTwo = Math.Atan((x - xPlantLat) / (y - yPlantLng)) * 180 / Math.PI - 90;
-            //Роза ветров за 1996 год
-            double[] roseOne = { 1, 5, 5, 7, 8, 4, 13, 14 };
-            //Роза ветров за 1997 год
-            double[] roseTwo = { 1, 5, 3, 17, 7, 9, 18, 5 };
-
-            double windRose = 0;
-
-            if (YearsCB.SelectedIndex == 0)
-            {
-                if (y - yPlantLng < 0)
-                {
-                    windAngleOne += 180;
-                }
-                if (windAngleOne < 0)
-                {
-                    windAngleOne += 360;
-                }
-                if (windAngleOne >= 0 && windAngleOne <= 45)
-                    windRose = roseOne[3] + (roseOne[4] - roseOne[3]) * windAngleOne / 45;
-                else if (windAngleOne >= 45 && windAngleOne <= 90)
-                    windRose = roseOne[4] + (roseOne[5] - roseOne[4]) * (windAngleOne - 45) / 45;
-                else if (windAngleOne >= 90 && windAngleOne <= 135)
-                    windRose = roseOne[5] + (roseOne[6] - roseOne[5]) * (windAngleOne - 90) / 45;
-                else if (windAngleOne >= 135 && windAngleOne <= 180)
-                    windRose = roseOne[6] + (roseOne[7] - roseOne[6]) * (windAngleOne - 135) / 45;
-                else if (windAngleOne >= 180 && windAngleOne <= 225)
-                    windRose = roseOne[7] + (roseOne[0] - roseOne[7]) * (windAngleOne - 180) / 45;
-                else if (windAngleOne >= 225 && windAngleOne <= 270)
-                    windRose = roseOne[0] + (roseOne[1] - roseOne[0]) * (windAngleOne - 225) / 45;
-                else if (windAngleOne >= 270 && windAngleOne <= 315)
-                    windRose = roseOne[1] + (roseOne[2] - roseOne[1]) * (windAngleOne - 270) / 45;
-                else if (windAngleOne >= 315 && windAngleOne <= 360)
-                    windRose = roseOne[2] + (roseOne[3] - roseOne[2]) * (windAngleOne - 315) / 45;
-            }
-
-            else if (YearsCB.SelectedIndex == 1)
-            {
-                if (y - yPlantLng <= 0)
-                {
-                    windAngleTwo += 180;
-                }
-                if (windAngleTwo < 0)
-                {
-                    windAngleTwo += 360;
-                }
-                if (windAngleTwo >= 0 && windAngleTwo <= 45)
-                    windRose = roseTwo[5] + (roseTwo[6] - roseTwo[5]) * windAngleTwo / 45;
-                else if (windAngleTwo >= 45 && windAngleTwo <= 90)
-                    windRose = roseTwo[6] + (roseTwo[7] - roseTwo[6]) * (windAngleTwo - 45) / 45;
-                else if (windAngleTwo >= 90 && windAngleTwo <= 135)
-                    windRose = roseTwo[7] + (roseTwo[0] - roseTwo[7]) * (windAngleTwo - 90) / 45;
-                else if (windAngleTwo >= 135 && windAngleTwo <= 180)
-                    windRose = roseTwo[0] + (roseTwo[1] - roseTwo[0]) * (windAngleTwo - 135) / 45;
-                else if (windAngleTwo >= 180 && windAngleTwo <= 225)
-                    windRose = roseTwo[1] + (roseTwo[2] - roseTwo[1]) * (windAngleTwo - 180) / 45;
-                else if (windAngleTwo >= 225 && windAngleTwo <= 270)
-                    windRose = roseTwo[2] + (roseTwo[3] - roseTwo[2]) * (windAngleTwo - 225) / 45;
-                else if (windAngleTwo >= 270 && windAngleTwo <= 315)
-                    windRose = roseTwo[3] + (roseTwo[4] - roseTwo[3]) * (windAngleTwo - 270) / 45;
-                else if (windAngleTwo >= 315 && windAngleTwo <= 360)
-                    windRose = roseTwo[4] + (roseTwo[5] - roseTwo[4]) * (windAngleTwo - 315) / 45;
-            }
-
-            return windRose;
-        }
-        #endregion
+        #endregion    
 
         #region Вычисление концентрации примеси в точке с координатами (x,y)
         private void CalcFieldConcentration(double x, double y, double tet1, double tet2)
         {
-            double windRose = WindRose(x, y);
+            double windRose = MapController.WindRose(x, y, xPlantLat, yPlantLng, YearsCB);
 
             //6371 - средний радиус Земли в километрах
 
             double rMax = 5;
             //Нахождение расстояния r
-            double r = GetR(x, y) * 6371;
+            double r = MapController.GetR(x, y, xPlantLat, yPlantLng) * 6371;
 
             //Вычисление концентрации
             double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);
