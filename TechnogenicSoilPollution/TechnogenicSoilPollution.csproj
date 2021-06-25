@@ -193,6 +193,7 @@
     <Content Include="Assets\image-plant.jpg" />
     <Content Include="Assets\Rose-Wind-1996.png" />
     <Content Include="Assets\Rose-Wind-1997.png" />
+    <Content Include="Database\Database-ImpurityEmission.sql" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
