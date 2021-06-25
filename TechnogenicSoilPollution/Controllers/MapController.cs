@@ -193,6 +193,11 @@ namespace TechnogenicSoilPollution.Controllers
         }
         #endregion
 
+        #region Переход от декартовых к полярным координатам 
+        public static double GetR(double x, double y, double xPlantLat, double yPlantLng) 
+            => Math.Sqrt(Math.Pow(x - xPlantLat, 2) + Math.Pow(y - yPlantLng, 2));
+        #endregion
+
         #region Сохранение карты в PNG
         public static void SaveMapPNG(GMapControl Gmap)
         {
