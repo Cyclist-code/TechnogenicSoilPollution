@@ -216,6 +216,7 @@ namespace TechnogenicSoilPollution.UC
             this.PhasesCB.Name = "PhasesCB";
             this.PhasesCB.Size = new System.Drawing.Size(133, 26);
             this.PhasesCB.TabIndex = 10;
+            this.PhasesCB.SelectedIndexChanged += new System.EventHandler(this.PhasesCB_SelectedIndexChanged);
             // 
             // materialLabel4
             // 

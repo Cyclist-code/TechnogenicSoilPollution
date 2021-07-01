@@ -120,5 +120,35 @@ namespace TechnogenicSoilPollution.UC
             }
         }
         #endregion
+
+        #region Вывод единиц измерения концентрации примеси
+        private void PhasesCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (PhasesCB.SelectedIndex == 2 || PhasesCB.SelectedIndex == 3)
+            {
+                labelUnitsOne.Text = "кг/м³";
+                labelUnitsTwo.Text = "кг/м³";
+                labelUnitsThree.Text = "кг/м³";
+                labelUnitsFour.Text = "кг/м³";
+                labelUnitsFive.Text = "кг/м³";
+                labelUnitsSix.Text = "кг/м³";
+                labelUnitsSeven.Text = "кг/м³";
+                labelUnitsEight.Text = "кг/м³";
+                labelUnitsNine.Text = "кг/м³";
+            }
+            else
+            {
+                labelUnitsOne.Text = "мг/л";
+                labelUnitsTwo.Text = "мг/л";
+                labelUnitsThree.Text = "мг/л";
+                labelUnitsFour.Text = "мг/л";
+                labelUnitsFive.Text = "мг/л";
+                labelUnitsSix.Text = "мг/л";
+                labelUnitsSeven.Text = "мг/л";
+                labelUnitsEight.Text = "мг/л";
+                labelUnitsNine.Text = "мг/л";
+            }
+        }
+        #endregion
     }
 }
