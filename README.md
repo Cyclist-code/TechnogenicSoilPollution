@@ -19,6 +19,6 @@
 ### Работа с базой данных
 ![TechnogenicSoilPollution-Database](https://user-images.githubusercontent.com/47049219/123360542-b053ec00-d597-11eb-84d6-a3a67665c724.png)
 ### Работа с расчётами и визуализацией
-![TechnogenicSoilPollution-Calculate-Field](https://user-images.githubusercontent.com/47049219/123360593-c497e900-d597-11eb-9fc3-327226c238e4.png)
+![карта](https://user-images.githubusercontent.com/47049219/124067385-8487a900-da64-11eb-95b6-515706a67f2a.png)
 ### Пример визуализации рассчитанного поля
-![TechnogenicSoilPollution-Display-Field](https://user-images.githubusercontent.com/47049219/123360607-cc578d80-d597-11eb-9d25-a5bacd1397d0.png)
+![расчёт](https://user-images.githubusercontent.com/47049219/124067449-910c0180-da64-11eb-9833-1f0e05bb01d4.png)
