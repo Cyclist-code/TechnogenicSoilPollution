@@ -336,7 +336,8 @@ namespace TechnogenicSoilPollution.Controllers
                     }
                     catch
                     {
-                        MessageBox.Show("Для данного элемента не проводились измерения", "Нет измерений", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"Для элемента {chemicalElements} не проводились измерения в\nданной фазе и выбранных точках пробоотбора." +
+                            $"\nОтображение рассчитанного поля является неверным.", "Нет измерений", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
 
