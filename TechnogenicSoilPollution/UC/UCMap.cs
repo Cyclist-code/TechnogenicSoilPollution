@@ -30,6 +30,8 @@ namespace TechnogenicSoilPollution.UC
             InitializeComponent();
 
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ImpurityEmissionDB"].ConnectionString);
+
+            RadioButtonMapScheme.Checked = true;
         }
 
         #region Загрузка пользовательского контрола
@@ -47,8 +49,17 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка карты
         private void Gmap_Load(object sender, EventArgs e)
         {
-            MapController.MapSettings(Gmap);
             MapController.LoadPointsMap(Gmap);
+        }
+        #endregion
+
+        #region Выбор типа карты
+        private void SelectMapType(object sender, EventArgs e)
+        {
+            if (RadioButtonMapScheme.Checked == true)
+                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite);
+            else
+                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite);
         }
         #endregion
 
@@ -149,6 +160,7 @@ namespace TechnogenicSoilPollution.UC
                 labelUnitsNine.Text = "мг/л";
             }
         }
-        #endregion
+
+        #endregion       
     }
 }

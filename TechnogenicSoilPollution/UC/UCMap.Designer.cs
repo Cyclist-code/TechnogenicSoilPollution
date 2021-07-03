@@ -586,6 +586,7 @@ namespace TechnogenicSoilPollution.UC
             this.RadioButtonMapScheme.TabStop = true;
             this.RadioButtonMapScheme.Text = "Схема";
             this.RadioButtonMapScheme.UseVisualStyleBackColor = true;
+            this.RadioButtonMapScheme.CheckedChanged += new System.EventHandler(this.SelectMapType);
             // 
             // RadioButtonMapSatellite
             // 
@@ -604,6 +605,7 @@ namespace TechnogenicSoilPollution.UC
             this.RadioButtonMapSatellite.TabStop = true;
             this.RadioButtonMapSatellite.Text = "Спутник";
             this.RadioButtonMapSatellite.UseVisualStyleBackColor = true;
+            this.RadioButtonMapSatellite.CheckedChanged += new System.EventHandler(this.SelectMapType);
             // 
             // UCMap
             // 
