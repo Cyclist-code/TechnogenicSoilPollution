@@ -36,7 +36,7 @@ namespace TechnogenicSoilPollution.Controllers
         }
 
         #region Настройки карты
-        public static void MapSettings(GMapControl Gmap)
+        public static void MapSettings(GMapControl Gmap, RadioButton RadioButtonMapScheme, RadioButton RadioButtonMapSatellite)
         {
             //Угол наклона карты
             Gmap.Bearing = 0;
@@ -69,8 +69,13 @@ namespace TechnogenicSoilPollution.Controllers
 
             //Русская локализация карты
             GMapProvider.Language = LanguageType.Russian;
+
             //Провайдер для отображения карты
-            Gmap.MapProvider = GMapProviders.GoogleMap;
+            if (RadioButtonMapScheme.Checked == true)
+                Gmap.MapProvider = GMapProviders.GoogleMap;
+            if (RadioButtonMapSatellite.Checked == true)
+                Gmap.MapProvider = GMapProviders.GoogleSatelliteMap;
+
             //Загрузка карты через интернет
             GMaps.Instance.Mode = AccessMode.ServerOnly;
             //Начальные координаты для загрузки карты
