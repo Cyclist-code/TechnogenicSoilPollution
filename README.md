@@ -20,6 +20,6 @@
 ### Работа с базой данных
 ![TechnogenicSoilPollution-Database](https://user-images.githubusercontent.com/47049219/123360542-b053ec00-d597-11eb-84d6-a3a67665c724.png)
 ### Работа с расчётами и визуализацией
-![карта](https://user-images.githubusercontent.com/47049219/124067385-8487a900-da64-11eb-95b6-515706a67f2a.png)
+![карта](https://user-images.githubusercontent.com/47049219/124342997-7f586480-dbf2-11eb-822b-4670b5629c59.png)
 ### Пример визуализации рассчитанного поля
-![расчёт](https://user-images.githubusercontent.com/47049219/124067449-910c0180-da64-11eb-9833-1f0e05bb01d4.png)
+![расчет](https://user-images.githubusercontent.com/47049219/124343002-8c755380-dbf2-11eb-885c-10318b456e7e.png)
