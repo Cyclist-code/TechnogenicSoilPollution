@@ -118,6 +118,7 @@ namespace TechnogenicSoilPollution
             this.Controls.Add(this.PanelLoadUserControl);
             this.Controls.Add(this.SideMenuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1150, 720);
             this.MinimumSize = new System.Drawing.Size(1150, 720);
             this.Name = "MainForm";
