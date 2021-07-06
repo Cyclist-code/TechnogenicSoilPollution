@@ -51,7 +51,7 @@ namespace TechnogenicSoilPollution.Forms
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(7, 312);
+            this.panel2.Location = new System.Drawing.Point(7, 333);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 1);
             this.panel2.TabIndex = 30;
@@ -70,7 +70,7 @@ namespace TechnogenicSoilPollution.Forms
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(5, 190);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(593, 120);
+            this.label7.Size = new System.Drawing.Size(593, 140);
             this.label7.TabIndex = 28;
             this.label7.Text = resources.GetString("label7.Text");
             // 
@@ -100,7 +100,7 @@ namespace TechnogenicSoilPollution.Forms
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TechnogenicSoilPollution.Properties.Resources.email;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 369);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 387);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.TabIndex = 25;
@@ -109,7 +109,7 @@ namespace TechnogenicSoilPollution.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.github;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 340);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 358);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.TabIndex = 24;
@@ -119,7 +119,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(35, 371);
+            this.label5.Location = new System.Drawing.Point(35, 389);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 20);
             this.label5.TabIndex = 23;
@@ -129,7 +129,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(35, 343);
+            this.label4.Location = new System.Drawing.Point(35, 361);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 22;
@@ -139,7 +139,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(5, 317);
+            this.label3.Location = new System.Drawing.Point(5, 336);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 20);
             this.label3.TabIndex = 21;
@@ -169,7 +169,7 @@ namespace TechnogenicSoilPollution.Forms
             // 
             this.linkLabelGitHub.AutoSize = true;
             this.linkLabelGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabelGitHub.Location = new System.Drawing.Point(103, 343);
+            this.linkLabelGitHub.Location = new System.Drawing.Point(103, 361);
             this.linkLabelGitHub.Name = "linkLabelGitHub";
             this.linkLabelGitHub.Size = new System.Drawing.Size(94, 20);
             this.linkLabelGitHub.TabIndex = 33;
@@ -181,14 +181,14 @@ namespace TechnogenicSoilPollution.Forms
             this.textBoxEmail.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(89, 371);
+            this.textBoxEmail.Location = new System.Drawing.Point(89, 389);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.ReadOnly = true;
             this.textBoxEmail.Size = new System.Drawing.Size(180, 20);
             this.textBoxEmail.TabIndex = 34;
-            this.textBoxEmail.Text = "CyclistCode@gmail.com";
+            this.textBoxEmail.Text = "cyclistcode@gmail.com";
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ReferenceProgramForm
