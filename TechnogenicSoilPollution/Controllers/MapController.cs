@@ -204,8 +204,8 @@ namespace TechnogenicSoilPollution.Controllers
         }
         #endregion
 
-        #region Переход от декартовых к полярным координатам 
-        private static double GetR(double x, double y, double xPlantLat, double yPlantLng) 
+        #region Переход от декартовых к полярным координатам
+        private static double TransitionBetweenCoordinates(double x, double y, double xPlantLat, double yPlantLng) 
             => Math.Sqrt(Math.Pow(x - xPlantLat, 2) + Math.Pow(y - yPlantLng, 2));
         #endregion
 
@@ -283,7 +283,7 @@ namespace TechnogenicSoilPollution.Controllers
         #endregion
 
         #region Расчёт загрязнения
-        public static void CalculatePollution(ComboBox ChemicalElementsCB, ComboBox PhasesCB, 
+        public static void CalculateFieldPollution(ComboBox ChemicalElementsCB, ComboBox PhasesCB, 
             CheckedListBox PivotPointsCLB, ComboBox YearsCB, GMapControl Gmap)
         {
             string chemicalElements = ChemicalElementsCB.SelectedItem.ToString();
@@ -336,7 +336,7 @@ namespace TechnogenicSoilPollution.Controllers
 
                         qt[counter] = rezult;
                         windt[counter] = WindRose(x, y, xPlantLat, yPlantLng, YearsCB);
-                        rt[counter] = GetR(x, y, xPlantLat, yPlantLng) * 6371;
+                        rt[counter] = TransitionBetweenCoordinates(x, y, xPlantLat, yPlantLng) * 6371;
                         counter++;
                     }
                     catch
@@ -383,7 +383,7 @@ namespace TechnogenicSoilPollution.Controllers
                 {
                     for (double j = 103.992177; j < 104.194542; j += 0.0005)
                     {
-                        CalcFieldConcentration(i, j, tet1, tet2, YearsCB);
+                        CalculateInPointsXY(i, j, tet1, tet2, YearsCB);
                     }
                 }
 
@@ -406,7 +406,7 @@ namespace TechnogenicSoilPollution.Controllers
         #endregion 
 
         #region Вычисление концентрации примеси в точке с координатами (x,y)
-        private static void CalcFieldConcentration(double x, double y, double tet1, double tet2, ComboBox YearsCB)
+        private static void CalculateInPointsXY(double x, double y, double tet1, double tet2, ComboBox YearsCB)
         {
             double windRose = WindRose(x, y, xPlantLat, yPlantLng, YearsCB);
 
@@ -414,7 +414,7 @@ namespace TechnogenicSoilPollution.Controllers
 
             double rMax = 5;
             //Нахождение расстояния r
-            double r = MapController.GetR(x, y, xPlantLat, yPlantLng) * 6371;
+            double r = TransitionBetweenCoordinates(x, y, xPlantLat, yPlantLng) * 6371;
 
             //Вычисление концентрации
             double Q = windRose * tet1 * Math.Pow(r, tet2) * Math.Exp(-2 * rMax / r);
@@ -470,6 +470,5 @@ namespace TechnogenicSoilPollution.Controllers
             }
         }
         #endregion
-
     }
 }

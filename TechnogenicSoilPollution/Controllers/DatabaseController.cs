@@ -103,7 +103,7 @@ namespace TechnogenicSoilPollution.Controllers
         #endregion
 
         #region Обновление существующих данных
-        public static void UpdateDataBtn(DataGridView dataGridView, ComboBox comboBox)
+        public static void UpdateDataMethod(DataGridView dataGridView, ComboBox comboBox)
         {
             sqlConnection.Open();
 
@@ -215,7 +215,7 @@ namespace TechnogenicSoilPollution.Controllers
         #endregion
 
         #region Экспорт данных в Excel
-        public static void ExportDataExcel(DataGridView dataGridView)
+        public static void ExportDataExcelMethod(DataGridView dataGridView)
         {
             if (dataSet != null)
             {

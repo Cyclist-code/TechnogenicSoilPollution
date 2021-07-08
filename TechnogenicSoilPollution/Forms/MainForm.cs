@@ -9,10 +9,11 @@ namespace TechnogenicSoilPollution
 {
     public partial class MainForm : MaterialForm
     {
-
+        #region UserControls
         private UCHome HomePage = new UCHome();
         private UCData DataPage = new UCData();
         private UCMap MapPage = new UCMap();
+        #endregion
 
         public MainForm()
         {

@@ -54,7 +54,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void UpdateDataBtn_Click(object sender, EventArgs e)
         {
-            DatabaseController.UpdateDataBtn(MainDataGridView, SelectYearCB);
+            DatabaseController.UpdateDataMethod(MainDataGridView, SelectYearCB);
         }
 
         private void AddDataBtn_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void ExportDataBtn_Click(object sender, EventArgs e)
         {
-            DatabaseController.ExportDataExcel(MainDataGridView);
+            DatabaseController.ExportDataExcelMethod(MainDataGridView);
         }
 
         #endregion

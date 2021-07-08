@@ -72,7 +72,7 @@ namespace TechnogenicSoilPollution.UC
 
         private void CalcPollutionBtn_Click(object sender, EventArgs e)
         {
-            MapController.CalculatePollution(ChemicalElementsCB, PhasesCB, PivotPointsCLB, YearsCB, Gmap);
+            MapController.CalculateFieldPollution(ChemicalElementsCB, PhasesCB, PivotPointsCLB, YearsCB, Gmap);
         }
 
         private void YearsCB_SelectedIndexChanged(object sender, EventArgs e)
