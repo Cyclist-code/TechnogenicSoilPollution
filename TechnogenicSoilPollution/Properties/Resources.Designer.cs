@@ -73,9 +73,9 @@ namespace TechnogenicSoilPollution.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap github {
+        internal static System.Drawing.Bitmap factory {
             get {
-                object obj = ResourceManager.GetObject("github", resourceCulture);
+                object obj = ResourceManager.GetObject("factory", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace TechnogenicSoilPollution.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_plant {
+        internal static System.Drawing.Bitmap github {
             get {
-                object obj = ResourceManager.GetObject("image-plant", resourceCulture);
+                object obj = ResourceManager.GetObject("github", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

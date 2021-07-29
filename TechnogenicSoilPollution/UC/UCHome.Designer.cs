@@ -48,11 +48,11 @@ namespace TechnogenicSoilPollution.UC
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.image_plant;
-            this.pictureBox1.Location = new System.Drawing.Point(315, 240);
+            this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.factory;
+            this.pictureBox1.Location = new System.Drawing.Point(315, 250);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(400, 400);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
