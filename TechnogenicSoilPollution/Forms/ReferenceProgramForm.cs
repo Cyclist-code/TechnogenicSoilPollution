@@ -24,7 +24,7 @@ namespace TechnogenicSoilPollution.Forms
         #region Переход в профиль разработчика на GitHub
         private void LinkLabelGitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/Cyclist-code");
+            Process.Start("https://github.com/Cyclist-code/TechnogenicSoilPollution");
         }
         #endregion
 
