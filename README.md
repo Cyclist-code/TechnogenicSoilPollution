@@ -10,8 +10,8 @@
 - Платформа WinForms;
 - .NET Framework 4.7.2;
 - База данных MS SQL Server;
-- Билиотека для дизайна MaterialSkin;
-- Библиотека для работы с картой GMap.NET.
+- Билиотека для дизайна [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin);
+- Библиотека для работы с картой [GMap.NET](https://github.com/judero01col/GMap.NET).
 ## Документация
 [Документация приложения](https://github.com/Cyclist-code/TechnogenicSoilPollution/wiki)
 ## Изображения приложения
