@@ -43,38 +43,38 @@ namespace TechnogenicSoilPollution.UC
             this.YearsCB = new System.Windows.Forms.ComboBox();
             this.PromptFormBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.RoseWindLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.label12 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.RoseWindPictureBox = new System.Windows.Forms.PictureBox();
             this.RoseWindImagePanel = new System.Windows.Forms.Panel();
-            this.labelUnitsNine = new System.Windows.Forms.Label();
-            this.labelUnitsEight = new System.Windows.Forms.Label();
-            this.labelUnitsSeven = new System.Windows.Forms.Label();
-            this.labelUnitsSix = new System.Windows.Forms.Label();
-            this.labelUnitsFive = new System.Windows.Forms.Label();
-            this.labelUnitsFour = new System.Windows.Forms.Label();
-            this.labelUnitsThree = new System.Windows.Forms.Label();
-            this.labelUnitsTwo = new System.Windows.Forms.Label();
-            this.labelUnitsOne = new System.Windows.Forms.Label();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.RadioButtonMapScheme = new MaterialSkin.Controls.MaterialRadioButton();
             this.RadioButtonMapSatellite = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsOne = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsTwo = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsThree = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsFour = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsFive = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsSix = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsSeven = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsEight = new MaterialSkin.Controls.MaterialLabel();
+            this.labelUnitsNine = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -269,16 +269,6 @@ namespace TechnogenicSoilPollution.UC
             this.RoseWindLabel.Size = new System.Drawing.Size(0, 19);
             this.RoseWindLabel.TabIndex = 15;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(663, 485);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 18);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "< 0.1";
-            // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(50)))), ((int)(((byte)(200)))), ((int)(((byte)(240)))));
@@ -288,16 +278,6 @@ namespace TechnogenicSoilPollution.UC
             this.pictureBox8.Size = new System.Drawing.Size(20, 20);
             this.pictureBox8.TabIndex = 46;
             this.pictureBox8.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(663, 431);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 18);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "2.5 - 4";
             // 
             // pictureBox7
             // 
@@ -309,16 +289,6 @@ namespace TechnogenicSoilPollution.UC
             this.pictureBox7.TabIndex = 44;
             this.pictureBox7.TabStop = false;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(663, 458);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 18);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "0.5 - 2";
-            // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(50)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
@@ -328,56 +298,6 @@ namespace TechnogenicSoilPollution.UC
             this.pictureBox6.Size = new System.Drawing.Size(20, 20);
             this.pictureBox6.TabIndex = 42;
             this.pictureBox6.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(663, 406);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 18);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "4.5 - 6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(663, 380);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 18);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "6.5 - 8";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(663, 354);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 18);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "8.5 - 10";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(663, 328);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 18);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "10.5 - 12";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(663, 302);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 18);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "12.5 - 14";
             // 
             // pictureBox5
             // 
@@ -429,16 +349,6 @@ namespace TechnogenicSoilPollution.UC
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(663, 275);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 18);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "> 14.5";
-            // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -465,96 +375,6 @@ namespace TechnogenicSoilPollution.UC
             this.RoseWindImagePanel.Name = "RoseWindImagePanel";
             this.RoseWindImagePanel.Size = new System.Drawing.Size(240, 240);
             this.RoseWindImagePanel.TabIndex = 14;
-            // 
-            // labelUnitsNine
-            // 
-            this.labelUnitsNine.AutoSize = true;
-            this.labelUnitsNine.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsNine.Location = new System.Drawing.Point(709, 275);
-            this.labelUnitsNine.Name = "labelUnitsNine";
-            this.labelUnitsNine.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsNine.TabIndex = 52;
-            this.labelUnitsNine.Text = "мг/л";
-            // 
-            // labelUnitsEight
-            // 
-            this.labelUnitsEight.AutoSize = true;
-            this.labelUnitsEight.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsEight.Location = new System.Drawing.Point(725, 302);
-            this.labelUnitsEight.Name = "labelUnitsEight";
-            this.labelUnitsEight.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsEight.TabIndex = 53;
-            this.labelUnitsEight.Text = "мг/л";
-            // 
-            // labelUnitsSeven
-            // 
-            this.labelUnitsSeven.AutoSize = true;
-            this.labelUnitsSeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsSeven.Location = new System.Drawing.Point(725, 328);
-            this.labelUnitsSeven.Name = "labelUnitsSeven";
-            this.labelUnitsSeven.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsSeven.TabIndex = 54;
-            this.labelUnitsSeven.Text = "мг/л";
-            // 
-            // labelUnitsSix
-            // 
-            this.labelUnitsSix.AutoSize = true;
-            this.labelUnitsSix.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsSix.Location = new System.Drawing.Point(716, 354);
-            this.labelUnitsSix.Name = "labelUnitsSix";
-            this.labelUnitsSix.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsSix.TabIndex = 55;
-            this.labelUnitsSix.Text = "мг/л";
-            // 
-            // labelUnitsFive
-            // 
-            this.labelUnitsFive.AutoSize = true;
-            this.labelUnitsFive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsFive.Location = new System.Drawing.Point(709, 380);
-            this.labelUnitsFive.Name = "labelUnitsFive";
-            this.labelUnitsFive.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsFive.TabIndex = 56;
-            this.labelUnitsFive.Text = "мг/л";
-            // 
-            // labelUnitsFour
-            // 
-            this.labelUnitsFour.AutoSize = true;
-            this.labelUnitsFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsFour.Location = new System.Drawing.Point(709, 406);
-            this.labelUnitsFour.Name = "labelUnitsFour";
-            this.labelUnitsFour.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsFour.TabIndex = 57;
-            this.labelUnitsFour.Text = "мг/л";
-            // 
-            // labelUnitsThree
-            // 
-            this.labelUnitsThree.AutoSize = true;
-            this.labelUnitsThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsThree.Location = new System.Drawing.Point(709, 431);
-            this.labelUnitsThree.Name = "labelUnitsThree";
-            this.labelUnitsThree.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsThree.TabIndex = 58;
-            this.labelUnitsThree.Text = "мг/л";
-            // 
-            // labelUnitsTwo
-            // 
-            this.labelUnitsTwo.AutoSize = true;
-            this.labelUnitsTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsTwo.Location = new System.Drawing.Point(709, 458);
-            this.labelUnitsTwo.Name = "labelUnitsTwo";
-            this.labelUnitsTwo.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsTwo.TabIndex = 59;
-            this.labelUnitsTwo.Text = "мг/л";
-            // 
-            // labelUnitsOne
-            // 
-            this.labelUnitsOne.AutoSize = true;
-            this.labelUnitsOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUnitsOne.Location = new System.Drawing.Point(699, 485);
-            this.labelUnitsOne.Name = "labelUnitsOne";
-            this.labelUnitsOne.Size = new System.Drawing.Size(38, 18);
-            this.labelUnitsOne.TabIndex = 60;
-            this.labelUnitsOne.Text = "мг/л";
             // 
             // materialLabel5
             // 
@@ -607,35 +427,269 @@ namespace TechnogenicSoilPollution.UC
             this.RadioButtonMapSatellite.UseVisualStyleBackColor = true;
             this.RadioButtonMapSatellite.CheckedChanged += new System.EventHandler(this.SelectMapType);
             // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(663, 275);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(49, 19);
+            this.materialLabel6.TabIndex = 64;
+            this.materialLabel6.Text = "> 14.5";
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(663, 302);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(65, 19);
+            this.materialLabel7.TabIndex = 65;
+            this.materialLabel7.Text = "12.5 - 14";
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(663, 328);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(65, 19);
+            this.materialLabel8.TabIndex = 66;
+            this.materialLabel8.Text = "10.5 - 12";
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(663, 354);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(57, 19);
+            this.materialLabel9.TabIndex = 67;
+            this.materialLabel9.Text = "8.5 - 10";
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel10.Location = new System.Drawing.Point(663, 380);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(49, 19);
+            this.materialLabel10.TabIndex = 68;
+            this.materialLabel10.Text = "6.5 - 8";
+            // 
+            // materialLabel11
+            // 
+            this.materialLabel11.AutoSize = true;
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel11.Location = new System.Drawing.Point(663, 406);
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Size = new System.Drawing.Size(49, 19);
+            this.materialLabel11.TabIndex = 69;
+            this.materialLabel11.Text = "4.5 - 6";
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.AutoSize = true;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel12.Location = new System.Drawing.Point(663, 431);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(49, 19);
+            this.materialLabel12.TabIndex = 70;
+            this.materialLabel12.Text = "2.5 - 4";
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel13.Location = new System.Drawing.Point(663, 458);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(49, 19);
+            this.materialLabel13.TabIndex = 71;
+            this.materialLabel13.Text = "0.5 - 2";
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel14.Location = new System.Drawing.Point(663, 485);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(41, 19);
+            this.materialLabel14.TabIndex = 72;
+            this.materialLabel14.Text = "< 0.1";
+            // 
+            // labelUnitsOne
+            // 
+            this.labelUnitsOne.AutoSize = true;
+            this.labelUnitsOne.Depth = 0;
+            this.labelUnitsOne.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsOne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsOne.Location = new System.Drawing.Point(709, 275);
+            this.labelUnitsOne.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsOne.Name = "labelUnitsOne";
+            this.labelUnitsOne.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsOne.TabIndex = 73;
+            this.labelUnitsOne.Text = "мг/л";
+            // 
+            // labelUnitsTwo
+            // 
+            this.labelUnitsTwo.AutoSize = true;
+            this.labelUnitsTwo.Depth = 0;
+            this.labelUnitsTwo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsTwo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsTwo.Location = new System.Drawing.Point(725, 302);
+            this.labelUnitsTwo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsTwo.Name = "labelUnitsTwo";
+            this.labelUnitsTwo.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsTwo.TabIndex = 74;
+            this.labelUnitsTwo.Text = "мг/л";
+            // 
+            // labelUnitsThree
+            // 
+            this.labelUnitsThree.AutoSize = true;
+            this.labelUnitsThree.Depth = 0;
+            this.labelUnitsThree.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsThree.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsThree.Location = new System.Drawing.Point(725, 328);
+            this.labelUnitsThree.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsThree.Name = "labelUnitsThree";
+            this.labelUnitsThree.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsThree.TabIndex = 75;
+            this.labelUnitsThree.Text = "мг/л";
+            // 
+            // labelUnitsFour
+            // 
+            this.labelUnitsFour.AutoSize = true;
+            this.labelUnitsFour.Depth = 0;
+            this.labelUnitsFour.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsFour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsFour.Location = new System.Drawing.Point(716, 354);
+            this.labelUnitsFour.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsFour.Name = "labelUnitsFour";
+            this.labelUnitsFour.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsFour.TabIndex = 76;
+            this.labelUnitsFour.Text = "мг/л";
+            // 
+            // labelUnitsFive
+            // 
+            this.labelUnitsFive.AutoSize = true;
+            this.labelUnitsFive.Depth = 0;
+            this.labelUnitsFive.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsFive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsFive.Location = new System.Drawing.Point(709, 380);
+            this.labelUnitsFive.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsFive.Name = "labelUnitsFive";
+            this.labelUnitsFive.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsFive.TabIndex = 77;
+            this.labelUnitsFive.Text = "мг/л";
+            // 
+            // labelUnitsSix
+            // 
+            this.labelUnitsSix.AutoSize = true;
+            this.labelUnitsSix.Depth = 0;
+            this.labelUnitsSix.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsSix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsSix.Location = new System.Drawing.Point(709, 406);
+            this.labelUnitsSix.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsSix.Name = "labelUnitsSix";
+            this.labelUnitsSix.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsSix.TabIndex = 78;
+            this.labelUnitsSix.Text = "мг/л";
+            // 
+            // labelUnitsSeven
+            // 
+            this.labelUnitsSeven.AutoSize = true;
+            this.labelUnitsSeven.Depth = 0;
+            this.labelUnitsSeven.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsSeven.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsSeven.Location = new System.Drawing.Point(709, 431);
+            this.labelUnitsSeven.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsSeven.Name = "labelUnitsSeven";
+            this.labelUnitsSeven.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsSeven.TabIndex = 79;
+            this.labelUnitsSeven.Text = "мг/л";
+            // 
+            // labelUnitsEight
+            // 
+            this.labelUnitsEight.AutoSize = true;
+            this.labelUnitsEight.Depth = 0;
+            this.labelUnitsEight.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsEight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsEight.Location = new System.Drawing.Point(709, 458);
+            this.labelUnitsEight.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsEight.Name = "labelUnitsEight";
+            this.labelUnitsEight.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsEight.TabIndex = 80;
+            this.labelUnitsEight.Text = "мг/л";
+            // 
+            // labelUnitsNine
+            // 
+            this.labelUnitsNine.AutoSize = true;
+            this.labelUnitsNine.Depth = 0;
+            this.labelUnitsNine.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelUnitsNine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelUnitsNine.Location = new System.Drawing.Point(699, 485);
+            this.labelUnitsNine.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelUnitsNine.Name = "labelUnitsNine";
+            this.labelUnitsNine.Size = new System.Drawing.Size(41, 19);
+            this.labelUnitsNine.TabIndex = 81;
+            this.labelUnitsNine.Text = "мг/л";
+            // 
             // UCMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelUnitsNine);
+            this.Controls.Add(this.labelUnitsEight);
+            this.Controls.Add(this.labelUnitsSeven);
+            this.Controls.Add(this.labelUnitsSix);
+            this.Controls.Add(this.labelUnitsFive);
+            this.Controls.Add(this.labelUnitsFour);
+            this.Controls.Add(this.labelUnitsThree);
+            this.Controls.Add(this.labelUnitsTwo);
+            this.Controls.Add(this.labelUnitsOne);
+            this.Controls.Add(this.materialLabel14);
+            this.Controls.Add(this.materialLabel13);
+            this.Controls.Add(this.materialLabel12);
+            this.Controls.Add(this.materialLabel11);
+            this.Controls.Add(this.materialLabel10);
+            this.Controls.Add(this.materialLabel9);
+            this.Controls.Add(this.materialLabel8);
+            this.Controls.Add(this.materialLabel7);
+            this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.RadioButtonMapSatellite);
             this.Controls.Add(this.RadioButtonMapScheme);
             this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.labelUnitsOne);
-            this.Controls.Add(this.labelUnitsTwo);
-            this.Controls.Add(this.labelUnitsThree);
-            this.Controls.Add(this.labelUnitsFour);
-            this.Controls.Add(this.labelUnitsFive);
-            this.Controls.Add(this.labelUnitsSix);
-            this.Controls.Add(this.labelUnitsSeven);
-            this.Controls.Add(this.labelUnitsEight);
-            this.Controls.Add(this.labelUnitsNine);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -690,37 +744,37 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.ComboBox YearsCB;
         private MaterialSkin.Controls.MaterialRaisedButton PromptFormBtn;
         private MaterialSkin.Controls.MaterialLabel RoseWindLabel;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox RoseWindPictureBox;
         private System.Windows.Forms.Panel RoseWindImagePanel;
-        private System.Windows.Forms.Label labelUnitsNine;
-        private System.Windows.Forms.Label labelUnitsEight;
-        private System.Windows.Forms.Label labelUnitsSeven;
-        private System.Windows.Forms.Label labelUnitsSix;
-        private System.Windows.Forms.Label labelUnitsFive;
-        private System.Windows.Forms.Label labelUnitsFour;
-        private System.Windows.Forms.Label labelUnitsThree;
-        private System.Windows.Forms.Label labelUnitsTwo;
-        private System.Windows.Forms.Label labelUnitsOne;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialRadioButton RadioButtonMapScheme;
         private MaterialSkin.Controls.MaterialRadioButton RadioButtonMapSatellite;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
+        private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialLabel materialLabel14;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsOne;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsTwo;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsThree;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsFour;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsFive;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsSix;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsSeven;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsEight;
+        private MaterialSkin.Controls.MaterialLabel labelUnitsNine;
     }
 }
