@@ -117,6 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="materialLabel2.Text" xml:space="preserve">
+    <value>Работа с расчётом примесей:
+Для правильного расчёта примесей, необходимо выбирать 2 опорные
+точки только с одного направления.
+В данном списке представлены направления и им принадлежащие 
+опорные точки:
+1. Северо-Запад  - 1 ,2, 3, 4;
+2. Северо-Восток - 5, 6, 7, 8;
+3. Юго-Запад - 9, 10;
+4. Юго-Восток - 11, 12, 13, 14.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
