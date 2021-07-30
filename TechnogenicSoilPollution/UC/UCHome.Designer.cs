@@ -29,22 +29,10 @@ namespace TechnogenicSoilPollution.UC
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TitleAppLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(11, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1021, 138);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Расчёт и визуализация техногенного загрязнения \r\nтерриторий в зоне влияния Иркутс" +
-    "кого \r\nалюминиевого завода";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -56,12 +44,24 @@ namespace TechnogenicSoilPollution.UC
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // TitleAppLabel
+            // 
+            this.TitleAppLabel.AutoSize = true;
+            this.TitleAppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TitleAppLabel.Location = new System.Drawing.Point(11, 26);
+            this.TitleAppLabel.Name = "TitleAppLabel";
+            this.TitleAppLabel.Size = new System.Drawing.Size(1021, 138);
+            this.TitleAppLabel.TabIndex = 0;
+            this.TitleAppLabel.Text = "Расчёт и визуализация техногенного загрязнения \r\nтерриторий в зоне влияния Иркутс" +
+    "кого \r\nалюминиевого завода";
+            this.TitleAppLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UCHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TitleAppLabel);
             this.Name = "UCHome";
             this.Size = new System.Drawing.Size(1031, 657);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -71,8 +71,7 @@ namespace TechnogenicSoilPollution.UC
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label TitleAppLabel;
     }
 }
