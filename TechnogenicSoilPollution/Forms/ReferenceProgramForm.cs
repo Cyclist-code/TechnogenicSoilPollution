@@ -17,22 +17,27 @@ namespace TechnogenicSoilPollution.Forms
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             #endregion
-
-            linkLabelGitHub.LinkClicked += LinkLabelGitHub_LinkClicked;
         }
 
         #region Переход в профиль разработчика на GitHub
-        private void LinkLabelGitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void GitHubProfileButton_Click(object sender, System.EventArgs e)
         {
             Process.Start("https://github.com/Cyclist-code/TechnogenicSoilPollution");
         }
         #endregion
 
+        #region Копирование электронной почты
+        private void CopyEmailButton_Click(object sender, System.EventArgs e)
+        {
+            Clipboard.SetText("cyclistcode@gmail.com");
+        }
+        #endregion
+
         #region Закрытие окна
-        private void CloseFormBtn_Click(object sender, System.EventArgs e)
+        private void CloseFormButton_Click(object sender, System.EventArgs e)
         {
             Close();
         }
-        #endregion
+        #endregion       
     }
 }
