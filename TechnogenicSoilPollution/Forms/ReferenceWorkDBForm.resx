@@ -117,11 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Добавлять новые данные нужно в ячейки видимой таблицы. Есть нюанс. 
-Чтобы добавить фазу, нужно выбрать её из выпадающего списка.
-К сожалению, это пока не удалось переделать под нормальный ввод 
-новых данных.</value>
+  <data name="materialLabel1.Text" xml:space="preserve">
+    <value>Обновление данных:
+При обновлении данных, пользователю необходимо находиться 
+на той строке, где происходило обновление данных. Иначе 
+обновленные данные сохранятся совсем в другую строку в базе 
+данных.</value>
+  </data>
+  <data name="materialLabel2.Text" xml:space="preserve">
+    <value>Добавление новых данных:
+Добавлять новые данные нужно в ячейки видимой таблицы. Есть 
+нюанс. Чтобы добавить фазу, нужно выбрать её из выпадающего 
+списка. К сожалению, это пока не удалось переделать под 
+нормальный ввод новых данных.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
