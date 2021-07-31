@@ -36,6 +36,8 @@ namespace TechnogenicSoilPollution
             this.BtnOpenHelp = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.PanelLoadUserControl = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.SideMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +96,8 @@ namespace TechnogenicSoilPollution
             // SideMenuPanel
             // 
             this.SideMenuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SideMenuPanel.Controls.Add(this.DarkThemeCheckBox);
+            this.SideMenuPanel.Controls.Add(this.panel1);
             this.SideMenuPanel.Controls.Add(this.BtnOpenHome);
             this.SideMenuPanel.Controls.Add(this.BtnOpenHelp);
             this.SideMenuPanel.Controls.Add(this.BtnOpenData);
@@ -109,6 +113,30 @@ namespace TechnogenicSoilPollution
             this.PanelLoadUserControl.Name = "PanelLoadUserControl";
             this.PanelLoadUserControl.Size = new System.Drawing.Size(1031, 657);
             this.PanelLoadUserControl.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(3, 187);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(110, 1);
+            this.panel1.TabIndex = 0;
+            // 
+            // DarkThemeCheckBox
+            // 
+            this.DarkThemeCheckBox.AutoSize = true;
+            this.DarkThemeCheckBox.Depth = 0;
+            this.DarkThemeCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
+            this.DarkThemeCheckBox.Location = new System.Drawing.Point(-2, 191);
+            this.DarkThemeCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.DarkThemeCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.DarkThemeCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DarkThemeCheckBox.Name = "DarkThemeCheckBox";
+            this.DarkThemeCheckBox.Ripple = true;
+            this.DarkThemeCheckBox.Size = new System.Drawing.Size(114, 30);
+            this.DarkThemeCheckBox.TabIndex = 0;
+            this.DarkThemeCheckBox.Text = "Тёмная тема";
+            this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -126,6 +154,7 @@ namespace TechnogenicSoilPollution
             this.Text = "Расчёт и визуализация техногенного загрязнения";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.SideMenuPanel.ResumeLayout(false);
+            this.SideMenuPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -138,6 +167,8 @@ namespace TechnogenicSoilPollution
         private MaterialSkin.Controls.MaterialRaisedButton BtnOpenHelp;
         private System.Windows.Forms.Panel SideMenuPanel;
         private System.Windows.Forms.Panel PanelLoadUserControl;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialCheckBox DarkThemeCheckBox;
     }
 }
 
