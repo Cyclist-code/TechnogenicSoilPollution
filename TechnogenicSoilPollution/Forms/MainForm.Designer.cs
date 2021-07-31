@@ -35,9 +35,9 @@ namespace TechnogenicSoilPollution
             this.BtnOpenData = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnOpenHelp = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
-            this.PanelLoadUserControl = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelLoadUserControl = new System.Windows.Forms.Panel();
             this.SideMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,21 +107,6 @@ namespace TechnogenicSoilPollution
             this.SideMenuPanel.Size = new System.Drawing.Size(120, 658);
             this.SideMenuPanel.TabIndex = 4;
             // 
-            // PanelLoadUserControl
-            // 
-            this.PanelLoadUserControl.Location = new System.Drawing.Point(119, 64);
-            this.PanelLoadUserControl.Name = "PanelLoadUserControl";
-            this.PanelLoadUserControl.Size = new System.Drawing.Size(1031, 657);
-            this.PanelLoadUserControl.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(3, 187);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(110, 1);
-            this.panel1.TabIndex = 0;
-            // 
             // DarkThemeCheckBox
             // 
             this.DarkThemeCheckBox.AutoSize = true;
@@ -137,6 +122,22 @@ namespace TechnogenicSoilPollution
             this.DarkThemeCheckBox.TabIndex = 0;
             this.DarkThemeCheckBox.Text = "Тёмная тема";
             this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
+            this.DarkThemeCheckBox.CheckedChanged += new System.EventHandler(this.DarkThemeCheckBox_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(3, 187);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(110, 1);
+            this.panel1.TabIndex = 0;
+            // 
+            // PanelLoadUserControl
+            // 
+            this.PanelLoadUserControl.Location = new System.Drawing.Point(119, 64);
+            this.PanelLoadUserControl.Name = "PanelLoadUserControl";
+            this.PanelLoadUserControl.Size = new System.Drawing.Size(1031, 657);
+            this.PanelLoadUserControl.TabIndex = 5;
             // 
             // MainForm
             // 
