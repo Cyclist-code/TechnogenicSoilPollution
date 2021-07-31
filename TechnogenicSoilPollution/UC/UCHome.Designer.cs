@@ -47,13 +47,13 @@ namespace TechnogenicSoilPollution.UC
             // TitleAppLabel
             // 
             this.TitleAppLabel.AutoSize = true;
-            this.TitleAppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleAppLabel.Location = new System.Drawing.Point(11, 26);
+            this.TitleAppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 38.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TitleAppLabel.Location = new System.Drawing.Point(15, 36);
             this.TitleAppLabel.Name = "TitleAppLabel";
-            this.TitleAppLabel.Size = new System.Drawing.Size(1021, 138);
+            this.TitleAppLabel.Size = new System.Drawing.Size(1000, 177);
             this.TitleAppLabel.TabIndex = 0;
-            this.TitleAppLabel.Text = "Расчёт и визуализация техногенного загрязнения \r\nтерриторий в зоне влияния Иркутс" +
-    "кого \r\nалюминиевого завода";
+            this.TitleAppLabel.Text = "Расчёт и визуализация техногенного \r\nзагрязнения территорий в зоне влияния \r\nИрку" +
+    "тского алюминиевого завода";
             this.TitleAppLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UCHome
