@@ -14,12 +14,14 @@
 - Библиотека для работы с картой [GMap.NET](https://github.com/judero01col/GMap.NET).
 ## Документация
 [Документация приложения](https://github.com/Cyclist-code/TechnogenicSoilPollution/wiki)
+## Нюансы
+- При выборе тёмной темы, заголовок на главной станице не меняет цвет, так как используется обычная метка.
 ## Изображения приложения
 ### Главное меню
-![главная](https://user-images.githubusercontent.com/47049219/124744939-709ee400-df49-11eb-937c-c3b0c5a6dba4.png)
+![home-page](https://user-images.githubusercontent.com/47049219/127740381-e28101fc-49d6-4cea-990d-a8d4e05e4caa.png)
 ### Работа с базой данных
-![база-данных](https://user-images.githubusercontent.com/47049219/124745019-8a402b80-df49-11eb-85a4-c1f31032514f.png)
+![database-page](https://user-images.githubusercontent.com/47049219/127740308-d240e689-6fdf-405a-9204-db85c2b688cc.png)
 ### Работа с расчётами и визуализацией
-![карта](https://user-images.githubusercontent.com/47049219/124745047-94622a00-df49-11eb-94b4-19c2ef083cf3.png)
+![map-page](https://user-images.githubusercontent.com/47049219/127740320-db1d75db-ac76-45ab-90d0-7f4caca6db27.png)
 ### Пример визуализации рассчитанного поля
-![расчёт](https://user-images.githubusercontent.com/47049219/124745078-9cba6500-df49-11eb-8549-15aa6557deed.png)
+![pollution-page](https://user-images.githubusercontent.com/47049219/127740413-76a3af93-1a39-48b9-a3c6-be023abba8e8.png)
