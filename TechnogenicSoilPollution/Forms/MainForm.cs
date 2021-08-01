@@ -15,6 +15,11 @@ namespace TechnogenicSoilPollution
         private UCMap MapPage = new UCMap();
         #endregion
 
+        #region Глобальные переменные
+        int openForm = 0;
+        ReferenceProgramForm programForm;
+        #endregion
+
         public MainForm()
         {
             InitializeComponent();
@@ -42,9 +47,19 @@ namespace TechnogenicSoilPollution
 
         #region Открытие окна со справкой
         private void BtnOpenHelp_Click(object sender, EventArgs e)
-        {
-            ReferenceProgramForm programForm = new ReferenceProgramForm();
-            programForm.ShowDialog();
+        {                       
+            foreach(Form form in Application.OpenForms)
+            {
+                if (form.Name == "ReferenceProgramForm")
+                    openForm = 1;
+                else openForm = 0;
+            }
+
+            if (openForm == 0)
+            {
+                programForm = new ReferenceProgramForm();
+                programForm.Show();
+            }
         }
         #endregion
 
