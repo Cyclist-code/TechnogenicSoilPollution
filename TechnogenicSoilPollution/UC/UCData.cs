@@ -11,6 +11,9 @@ namespace TechnogenicSoilPollution.UC
     {
         #region Глобальные переменные
         private SqlConnection sqlConnection = null;
+
+        int openForm = 0;
+        ReferenceWorkDBForm dBForm;
         #endregion
 
         public UCData()
@@ -43,8 +46,18 @@ namespace TechnogenicSoilPollution.UC
 
         private void ReferenceDataBaseBtn_Click(object sender, EventArgs e)
         {
-            ReferenceWorkDBForm workDBForm = new ReferenceWorkDBForm();
-            workDBForm.ShowDialog();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "ReferenceWorkDBForm")
+                    openForm = 1;
+                else openForm = 0;
+            }
+
+            if (openForm == 0)
+            {
+                dBForm = new ReferenceWorkDBForm();
+                dBForm.Show();
+            }
         }
 
         private void AddNewRowBtn_Click(object sender, EventArgs e)
