@@ -23,6 +23,9 @@ namespace TechnogenicSoilPollution.UC
         double yUserLng = 0;
 
         private SqlConnection sqlConnection = null;
+
+        int openForm = 0;
+        PromptMapForm promptMap;
         #endregion
 
         public UCMap()
@@ -82,8 +85,18 @@ namespace TechnogenicSoilPollution.UC
 
         private void PromptFormBtn_Click(object sender, EventArgs e)
         {
-            PromptMapForm promptMap = new PromptMapForm();
-            promptMap.ShowDialog();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name == "PromptMapForm")
+                    openForm = 1;
+                else openForm = 0;
+            }
+
+            if (openForm == 0)
+            {
+                promptMap = new PromptMapForm();
+                promptMap.Show();
+            }
         }
 
         #endregion
