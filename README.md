@@ -14,8 +14,6 @@
 - Библиотека для работы с картой [GMap.NET](https://github.com/judero01col/GMap.NET).
 ## Документация
 [Документация приложения](https://cyclistcode.gitbook.io/technogenic-soil-pollution/)
-## Нюансы
-- При выборе тёмной темы, заголовок на главной станице не меняет цвет, так как используется обычная метка.
 ## Изображения приложения
 ### Главное меню
 ![home-page](https://user-images.githubusercontent.com/47049219/127740381-e28101fc-49d6-4cea-990d-a8d4e05e4caa.png)
