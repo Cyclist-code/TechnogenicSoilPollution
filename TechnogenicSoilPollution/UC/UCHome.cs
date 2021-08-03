@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -8,5 +9,13 @@ namespace TechnogenicSoilPollution.UC
         {
             InitializeComponent();
         }
+
+        #region Свойство для установки цвета текста у заголовка
+        public Color ForeColorLabel
+        {
+            get { return TitleAppLabel.ForeColor; }
+            set { TitleAppLabel.ForeColor = value; }
+        }
+        #endregion
     }
 }
