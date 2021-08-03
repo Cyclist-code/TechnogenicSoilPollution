@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.UC;
 using TechnogenicSoilPollution.Forms;
@@ -33,12 +34,14 @@ namespace TechnogenicSoilPollution
             {
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
                 materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+                HomePage.ForeColorLabel = Color.Black;
             }
             if (theme == "1")
             {
                 DarkThemeCheckBox.Checked = true;
                 materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
                 materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+                HomePage.ForeColorLabel = Color.White;
             }
             #endregion
 
@@ -111,6 +114,7 @@ namespace TechnogenicSoilPollution
                 var materialSkinManager = MaterialSkinManager.Instance;
                 materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
                 materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+                HomePage.ForeColorLabel = Color.White;
                 Properties.Settings.Default.DarkTheme = "1";
                 Properties.Settings.Default.Save();
             }
@@ -119,6 +123,7 @@ namespace TechnogenicSoilPollution
                 var materialSkinManager = MaterialSkinManager.Instance;
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
                 materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+                HomePage.ForeColorLabel = Color.Black;
                 Properties.Settings.Default.DarkTheme = "0";
                 Properties.Settings.Default.Save();
             }
