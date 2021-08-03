@@ -13,7 +13,7 @@
 - Билиотека для дизайна [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin);
 - Библиотека для работы с картой [GMap.NET](https://github.com/judero01col/GMap.NET).
 ## Документация
-[Документация приложения](https://github.com/Cyclist-code/TechnogenicSoilPollution/wiki)
+[Документация приложения](https://cyclistcode.gitbook.io/technogenic-soil-pollution/)
 ## Нюансы
 - При выборе тёмной темы, заголовок на главной станице не меняет цвет, так как используется обычная метка.
 ## Изображения приложения
