@@ -120,6 +120,7 @@
       <DependentUpon>ReferenceWorkDBForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CoordinatesPoint.cs" />
+    <Compile Include="Helpers\FormSettings.cs" />
     <Compile Include="Helpers\GMapPoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
