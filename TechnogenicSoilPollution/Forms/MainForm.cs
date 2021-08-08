@@ -1,10 +1,9 @@
-﻿using MaterialSkin;
-using MaterialSkin.Controls;
+﻿using MaterialSkin.Controls;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.UC;
 using TechnogenicSoilPollution.Forms;
+using TechnogenicSoilPollution.Helpers;
 
 namespace TechnogenicSoilPollution
 {
@@ -25,25 +24,8 @@ namespace TechnogenicSoilPollution
         {
             InitializeComponent();
 
-            #region Дефолтная тема
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            string theme = Properties.Settings.Default.DarkTheme;
-
-            if((theme == "") || (theme == " ") || (theme == "0"))
-            {
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-                HomePage.ForeColorLabel = Color.Black;
-            }
-            if (theme == "1")
-            {
-                DarkThemeCheckBox.Checked = true;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
-                HomePage.ForeColorLabel = Color.White;
-            }
-            #endregion
+            // Дефолтная тема
+            FormSettings.InstallingAppTheme(this, HomePage, DarkThemeCheckBox);
 
             PanelLoadUserControl.Controls.Add(HomePage);
         }
@@ -109,26 +91,8 @@ namespace TechnogenicSoilPollution
         #region Выбор темы оформления приложения
         private void DarkThemeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DarkThemeCheckBox.Checked)
-            {
-                var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
-                HomePage.ForeColorLabel = Color.White;
-                Properties.Settings.Default.DarkTheme = "1";
-                Properties.Settings.Default.Save();
-            }
-            if (!DarkThemeCheckBox.Checked)
-            {
-                var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-                HomePage.ForeColorLabel = Color.Black;
-                Properties.Settings.Default.DarkTheme = "0";
-                Properties.Settings.Default.Save();
-            }
+            FormSettings.ChoosingTheme(HomePage, DarkThemeCheckBox);
         }
         #endregion
-
     }
 }
