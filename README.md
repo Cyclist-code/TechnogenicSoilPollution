@@ -16,10 +16,10 @@
 [Документация приложения](https://cyclistcode.gitbook.io/technogenic-soil-pollution/)
 ## Изображения приложения
 ### Главное меню
-![home-page](https://user-images.githubusercontent.com/47049219/127740381-e28101fc-49d6-4cea-990d-a8d4e05e4caa.png)
+![Home-page](https://user-images.githubusercontent.com/47049219/129121349-87cabd1f-ddf4-45c0-8074-357970ca4057.png)
 ### Работа с базой данных
-![database-page](https://user-images.githubusercontent.com/47049219/127740308-d240e689-6fdf-405a-9204-db85c2b688cc.png)
+![Database-page](https://user-images.githubusercontent.com/47049219/129121191-6a65c9d4-5471-4360-a200-976ae315a223.png)
 ### Работа с расчётами и визуализацией
-![map-page](https://user-images.githubusercontent.com/47049219/127740320-db1d75db-ac76-45ab-90d0-7f4caca6db27.png)
+![Calculate-page](https://user-images.githubusercontent.com/47049219/129121206-921faf62-b42d-4e7f-a9d0-92578e827580.png)
 ### Пример визуализации рассчитанного поля
-![pollution-page](https://user-images.githubusercontent.com/47049219/127740413-76a3af93-1a39-48b9-a3c6-be023abba8e8.png)
+![Result-calculate](https://user-images.githubusercontent.com/47049219/129121221-2dc75c2e-a537-4405-8722-762f2e1eeef2.png)
