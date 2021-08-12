@@ -188,9 +188,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\email.png" />
     <Content Include="Assets\factory.png" />
-    <Content Include="Assets\github.png" />
     <Content Include="Assets\icon-app.ico" />
     <Content Include="Assets\Rose-Wind-1996.png" />
     <Content Include="Assets\Rose-Wind-1997.png" />
