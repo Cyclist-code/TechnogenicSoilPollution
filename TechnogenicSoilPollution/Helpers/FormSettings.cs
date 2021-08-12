@@ -17,14 +17,14 @@ namespace TechnogenicSoilPollution.Helpers
             if ((theme == "") || (theme == " ") || (theme == "0"))
             {
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Green700, Primary.Green900, Primary.Green500, Accent.Green400, TextShade.WHITE);
                 home.ForeColorLabel = Color.Black;
             }
             if (theme == "1")
             {
                 materialCheckBox.Checked = true;
                 materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Green700, Primary.Green900, Primary.Green500, Accent.Green400, TextShade.WHITE);
                 home.ForeColorLabel = Color.White;
             }
         }
@@ -36,8 +36,7 @@ namespace TechnogenicSoilPollution.Helpers
             if (materialCheckBox.Checked)
             {
                 var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue200, TextShade.WHITE);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;               
                 home.ForeColorLabel = Color.White;
                 Properties.Settings.Default.DarkTheme = "1";
                 Properties.Settings.Default.Save();
@@ -45,8 +44,7 @@ namespace TechnogenicSoilPollution.Helpers
             if (!materialCheckBox.Checked)
             {
                 var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;               
                 home.ForeColorLabel = Color.Black;
                 Properties.Settings.Default.DarkTheme = "0";
                 Properties.Settings.Default.Save();
