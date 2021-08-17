@@ -62,6 +62,7 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.CancelExitAppButton.TabIndex = 4;
             this.CancelExitAppButton.Text = "Нет";
             this.CancelExitAppButton.UseVisualStyleBackColor = true;
+            this.CancelExitAppButton.Click += new System.EventHandler(this.CancelExitAppButton_Click);
             // 
             // ExitAppButton
             // 
@@ -74,6 +75,7 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.ExitAppButton.TabIndex = 3;
             this.ExitAppButton.Text = "Да";
             this.ExitAppButton.UseVisualStyleBackColor = true;
+            this.ExitAppButton.Click += new System.EventHandler(this.ExitAppButton_Click);
             // 
             // pictureBox1
             // 
