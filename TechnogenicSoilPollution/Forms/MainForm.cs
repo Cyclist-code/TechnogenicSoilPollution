@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using TechnogenicSoilPollution.UC;
 using TechnogenicSoilPollution.Forms;
+using TechnogenicSoilPollution.Forms.Messages;
 using TechnogenicSoilPollution.Helpers;
 
 namespace TechnogenicSoilPollution
@@ -81,7 +82,10 @@ namespace TechnogenicSoilPollution
         #region Подтверждение закрытия приложения
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите выйти из приложения?", "Выход из приложения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            MessageExitForm exitForm = new MessageExitForm();
+            exitForm.ShowDialog();
+
+            if (exitForm.DialogResult == DialogResult.OK)
                 e.Cancel = false;
             else
                 e.Cancel = true;
