@@ -197,10 +197,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Error.png" />
     <Content Include="Assets\factory.png" />
     <Content Include="Assets\icon-app.ico" />
+    <Content Include="Assets\Info.png" />
+    <Content Include="Assets\Question.png" />
     <Content Include="Assets\Rose-Wind-1996.png" />
     <Content Include="Assets\Rose-Wind-1997.png" />
+    <Content Include="Assets\Warning.png" />
     <Content Include="Database\Database-ImpurityEmission.sql" />
   </ItemGroup>
   <ItemGroup>
