@@ -29,10 +29,20 @@ namespace TechnogenicSoilPollution.Forms.Messages
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MessageExitForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MessageExitForm";
+            this.ClientSize = new System.Drawing.Size(350, 160);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MessageExitForm";
+            this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
