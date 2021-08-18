@@ -33,7 +33,7 @@ namespace TechnogenicSoilPollution.Forms
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.GitHubProfileButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.CopyEmailButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.DocumentationButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.DocWebsiteButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@ namespace TechnogenicSoilPollution.Forms
             this.GitHubProfileButton.TabIndex = 38;
             this.GitHubProfileButton.Text = "GitHub";
             this.GitHubProfileButton.UseVisualStyleBackColor = true;
-            this.GitHubProfileButton.Click += new System.EventHandler(this.GitHubProfileButton_Click);
+            this.GitHubProfileButton.Click += new System.EventHandler(this.FeedbackAndDocButtons);
             // 
             // CopyEmailButton
             // 
@@ -75,19 +75,20 @@ namespace TechnogenicSoilPollution.Forms
             this.CopyEmailButton.TabIndex = 39;
             this.CopyEmailButton.Text = "Email";
             this.CopyEmailButton.UseVisualStyleBackColor = true;
-            this.CopyEmailButton.Click += new System.EventHandler(this.CopyEmailButton_Click);
+            this.CopyEmailButton.Click += new System.EventHandler(this.FeedbackAndDocButtons);
             // 
-            // DocumentationButton
+            // DocWebsiteButton
             // 
-            this.DocumentationButton.Depth = 0;
-            this.DocumentationButton.Location = new System.Drawing.Point(257, 374);
-            this.DocumentationButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DocumentationButton.Name = "DocumentationButton";
-            this.DocumentationButton.Primary = true;
-            this.DocumentationButton.Size = new System.Drawing.Size(140, 36);
-            this.DocumentationButton.TabIndex = 42;
-            this.DocumentationButton.Text = "Документация";
-            this.DocumentationButton.UseVisualStyleBackColor = true;
+            this.DocWebsiteButton.Depth = 0;
+            this.DocWebsiteButton.Location = new System.Drawing.Point(257, 374);
+            this.DocWebsiteButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DocWebsiteButton.Name = "DocWebsiteButton";
+            this.DocWebsiteButton.Primary = true;
+            this.DocWebsiteButton.Size = new System.Drawing.Size(140, 36);
+            this.DocWebsiteButton.TabIndex = 42;
+            this.DocWebsiteButton.Text = "Документация";
+            this.DocWebsiteButton.UseVisualStyleBackColor = true;
+            this.DocWebsiteButton.Click += new System.EventHandler(this.FeedbackAndDocButtons);
             // 
             // pictureBox1
             // 
@@ -105,7 +106,7 @@ namespace TechnogenicSoilPollution.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 440);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.DocumentationButton);
+            this.Controls.Add(this.DocWebsiteButton);
             this.Controls.Add(this.CopyEmailButton);
             this.Controls.Add(this.GitHubProfileButton);
             this.Controls.Add(this.materialLabel1);
@@ -125,7 +126,7 @@ namespace TechnogenicSoilPollution.Forms
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialRaisedButton GitHubProfileButton;
         private MaterialSkin.Controls.MaterialRaisedButton CopyEmailButton;
-        private MaterialSkin.Controls.MaterialRaisedButton DocumentationButton;
+        private MaterialSkin.Controls.MaterialRaisedButton DocWebsiteButton;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
