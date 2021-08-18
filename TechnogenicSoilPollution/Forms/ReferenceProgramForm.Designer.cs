@@ -30,75 +30,31 @@ namespace TechnogenicSoilPollution.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReferenceProgramForm));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.GitHubProfileButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.CopyEmailButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.CloseFormButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.DocumentationButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(7, 325);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 1);
-            this.panel2.TabIndex = 30;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(7, 166);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 1);
-            this.panel1.TabIndex = 29;
             // 
             // materialLabel1
             // 
-            this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(5, 69);
+            this.materialLabel1.Location = new System.Drawing.Point(15, 227);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(533, 95);
+            this.materialLabel1.Size = new System.Drawing.Size(410, 134);
             this.materialLabel1.TabIndex = 35;
             this.materialLabel1.Text = resources.GetString("materialLabel1.Text");
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(5, 170);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(528, 152);
-            this.materialLabel2.TabIndex = 36;
-            this.materialLabel2.Text = resources.GetString("materialLabel2.Text");
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(5, 329);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(124, 19);
-            this.materialLabel3.TabIndex = 37;
-            this.materialLabel3.Text = "Обратная связь:";
+            this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GitHubProfileButton
             // 
             this.GitHubProfileButton.Depth = 0;
-            this.GitHubProfileButton.Location = new System.Drawing.Point(7, 355);
+            this.GitHubProfileButton.Location = new System.Drawing.Point(45, 374);
             this.GitHubProfileButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.GitHubProfileButton.Name = "GitHubProfileButton";
             this.GitHubProfileButton.Primary = true;
@@ -111,7 +67,7 @@ namespace TechnogenicSoilPollution.Forms
             // CopyEmailButton
             // 
             this.CopyEmailButton.Depth = 0;
-            this.CopyEmailButton.Location = new System.Drawing.Point(113, 355);
+            this.CopyEmailButton.Location = new System.Drawing.Point(151, 374);
             this.CopyEmailButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CopyEmailButton.Name = "CopyEmailButton";
             this.CopyEmailButton.Primary = true;
@@ -121,32 +77,38 @@ namespace TechnogenicSoilPollution.Forms
             this.CopyEmailButton.UseVisualStyleBackColor = true;
             this.CopyEmailButton.Click += new System.EventHandler(this.CopyEmailButton_Click);
             // 
-            // CloseFormButton
+            // DocumentationButton
             // 
-            this.CloseFormButton.Depth = 0;
-            this.CloseFormButton.Location = new System.Drawing.Point(428, 398);
-            this.CloseFormButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CloseFormButton.Name = "CloseFormButton";
-            this.CloseFormButton.Primary = true;
-            this.CloseFormButton.Size = new System.Drawing.Size(100, 40);
-            this.CloseFormButton.TabIndex = 40;
-            this.CloseFormButton.Text = "OK";
-            this.CloseFormButton.UseVisualStyleBackColor = true;
-            this.CloseFormButton.Click += new System.EventHandler(this.CloseFormButton_Click);
+            this.DocumentationButton.Depth = 0;
+            this.DocumentationButton.Location = new System.Drawing.Point(257, 374);
+            this.DocumentationButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DocumentationButton.Name = "DocumentationButton";
+            this.DocumentationButton.Primary = true;
+            this.DocumentationButton.Size = new System.Drawing.Size(140, 36);
+            this.DocumentationButton.TabIndex = 42;
+            this.DocumentationButton.Text = "Документация";
+            this.DocumentationButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.factory;
+            this.pictureBox1.Location = new System.Drawing.Point(145, 75);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
             // 
             // ReferenceProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 450);
-            this.Controls.Add(this.CloseFormButton);
+            this.ClientSize = new System.Drawing.Size(440, 440);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.DocumentationButton);
             this.Controls.Add(this.CopyEmailButton);
             this.Controls.Add(this.GitHubProfileButton);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -154,20 +116,16 @@ namespace TechnogenicSoilPollution.Forms
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о приложении";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialRaisedButton GitHubProfileButton;
         private MaterialSkin.Controls.MaterialRaisedButton CopyEmailButton;
-        private MaterialSkin.Controls.MaterialRaisedButton CloseFormButton;
+        private MaterialSkin.Controls.MaterialRaisedButton DocumentationButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
