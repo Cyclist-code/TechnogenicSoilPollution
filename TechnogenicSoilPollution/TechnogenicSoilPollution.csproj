@@ -107,6 +107,12 @@
     <Compile Include="Forms\Messages\MessageExitForm.Designer.cs">
       <DependentUpon>MessageExitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Messages\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PromptMapForm.cs">
       <SubType>Form</SubType>
     </Compile>
