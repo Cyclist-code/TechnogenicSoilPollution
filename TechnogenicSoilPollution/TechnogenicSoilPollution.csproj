@@ -160,6 +160,9 @@
     <EmbeddedResource Include="Forms\Messages\MessageExitForm.resx">
       <DependentUpon>MessageExitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PromptMapForm.resx">
       <DependentUpon>PromptMapForm.cs</DependentUpon>
     </EmbeddedResource>
