@@ -13,17 +13,20 @@ namespace TechnogenicSoilPollution.Forms.Messages
 
     public partial class MessageForm : MaterialForm
     {
-        public MessageForm(string message, IconMessageForm icon)
+        public MessageForm()
         {
             InitializeComponent();
 
             #region Установка стиля окна
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            #endregion
+            #endregion          
+        }
 
-            #region Установка текста сообщения и иконки
+        #region Метод для отображения сообщения
+        public void ShowDialogMessage(string message, IconMessageForm icon)
 
+        {
             MessageLabel.Text = message;
 
             switch (icon)
@@ -43,8 +46,10 @@ namespace TechnogenicSoilPollution.Forms.Messages
                 default:
                     break;
             }
-            #endregion
+
+            this.ShowDialog();
         }
+        #endregion
 
         #region Закрытие окна сообщения
         private void CloseButton_Click(object sender, System.EventArgs e)
