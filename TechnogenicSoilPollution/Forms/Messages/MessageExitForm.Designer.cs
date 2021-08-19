@@ -32,9 +32,9 @@ namespace TechnogenicSoilPollution.Forms.Messages
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageExitForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CancelExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@ namespace TechnogenicSoilPollution.Forms.Messages
             // materialLabel1
             // 
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(77, 35);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -62,6 +62,16 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.materialLabel1.Size = new System.Drawing.Size(268, 40);
             this.materialLabel1.TabIndex = 6;
             this.materialLabel1.Text = "Вы действительно хотите выйти из приложения?";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.Question;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // CancelExitAppButton
             // 
@@ -88,16 +98,6 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.ExitAppButton.Text = "Да";
             this.ExitAppButton.UseVisualStyleBackColor = true;
             this.ExitAppButton.Click += new System.EventHandler(this.ExitAppButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TechnogenicSoilPollution.Properties.Resources.Question;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // MessageExitForm
             // 
