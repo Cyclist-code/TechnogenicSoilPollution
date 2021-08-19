@@ -75,7 +75,7 @@ namespace TechnogenicSoilPollution.Forms.Messages
             // 
             // IconPictureBox
             // 
-            this.IconPictureBox.Location = new System.Drawing.Point(15, 35);
+            this.IconPictureBox.Location = new System.Drawing.Point(15, 29);
             this.IconPictureBox.Name = "IconPictureBox";
             this.IconPictureBox.Size = new System.Drawing.Size(50, 50);
             this.IconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
