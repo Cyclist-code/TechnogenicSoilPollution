@@ -45,5 +45,12 @@ namespace TechnogenicSoilPollution.Forms.Messages
             }
             #endregion
         }
+
+        #region Закрытие окна сообщения
+        private void CloseButton_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
+        #endregion
     }
 }

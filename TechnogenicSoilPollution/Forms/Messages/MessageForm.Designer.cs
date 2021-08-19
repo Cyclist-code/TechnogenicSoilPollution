@@ -31,9 +31,9 @@ namespace TechnogenicSoilPollution.Forms.Messages
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.IconPictureBox = new System.Windows.Forms.PictureBox();
-            this.CloseButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.MessageLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.CloseButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.IconPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -49,13 +49,16 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.panel1.Size = new System.Drawing.Size(350, 137);
             this.panel1.TabIndex = 0;
             // 
-            // IconPictureBox
+            // MessageLabel
             // 
-            this.IconPictureBox.Location = new System.Drawing.Point(15, 35);
-            this.IconPictureBox.Name = "IconPictureBox";
-            this.IconPictureBox.Size = new System.Drawing.Size(50, 50);
-            this.IconPictureBox.TabIndex = 0;
-            this.IconPictureBox.TabStop = false;
+            this.MessageLabel.Depth = 0;
+            this.MessageLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.MessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MessageLabel.Location = new System.Drawing.Point(77, 35);
+            this.MessageLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.MessageLabel.Name = "MessageLabel";
+            this.MessageLabel.Size = new System.Drawing.Size(268, 50);
+            this.MessageLabel.TabIndex = 7;
             // 
             // CloseButton
             // 
@@ -68,17 +71,16 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.CloseButton.TabIndex = 4;
             this.CloseButton.Text = "ОК";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // MessageLabel
+            // IconPictureBox
             // 
-            this.MessageLabel.Depth = 0;
-            this.MessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.MessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MessageLabel.Location = new System.Drawing.Point(77, 35);
-            this.MessageLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(268, 50);
-            this.MessageLabel.TabIndex = 7;
+            this.IconPictureBox.Location = new System.Drawing.Point(15, 35);
+            this.IconPictureBox.Name = "IconPictureBox";
+            this.IconPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.IconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IconPictureBox.TabIndex = 0;
+            this.IconPictureBox.TabStop = false;
             // 
             // MessageForm
             // 
