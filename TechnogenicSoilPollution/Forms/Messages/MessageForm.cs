@@ -1,26 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace TechnogenicSoilPollution.Forms.Messages
 {
+    public enum IconMessageForm
+    {
+        Error,
+        Info,
+        Question,
+        Warning
+    }
+
     public partial class MessageForm : MaterialForm
     {
-        public MessageForm()
+        public MessageForm(string message, IconMessageForm icon)
         {
             InitializeComponent();
 
             #region Установка стиля окна
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
+            #endregion
+
+            #region Установка текста сообщения и иконки
+
+            MessageLabel.Text = message;
+
+            switch (icon)
+            {
+                case IconMessageForm.Error:
+                    IconPictureBox.Image = Properties.Resources.Error;
+                    break;
+                case IconMessageForm.Info:
+                    IconPictureBox.Image = Properties.Resources.Info;
+                    break;
+                case IconMessageForm.Question:
+                    IconPictureBox.Image = Properties.Resources.Question;
+                    break;
+                case IconMessageForm.Warning:
+                    IconPictureBox.Image = Properties.Resources.Warning;
+                    break;
+                default:
+                    break;
+            }
             #endregion
         }
     }
