@@ -35,6 +35,7 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CancelExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.CaptionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -99,11 +100,24 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.ExitAppButton.UseVisualStyleBackColor = true;
             this.ExitAppButton.Click += new System.EventHandler(this.ExitAppButton_Click);
             // 
+            // CaptionLabel
+            // 
+            this.CaptionLabel.AutoSize = true;
+            this.CaptionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CaptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CaptionLabel.ForeColor = System.Drawing.Color.White;
+            this.CaptionLabel.Location = new System.Drawing.Point(12, 4);
+            this.CaptionLabel.Name = "CaptionLabel";
+            this.CaptionLabel.Size = new System.Drawing.Size(135, 15);
+            this.CaptionLabel.TabIndex = 2;
+            this.CaptionLabel.Text = "Выход из приложения";
+            // 
             // MessageExitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 160);
+            this.Controls.Add(this.CaptionLabel);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -114,6 +128,7 @@ namespace TechnogenicSoilPollution.Forms.Messages
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -124,5 +139,6 @@ namespace TechnogenicSoilPollution.Forms.Messages
         private MaterialSkin.Controls.MaterialRaisedButton ExitAppButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.Label CaptionLabel;
     }
 }
