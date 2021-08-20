@@ -24,10 +24,11 @@ namespace TechnogenicSoilPollution.Forms.Messages
         }
 
         #region Метод для отображения сообщения
-        public void ShowDialogMessage(string message, IconMessageForm icon)
+        public void ShowDialogMessage(string message, string caption, IconMessageForm icon)
 
         {
             MessageLabel.Text = message;
+            CaptionLabel.Text = caption;
 
             switch (icon)
             {
