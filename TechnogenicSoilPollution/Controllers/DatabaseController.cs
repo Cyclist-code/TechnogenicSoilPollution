@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Data;
-
+using TechnogenicSoilPollution.Forms.Messages;
 
 namespace TechnogenicSoilPollution.Controllers
 {
@@ -14,6 +14,8 @@ namespace TechnogenicSoilPollution.Controllers
         private static SqlConnection sqlConnection = null;
         private static SqlDataAdapter adapter = null;
         private static DataSet dataSet = null;
+
+        private static MessageForm messageForm = new MessageForm();
         #endregion
 
         static DatabaseController()
@@ -96,8 +98,8 @@ namespace TechnogenicSoilPollution.Controllers
                 dataSet.Tables[0].Rows.Add(newRow);
             }
             else
-            {
-                MessageBox.Show("Добавление новой строки возможно\nтолько при выбранных данных.", "Новая строка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {               
+                messageForm.ShowDialogMessage("Новая строка возможно только при выбранных данных.", "Новая строка", IconMessageForm.Warning);
             }
         }
         #endregion
@@ -130,14 +132,14 @@ namespace TechnogenicSoilPollution.Controllers
                         command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[9].Value));
                         adapter.UpdateCommand = command;
                         command.ExecuteNonQuery();
-
-                        MessageBox.Show("Данные успешно обновлены.", "Обновление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 
+                        messageForm.ShowDialogMessage("Существующие данные успешно обновлены.", "Обновление данных", IconMessageForm.Info);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Обновление данных возможно\nтолько при выбранных данных.", "Обновление данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                messageForm.ShowDialogMessage("Обновление данных возможно только при выбранных данных.", "Обновление данных", IconMessageForm.Warning);
             }
 
             sqlConnection.Close();
@@ -173,14 +175,14 @@ namespace TechnogenicSoilPollution.Controllers
                         command.Parameters.AddWithValue("@Stocks_elements", dataGridView.Rows[i].Cells[7].Value);
                         adapter.InsertCommand = command;
                         command.ExecuteNonQuery();
-
-                        MessageBox.Show("Данные успешно добавлены.", "Добавление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        messageForm.ShowDialogMessage("Внесённые данные успешно добавлены.", "Добавление данных", IconMessageForm.Info);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Добавление данных возможно\nтолько при выбранных данных.", "Добавление данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                messageForm.ShowDialogMessage("Добавление данных возможно только при выбранных данных.", "Добавление данных", IconMessageForm.Warning);
             }
 
             sqlConnection.Close();
@@ -201,11 +203,11 @@ namespace TechnogenicSoilPollution.Controllers
                     command.Parameters.AddWithValue("@Id_content", Convert.ToInt32(dataGridView.CurrentRow.Cells[9].Value));
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Данные успешно удалены.", "Удаление данных", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    messageForm.ShowDialogMessage("Сохранённые данные успешно удалены.", "Удаление данных", IconMessageForm.Info);
                 }
                 else
                 {
-                    MessageBox.Show("Пустую строку удалить нельзя.", "Удаление строки", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    messageForm.ShowDialogMessage("Удаление добавленной пустой строки невозможно.", "Удаление данных", IconMessageForm.Warning);
                 }
 
             }
@@ -253,7 +255,7 @@ namespace TechnogenicSoilPollution.Controllers
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messageForm.ShowDialogMessage(ex.Message, "Ошибка экспорта", IconMessageForm.Error);
                 }
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog
@@ -268,12 +270,12 @@ namespace TechnogenicSoilPollution.Controllers
                     {
                         workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
                             XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                        MessageBox.Show("Документ Excel сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx",
-                                        "Сохранение документа Excel", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        messageForm.ShowDialogMessage("Файл сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx",
+                            "Сохранение документа Excel", IconMessageForm.Info);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messageForm.ShowDialogMessage(ex.Message, "Ошибка экспорта", IconMessageForm.Error);
                     }
                 }
 
@@ -281,7 +283,7 @@ namespace TechnogenicSoilPollution.Controllers
             }
             else
             {
-                MessageBox.Show("Экспорт данных в Excel возможет\nтолько при выбранных данных.", "Экспорт данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                messageForm.ShowDialogMessage("Экспорт данных в Excel возможен только при выбранных данных.", "Экспорт данных", IconMessageForm.Warning);
             }
         }
         #endregion
