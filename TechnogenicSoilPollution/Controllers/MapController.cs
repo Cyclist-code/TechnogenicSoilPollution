@@ -11,6 +11,7 @@ using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Collections.Generic;
 using TechnogenicSoilPollution.Helpers;
+using TechnogenicSoilPollution.Forms.Messages;
 using System.Text;
 
 namespace TechnogenicSoilPollution.Controllers
@@ -23,6 +24,8 @@ namespace TechnogenicSoilPollution.Controllers
         static readonly double yPlantLng = 104.084576;
 
         private static SqlConnection sqlConnection = null;
+
+        static MessageForm messageForm = new MessageForm();
         #endregion
 
         #region Слои
@@ -341,8 +344,7 @@ namespace TechnogenicSoilPollution.Controllers
                     }
                     catch
                     {
-                        MessageBox.Show($"Для элемента {chemicalElements} не проводились измерения в\nданной фазе и выбранных точках пробоотбора." +
-                            $"\nОтображение рассчитанного поля является неверным.", "Нет измерений", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        messageForm.ShowDialogMessage($"Для элемента {chemicalElements} не проводились измерения.", "Нет измерений", IconMessageForm.Warning);
                     }
                 }
 
@@ -400,7 +402,7 @@ namespace TechnogenicSoilPollution.Controllers
             }
             else
             {
-                MessageBox.Show("Выберите опорные точки для расчёта.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                messageForm.ShowDialogMessage("Выберите опорные точки для расчёта.", "Выбор опорных точек", IconMessageForm.Warning);
             }
         }
         #endregion 
@@ -441,8 +443,8 @@ namespace TechnogenicSoilPollution.Controllers
                             {
                                 string fileName = saveMapDialog.FileName;
                                 imageMap.Save(fileName);
-                                MessageBox.Show("Карта сохранена в директории: " + Environment.NewLine + saveMapDialog.FileName,
-                                    "Сохранение карты", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                messageForm.ShowDialogMessage("Карта сохранена в директории: " + Environment.NewLine + saveMapDialog.FileName,
+                                    "Сохранение карты", IconMessageForm.Info);
                             }
                         }
                     }
@@ -450,7 +452,7 @@ namespace TechnogenicSoilPollution.Controllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageForm.ShowDialogMessage(ex.Message, "Ошибка сохранения", IconMessageForm.Error);
             }
         }
         #endregion
