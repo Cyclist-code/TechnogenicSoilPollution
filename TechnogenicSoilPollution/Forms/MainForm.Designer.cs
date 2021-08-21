@@ -102,9 +102,9 @@ namespace TechnogenicSoilPollution
             this.SideMenuPanel.Controls.Add(this.BtnOpenHelp);
             this.SideMenuPanel.Controls.Add(this.BtnOpenData);
             this.SideMenuPanel.Controls.Add(this.BtnOpenMap);
-            this.SideMenuPanel.Location = new System.Drawing.Point(-1, 63);
+            this.SideMenuPanel.Location = new System.Drawing.Point(0, 64);
             this.SideMenuPanel.Name = "SideMenuPanel";
-            this.SideMenuPanel.Size = new System.Drawing.Size(120, 658);
+            this.SideMenuPanel.Size = new System.Drawing.Size(119, 656);
             this.SideMenuPanel.TabIndex = 4;
             // 
             // DarkThemeCheckBox
@@ -134,9 +134,10 @@ namespace TechnogenicSoilPollution
             // 
             // PanelLoadUserControl
             // 
+            this.PanelLoadUserControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelLoadUserControl.Location = new System.Drawing.Point(119, 64);
             this.PanelLoadUserControl.Name = "PanelLoadUserControl";
-            this.PanelLoadUserControl.Size = new System.Drawing.Size(1031, 657);
+            this.PanelLoadUserControl.Size = new System.Drawing.Size(1031, 656);
             this.PanelLoadUserControl.TabIndex = 5;
             // 
             // MainForm
