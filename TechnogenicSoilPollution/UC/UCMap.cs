@@ -8,6 +8,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using TechnogenicSoilPollution.Controllers;
 using TechnogenicSoilPollution.Forms;
+using TechnogenicSoilPollution.Forms.Messages;
 
 namespace TechnogenicSoilPollution.UC
 {
@@ -26,6 +27,8 @@ namespace TechnogenicSoilPollution.UC
 
         int openForm = 0;
         PromptMapForm promptMap;
+
+        MessageForm messageForm = new MessageForm();
         #endregion
 
         public UCMap()
@@ -139,8 +142,8 @@ namespace TechnogenicSoilPollution.UC
         {
             if (e.NewValue == CheckState.Checked && PivotPointsCLB.CheckedItems.Count >= 2)
             {
-                e.NewValue = CheckState.Unchecked;
-                MessageBox.Show("2 опорные точки для расчёта уже выбраны.", "Выбор опорных точек", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.NewValue = CheckState.Unchecked;                
+                messageForm.ShowDialogMessage("2 опорные точки для расчёта уже выбраны.", "Выбор опорных точек", IconMessageForm.Warning);
             }
         }
         #endregion
