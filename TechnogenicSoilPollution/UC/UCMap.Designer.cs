@@ -78,6 +78,7 @@ namespace TechnogenicSoilPollution.UC
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.RadioButtonMapHybrid = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -668,12 +669,13 @@ namespace TechnogenicSoilPollution.UC
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RadioButtonMapHybrid);
             this.groupBox1.Controls.Add(this.RadioButtonMapSatellite);
             this.groupBox1.Controls.Add(this.RadioButtonMapScheme);
             this.groupBox1.Controls.Add(this.materialLabel5);
             this.groupBox1.Location = new System.Drawing.Point(642, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(98, 89);
+            this.groupBox1.Size = new System.Drawing.Size(98, 111);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             // 
@@ -706,6 +708,24 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel15.Size = new System.Drawing.Size(129, 19);
             this.materialLabel15.TabIndex = 62;
             this.materialLabel15.Text = "Условия расчёта";
+            // 
+            // RadioButtonMapHybrid
+            // 
+            this.RadioButtonMapHybrid.AutoSize = true;
+            this.RadioButtonMapHybrid.Depth = 0;
+            this.RadioButtonMapHybrid.Font = new System.Drawing.Font("Roboto", 10F);
+            this.RadioButtonMapHybrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RadioButtonMapHybrid.Location = new System.Drawing.Point(3, 76);
+            this.RadioButtonMapHybrid.Margin = new System.Windows.Forms.Padding(0);
+            this.RadioButtonMapHybrid.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.RadioButtonMapHybrid.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RadioButtonMapHybrid.Name = "RadioButtonMapHybrid";
+            this.RadioButtonMapHybrid.Ripple = true;
+            this.RadioButtonMapHybrid.Size = new System.Drawing.Size(76, 30);
+            this.RadioButtonMapHybrid.TabIndex = 64;
+            this.RadioButtonMapHybrid.TabStop = true;
+            this.RadioButtonMapHybrid.Text = "Гибрид";
+            this.RadioButtonMapHybrid.UseVisualStyleBackColor = true;
             // 
             // UCMap
             // 
@@ -820,5 +840,6 @@ namespace TechnogenicSoilPollution.UC
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel15;
+        private MaterialSkin.Controls.MaterialRadioButton RadioButtonMapHybrid;
     }
 }
