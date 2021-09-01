@@ -63,9 +63,11 @@ namespace TechnogenicSoilPollution.UC
         private void SelectMapType(object sender, EventArgs e)
         {
             if (RadioButtonMapScheme.Checked == true)
-                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite);
-            else
-                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite);
+                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
+            if (RadioButtonMapSatellite.Checked == true)
+                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
+            if (RadioButtonMapHybrid.Checked == true)
+                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
         }
         #endregion
 
