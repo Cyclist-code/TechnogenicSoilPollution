@@ -55,6 +55,7 @@ namespace TechnogenicSoilPollution.UC
         #region Загрузка карты
         private void Gmap_Load(object sender, EventArgs e)
         {
+            MapController.MapSettings(Gmap);
             MapController.LoadPointsMap(Gmap);
         }
         #endregion
@@ -63,11 +64,11 @@ namespace TechnogenicSoilPollution.UC
         private void SelectMapType(object sender, EventArgs e)
         {
             if (RadioButtonMapScheme.Checked == true)
-                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
+                MapController.TypeMap(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
             if (RadioButtonMapSatellite.Checked == true)
-                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
+                MapController.TypeMap(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
             if (RadioButtonMapHybrid.Checked == true)
-                MapController.MapSettings(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
+                MapController.TypeMap(Gmap, RadioButtonMapScheme, RadioButtonMapSatellite, RadioButtonMapHybrid);
         }
         #endregion
 

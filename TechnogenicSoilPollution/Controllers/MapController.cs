@@ -39,8 +39,7 @@ namespace TechnogenicSoilPollution.Controllers
         }
 
         #region Настройки карты
-        public static void MapSettings(GMapControl Gmap, RadioButton RadioButtonMapScheme, 
-            RadioButton RadioButtonMapSatellite, RadioButton RadioButtonMapHybrid)
+        public static void MapSettings(GMapControl Gmap)
         {
             //Угол наклона карты
             Gmap.Bearing = 0;
@@ -73,7 +72,18 @@ namespace TechnogenicSoilPollution.Controllers
 
             //Русская локализация карты
             GMapProvider.Language = LanguageType.Russian;
+           
+            //Загрузка карты через интернет
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            //Начальные координаты для загрузки карты
+            Gmap.Position = new PointLatLng(52.192972, 104.087009);
+        }
+        #endregion
 
+        #region Тип карты (схема, спутник, гибрид)
+        public static void TypeMap(GMapControl Gmap, RadioButton RadioButtonMapScheme,
+           RadioButton RadioButtonMapSatellite, RadioButton RadioButtonMapHybrid)
+        {
             //Провайдер для отображения карты
             if (RadioButtonMapScheme.Checked == true)
                 Gmap.MapProvider = GMapProviders.GoogleMap;
@@ -81,11 +91,6 @@ namespace TechnogenicSoilPollution.Controllers
                 Gmap.MapProvider = GMapProviders.GoogleSatelliteMap;
             if (RadioButtonMapHybrid.Checked == true)
                 Gmap.MapProvider = GMapProviders.GoogleHybridMap;
-
-            //Загрузка карты через интернет
-            GMaps.Instance.Mode = AccessMode.ServerOnly;
-            //Начальные координаты для загрузки карты
-            Gmap.Position = new PointLatLng(52.192972, 104.087009);
         }
         #endregion
 

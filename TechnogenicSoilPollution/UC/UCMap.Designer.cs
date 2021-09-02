@@ -76,9 +76,9 @@ namespace TechnogenicSoilPollution.UC
             this.labelUnitsEight = new MaterialSkin.Controls.MaterialLabel();
             this.labelUnitsNine = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RadioButtonMapHybrid = new MaterialSkin.Controls.MaterialRadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
-            this.RadioButtonMapHybrid = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -679,6 +679,25 @@ namespace TechnogenicSoilPollution.UC
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             // 
+            // RadioButtonMapHybrid
+            // 
+            this.RadioButtonMapHybrid.AutoSize = true;
+            this.RadioButtonMapHybrid.Depth = 0;
+            this.RadioButtonMapHybrid.Font = new System.Drawing.Font("Roboto", 10F);
+            this.RadioButtonMapHybrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RadioButtonMapHybrid.Location = new System.Drawing.Point(3, 76);
+            this.RadioButtonMapHybrid.Margin = new System.Windows.Forms.Padding(0);
+            this.RadioButtonMapHybrid.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.RadioButtonMapHybrid.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RadioButtonMapHybrid.Name = "RadioButtonMapHybrid";
+            this.RadioButtonMapHybrid.Ripple = true;
+            this.RadioButtonMapHybrid.Size = new System.Drawing.Size(76, 30);
+            this.RadioButtonMapHybrid.TabIndex = 64;
+            this.RadioButtonMapHybrid.TabStop = true;
+            this.RadioButtonMapHybrid.Text = "Гибрид";
+            this.RadioButtonMapHybrid.UseVisualStyleBackColor = true;
+            this.RadioButtonMapHybrid.CheckedChanged += new System.EventHandler(this.SelectMapType);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.materialLabel15);
@@ -708,24 +727,6 @@ namespace TechnogenicSoilPollution.UC
             this.materialLabel15.Size = new System.Drawing.Size(129, 19);
             this.materialLabel15.TabIndex = 62;
             this.materialLabel15.Text = "Условия расчёта";
-            // 
-            // RadioButtonMapHybrid
-            // 
-            this.RadioButtonMapHybrid.AutoSize = true;
-            this.RadioButtonMapHybrid.Depth = 0;
-            this.RadioButtonMapHybrid.Font = new System.Drawing.Font("Roboto", 10F);
-            this.RadioButtonMapHybrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RadioButtonMapHybrid.Location = new System.Drawing.Point(3, 76);
-            this.RadioButtonMapHybrid.Margin = new System.Windows.Forms.Padding(0);
-            this.RadioButtonMapHybrid.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.RadioButtonMapHybrid.MouseState = MaterialSkin.MouseState.HOVER;
-            this.RadioButtonMapHybrid.Name = "RadioButtonMapHybrid";
-            this.RadioButtonMapHybrid.Ripple = true;
-            this.RadioButtonMapHybrid.Size = new System.Drawing.Size(76, 30);
-            this.RadioButtonMapHybrid.TabIndex = 64;
-            this.RadioButtonMapHybrid.TabStop = true;
-            this.RadioButtonMapHybrid.Text = "Гибрид";
-            this.RadioButtonMapHybrid.UseVisualStyleBackColor = true;
             // 
             // UCMap
             // 
