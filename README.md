@@ -4,10 +4,10 @@
 - расчётный модуль для расчёта с использованием математиче-ской модели полей выпадений выбранных загрязняющих примесей;
 - графический модуль, осуществляющий визуализацию рассчитанных полей на карте окрестностей ИркАЗ г. Шелехова.
 ## Технологии
-- Язык программирования [C#](https://docs.microsoft.com/ru-ru/dotnet/csharp/);
-- Платформа [Windows Forms](https://docs.microsoft.com/ru-ru/dotnet/desktop/winforms/?view=netframeworkdesktop-4.8);
-- [.NET Framework 4.7.2 ](https://dotnet.microsoft.com/download/dotnet-framework/net472);
-- База данных [Microsoft SQL Server](https://www.microsoft.com/ru-ru/sql-server/sql-server-2019);
+- Язык программирования C#;
+- Платформа Windows Forms;
+- .NET Framework 4.7.2;
+- База данных Microsoft SQL Server;
 - Билиотека для дизайна [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin);
 - Библиотека для работы с картой [GMap.NET](https://github.com/judero01col/GMap.NET).
 ## Документация
@@ -18,6 +18,6 @@
 ### Работа с базой данных
 ![Database-page](https://user-images.githubusercontent.com/47049219/130340520-1fe11424-0e2c-4fe2-b10f-2ecacb5b8237.png)
 ### Работа с расчётами и визуализацией
-![Calculate-page](https://user-images.githubusercontent.com/47049219/130340529-212aa7a0-97fa-4492-a49f-f45a12e6d8b1.png)
+![Calculate-page](https://user-images.githubusercontent.com/47049219/132160899-f4de4c88-a114-46bb-ab6e-b0038d6957de.png)
 ### Пример визуализации рассчитанного поля
-![Result-calculate-page](https://user-images.githubusercontent.com/47049219/130340537-2ddd820b-dddf-4605-99cd-9c560fd65042.png)
+![Result-calculate-page](https://user-images.githubusercontent.com/47049219/132161034-a3049009-ebda-4b6f-be98-3508d2e0d0d8.png)
